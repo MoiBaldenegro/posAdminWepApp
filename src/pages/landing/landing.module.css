@@ -1,0 +1,61 @@
+.loginPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btnBack{
+    width: 672px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+    background: #F9F9F91A;
+    color: #fff;
+    transition: 300ms;
+    border: none;
+    letter-spacing: 5px;
+  }
+  .centerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vw;
+    margin-bottom: 2vh;
+    color: #f9f9f9;
+  }
+  .btnEntrar:hover,
+  .btnBack:hover{
+    background: #75000B;
+  }
+  .btnBackLink{
+    text-decoration: none;
+    color:#f9f9f9;
+    text-transform: uppercase;
+    padding: 15px 300px;
+ 
+
+  }
+  .ws{
+    position: absolute;
+    top: 86%;
+    left: 3%;
+    height: 80px;
+  }
+
+
+  .ws{
+ 
+    background-size: cover;
+    text-indent: -9999px; /* Oculta el texto del enlace */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono */
+    transition: transform 0.4s ease; /* Agrega una transición de escala */
+  }
+
+  .ws:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px 1px #67c55b;
+    border-radius: 50%;
+}

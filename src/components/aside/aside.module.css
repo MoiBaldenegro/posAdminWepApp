@@ -1,0 +1,193 @@
+@import "../../varCss/colors.module.css";
+@import "../../varCss/fonts.module.css";
+
+.aside{
+    margin: 0 15px ;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 358px;
+    height: 82vh;
+    border-radius: 16px;
+    background: var(--color-gradient);
+    box-shadow: var(--standard-shadow);
+}
+.sectionOne{
+    width: 333px;
+    height: 285vh;
+    margin-top: 25px;
+    margin-left: 20px;
+    max-height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.sectionTwo{
+    width: 330px;
+    height: 500px;
+    margin-left: 20px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.hidden{
+    display: none;
+}
+.isActive,
+.notActive{
+    gap: 15px;
+    padding:15px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height:46px;
+    border-radius: 8px;
+    margin: 5px;
+    text-decoration: none;
+    color: var(--color-white);
+}
+.isActive{
+    background-color: var(--color-gray-medium);
+}
+.notActive:hover{
+    background-color: var(--color-gray-medium);
+}
+.isActiveDeploy,
+.notActiveDeploy{
+    display: flex;
+    margin-left: 3vw;
+    position: relative;
+    margin-left: 1vw;
+    width: 160px;
+    height: 30px;
+    font-size: var(--font-size-medium);
+    font-weight: 400;
+    text-align: left;
+    border-radius: 12px;
+    transition: 200ms;
+    width: 254px;
+    height: 52px;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-white); 
+}
+.isActiveDeploy{  
+    font-weight: 700;
+}
+.separator{
+ width: 100px;
+}
+.itemTittle{
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+}
+ 
+.icon{
+    width: 27px;
+    height: 26px;
+    transition: 400ms;
+    margin-right: 5px;
+}
+.arrowIcon{
+    margin-right: 3.2px;
+    transform-origin: center;
+    transition: transform 0.4s ease-in-out;
+}
+
+.isActive .arrowIcon{
+    transform: rotate(180deg);
+}
+.isActive .icon{
+    transform: rotate(10deg);
+   
+}
+
+/*  ASIDE SCROLL BAR*/
+.sectionOne::-webkit-scrollbar {
+    width: 10px; 
+  }
+  
+  .sectionOne::-webkit-scrollbar-thumb {
+    background-color: rgba(249, 249, 249, 0.15); 
+    border-radius: 5px; 
+
+  }
+ .configContainer{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+ }
+ .iconDivider{
+    width: 300px;
+    margin-left: 20px;
+ }
+ 
+ .itemsDeployContainer,
+ .deployContainer{
+    margin-top: 2.5vh;
+    display: flex;
+    margin-left: 3vw;
+    position: relative;  
+ }
+
+ .redLine{
+    margin-left: -4px;
+    position: absolute;
+    transition: 400ms;
+    height: 40px;
+ }
+.iconContainer,
+.configContainer{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.iconAyuda,
+.iconConfig{
+    display: flex;
+    gap: 15px;
+    margin: 12px 25px;
+    text-decoration: none;
+    color: var(--color-white);
+}
+.linesContainer{
+    margin-left: -20px;
+}
+.line{
+    height: 250px;
+}
+@keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 300px; /* Ajusta la altura máxima deseada */
+      opacity: 1;
+    }
+  }
+
+  .linesContainer,
+  .containerDeployItemsClass{
+    transition: 300ms;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in;
+    animation: slideDown 0.3s ease-in;
+  }
+  .closedDeploy{
+    max-height: 0;
+    transition: max-height 0.3s ease-in;
+    animation: slideUp 0.3s ease-in;
+  }
+  
+
+/* Mixin de centrado con flexbox */
+.selector{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/******************************/

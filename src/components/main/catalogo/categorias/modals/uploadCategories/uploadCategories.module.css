@@ -1,0 +1,125 @@
+@import "../../../../../../varCss/colors.module.css";
+@import "../../../../../../varCss/fonts.module.css";
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.822);
+  }
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    justify-content: center;
+    position: relative;
+    width: 1120px;
+    height: 736px;
+    padding: 32px;
+    border-radius: 32px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.2);
+  }
+  .dropZone {
+    width: 900px;
+    height: 300px;
+    outline: 4px dashed var(--color-accent-red-primary); 
+    background: var(--color-gray-medium); 
+    padding: 20px;
+    text-align: center;
+    cursor: crosshair;
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    transition: 200ms;
+  }
+  .dropZone:hover{
+    filter: brightness(1.4);
+  }
+  .tittle{
+    font-size: var(--font-size-large);
+    margin-bottom: 50px;
+  }
+  .importButton{
+    display: flex;
+    color: #F9F9F9;
+    width: 192.18px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    background: var(--color-accent-red-primary);
+    margin: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    transition: 300ms;
+  }
+  .importButton:disabled{
+    opacity: .5;
+    background: #F9F9F933;
+  }
+  .importButton:disabled:hover{
+    background: #F9F9F933;
+  }
+  .importButton:hover{
+    background-color: var(--color-red-hover);
+  }
+  .closeButton{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    cursor: pointer;
+    border: none;
+    transition: 300ms;
+    padding: 5px 10px;
+    border-radius: 100px;
+    height: 40px;
+  }
+ 
+  
+
+  .inDropZoneCharge{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .inDropZoneCharge img{
+    height: 100px;
+  }
+
+  .resetButton{
+    color: var(--color-white);
+    background-color: transparent;
+    width: 192.18px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    background: var(--color-accent-red-primary);
+    border-radius: 8px;
+  }
+  .resetButton:hover{
+    filter: brightness(0.8);
+  }
+  .inDropZone{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .inDropZone
+  img{
+    height: 70px;
+  }

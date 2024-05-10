@@ -1,0 +1,95 @@
+@import "../../../../../../varCss/fonts.module.css";
+@import "../../../../../../varCss/colors.module.css";
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.904);
+  }
+  .modal {
+    position: relative;
+    width: 634px;
+  height: 350px;
+  padding: 32px;
+  border-radius: 32px;
+  background: rgba(31, 32, 35, 1);
+  display: flex;
+  flex-direction: column;
+
+  }
+  .closeButton {
+    position: absolute;
+    top: 12px;
+    right: 13px;  
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #cfcece;
+  font-weight: 900;
+  }
+  .tittle{
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 35px;
+    margin-left: 40px;
+  
+  }
+  /* Aqui hay que elegir cual de los dos selectores de tittle se queda */
+
+  .contentContainer{
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+
+  .inputContainer{
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+    width: 506px;
+    height:80px;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 16px
+
+
+  }
+  .input{
+    background: rgba(249, 249, 249, 0.1);
+    width: 474px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    text-indent: 15px;
+    color: #f9f9f9a6;
+    border: none;
+  }
+  .saveButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f9f9f9;
+    width: 117px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+    border: none;
+  background-color: var(--color-accent-red-primary);
+  transition: 300ms;
+  margin-left: 20vw;
+    
+
+  }
+  .saveButton:hover{
+    background-color: var(--color-red-hover);
+  }

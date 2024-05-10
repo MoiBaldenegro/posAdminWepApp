@@ -1,0 +1,7 @@
+.tableExcels{
+    border: 1px solid #f9f9f9;
+    width: 96%;
+    max-height: 90%;
+    border-radius: 8px;
+    overflow: auto;
+}

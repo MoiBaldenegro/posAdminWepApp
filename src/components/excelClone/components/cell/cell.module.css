@@ -1,0 +1,43 @@
+.inputContainer{
+    display: inline;   
+}
+.inputCell,
+.istittle{
+    background-color: rgb(24, 23, 23);
+    width: 274px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    border: none;
+    outline: none;
+    border: 1px solid #f9f9f9;
+    color: #f9f9f9a1;
+}
+
+.istittle{
+background-color: rgba(249, 249, 249, 0.5);
+}
+.buttonCreate{
+    margin: 3.2vh -7.5vw;
+    display: none;
+    position: absolute;
+    transition: 250ms;
+    width: 48px;
+height: 48px;
+padding: 8px;
+border-radius: 0px 0px 8px 8px;
+}
+.hidden{
+    display: none;
+    transition: 250ms;
+}
+
+.inputContainer:hover .buttonCreate {
+    display: inline;
+    transition: 250ms;  
+}
+.inputCell:hover{
+    outline: 3px solid rgba(255, 0, 0, 0.616);
+}
+.createContainer{
+    display: inline;
+}

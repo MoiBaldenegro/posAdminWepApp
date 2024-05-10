@@ -1,0 +1,222 @@
+@import "../../../../varCss/colors.module.css";
+@import "../../../../varCss/fonts.module.css";
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: transparent;
+  }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 20vh 0px 0px 21vw;
+    width: 1530px;
+    height: 800px;
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+  .sectionFirst{
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -40px;
+    width: 1500px;
+  }
+  .tittleHead{
+    width: 600px;
+    border: none;
+  }
+  img[alt="left-arrow-icon"] {
+    transition: transform 0.2s ease; 
+    cursor: pointer;
+}
+  img[alt="left-arrow-icon"]:hover {
+    transform:  translateX(-4px); 
+}
+
+  .sectionTwo{
+    display: flex;
+    flex-direction: column;
+    height: 745px;
+    margin-left: -10px;
+    width: 1500px;
+    overflow-y: auto;
+    gap: 32px;
+  }
+  .detailsContainer{
+    width: 1,478px;
+    min-height: 534px;
+    position: relative;
+    gap: 10px; 
+    height: 400px;
+    display: flex;
+    justify-content: space-between;   
+  }
+  .detailsFirst{
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+    width: 1,478px;
+    padding: 10px 16px 30px 16px;
+    border-radius: 16px;
+    position: relative;
+
+  }
+  .detailsInOne,
+  .detailsInTwo{
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 415.5px;
+    height: 534px;
+    padding: 16px;
+    border-radius: 16px;
+    gap: 32px;
+  }
+  .detailsInTwo{
+    width: 587px;  
+    gap: 24px;
+  }
+  .detailsHead,
+  .detailsHeadTwo{
+    display: flex;
+    align-items: center;
+    background: rgba(249, 249, 249, 0.1);
+    width: 351.5px;
+    height: 46px;
+    padding: 12px;
+    border-radius: 8px;
+    gap: 8px;
+  }
+  .detailsHeadTwo{
+    width: 523px;
+  }
+
+  .detailsContent,
+  .detailsContentTwo,
+  .detailsContentThree{
+    width: 351.5px;
+    gap: 16px; 
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .detailsContentTwo,
+  .detailsContentThree{
+    width: 520px;
+    margin: 0;
+  }
+  .itemContainer{
+    width: 100%;
+    height: 24px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+  }
+  .itemContainer h5,
+  .itemContainer h4{
+    font-weight: 200;
+    font-size: var(--font-size-small);
+    display: flex;
+    gap: 8px;
+    
+  }
+  .itemContainer h4{
+    font-weight: 600;
+    width: 130px;
+    justify-content: center;
+    margin: 0;
+
+   }
+  
+  .table{
+    border-collapse: separate;
+    border-spacing: 0 1px;
+    width: 1460px;
+    background: #F9F9F980;
+    padding: 0px, 16px, 0px, 16px;
+    border-radius: 8px;
+    overflow: hidden;   
+  }
+
+  .tableTittle{
+    font-size: var(--font-size-medium);
+    margin-bottom: 10px;
+  }
+  .tHeadNote{
+    text-align: left;
+    text-indent: 8px;
+    background-color: #F9F9F966;
+    width: 464px;
+    height:56px;
+    padding: 16px;
+    gap: 8px;
+  }
+
+.tableRows{
+  text-indent: 25px;
+}
+.tableRows,
+.buttonsContainer{
+    padding: 10px;
+}
+.release{
+  transition: 300ms;
+}
+.actionButtonsFirstDetails{
+  position: relative;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  transition: 200ms;
+  margin: -8px;
+  background-color: #7c78784f;
+}
+.detailsContentThree div h4{
+  font-weight: 100;
+  justify-content: start;
+}
+.detailsContentThree div h4:first-child{
+  width: 185px;
+
+}
+.detailsContentThree div h4:nth-child(2){
+  width: 160px;
+}
+.detailsContentThree div h4:nth-child(3){
+  width: 165px;
+}
+.resume{
+  margin: -5px;
+  width: 351.5px;
+  height: 380px;
+  padding: 0px, 16px, 0px, 16px;
+  gap: 15px;
+  display: flex; 
+  flex-direction: column;
+}
+.resume img{
+  margin-top: 12px;
+}
+
+
+.itemContainerSubtittle{
+  display: flex;
+  justify-content: space-between;
+}
+.itemContainerSubtittle h4{
+  font-size: var(--font-size-small);
+  font-weight: 100;
+  margin-top: 10px;
+}

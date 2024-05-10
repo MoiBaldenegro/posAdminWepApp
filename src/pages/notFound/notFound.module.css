@@ -1,0 +1,47 @@
+.loginPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btnBack{
+    width: 672px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+    background: #F9F9F91A;
+    color: #fff;
+    transition: 300ms;
+    border: none;
+    letter-spacing: 5px;
+  }
+  .centerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vw;
+    margin-bottom: 2vh;
+    color: #f9f9f9;
+    align-items: center;
+  }
+  .btnEntrar:hover,
+  .btnBack:hover{
+    background: #75000B;
+  }
+  .btnBackLink{
+    text-decoration: none;
+    color:#f9f9f9;
+    text-transform: uppercase;
+    padding: 15px 300px;
+ 
+
+  }
+  text{
+    font-size: 92px;
+    color: #75000B;
+    width: 80%;
+    text-align: center;
+  }

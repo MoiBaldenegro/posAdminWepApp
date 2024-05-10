@@ -1,0 +1,15 @@
+  
+  :root {
+    /* colors */
+    --color-primary: #1F2023;
+    --color-white: #f9f9f9;
+    --color-gray-medium:#ebebeb41;
+    --color-gray-hover: #DCDCDC;
+    --color-accent-red-primary:#99000F;
+    --color-red-hover: #75000B;
+    --color-error-message:  #FF8368;
+    --color-accent-darkmode: #FF5733;
+    --color-gradient: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+    --standard-shadow: 5px 5px 10px 0px #0000001A;
+    
+  } 

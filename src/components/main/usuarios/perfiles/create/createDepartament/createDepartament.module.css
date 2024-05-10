@@ -1,0 +1,243 @@
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.616);
+  }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    width: 920px;
+    height: 709px;
+    padding: 32px;
+    border-radius: 32px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    & h2{
+      width: 100%;
+      font-weight: 200;
+      font-size: 24px;
+    }
+  }
+  .closeButton {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: whitesmoke;
+  }
+
+  .head{
+    width: 100%;
+    >h2{
+      font-weight: 400;
+      font-size: 32px;
+    }
+  }
+
+  .mainSection{
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    width: 472px;
+  }
+
+  .departamentBox{
+    height: 48px;
+    display: flex;
+    align-items: center;
+    transition: .2s ease;
+    gap: 8px;
+    padding: 0px 8px 0px 8px;
+    
+    > input{
+      width: 280px;
+      height: 48px;
+      padding: 12px 16px 12px 16px;
+      border-radius: 8px;
+      background: rgba(249, 249, 249, 0.1);
+      color: aliceblue;
+      font-size: 16px; 
+    }
+
+    > button {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(249, 249, 249, 0.1);
+    }
+  }
+
+  .departamentBox:hover{
+    background-color: rgba(240, 248, 255, 0.034);
+    border-radius: 8px;
+
+  }
+
+  .hidden{
+    display: none;
+  }
+
+  .profilesContainer{
+    width: 352px;
+    height: 567px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+
+    >div:nth-child(2){
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 110px;
+
+      input{
+        background: rgba(249, 249, 249, 0.1);
+        width: 320px;
+        height: 48px;
+        border-radius: 8px;
+        text-indent: 15px;
+        font-size: 16px;
+        color: aliceblue;
+      }
+
+      >div{
+        display: flex;
+        justify-content: space-between;
+        height: 48px;
+
+        >button{
+            background: rgba(249, 249, 249, 0.1);
+            color: antiquewhite;
+            border-radius: 8px;
+            width: 152px;
+        }
+     
+      }
+    }
+    >div:last-child{
+     min-height: 369px; 
+     max-height: 369px; 
+     background: rgba(249, 249, 249, 0.1);
+     border-radius: 8px;
+     padding: 16px;
+     overflow-x: hidden;
+     overflow-y: auto;
+
+    }
+  }
+
+  .content{
+    width: 857px;
+    height: 567px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .footer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    >button{
+      width: 96px;
+      height: 48px;
+      padding: 12px 16px 12px 16px;
+      border-radius: 8px;
+      gap: 8px;
+      background: rgba(249, 249, 249, 0.2);
+      color: aliceblue;
+      transition: .2s ease;
+
+    }
+    > button:last-child{
+      background: rgba(153, 0, 15, 1);
+
+    }
+
+    > button:disabled{
+      background: rgba(249, 249, 249, 0.2);
+      opacity: 0.85;
+
+    }
+
+    >:last-child{
+      width: 120px;
+    }
+  }
+
+  .departamentsContainer{
+    width: 440px;
+      border-radius: 8px;
+      min-height: 440px;
+      max-height: 440px;
+      overflow-x:  hidden;
+      overflow-y:  auto;
+      padding: 16px 0px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+  }
+
+.newDepartament{
+  margin-left: 35px;
+}
+
+.backButton{
+  width: 104px !important;
+  color: rgba(240, 248, 255, 0.712);
+}
+
+.profileBox{
+  height: 35px;
+  margin: 4px;
+
+  >h3{
+    font-size: 16px;
+    font-weight: 200;
+  }
+  >h3:last-child{
+    opacity: 0.3;
+    font-weight: 100;
+
+  }
+}
+
+.saveButton{
+  background: rgba(153, 0, 15, 1) !important;
+
+}
+
+.saveButton:disabled{
+  background-color: rgba(240, 248, 255, 0.103) !important;
+}
+
+  
+  
+
+

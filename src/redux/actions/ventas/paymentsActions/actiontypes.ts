@@ -1,0 +1,14 @@
+// Public
+export const PAYMENTS_FAILURE = 'PAYMENTS_FAILURE';
+export const PAYMENTS_REQUEST = 'PAYMENTS_REQUEST';
+export const SEARCH_PAYMENTS = 'SEARCH_PAYMENTS';
+
+// Create
+export const PAYMENTS_CONFLICT = 'PAYMENTS_CONFLICT';
+export const SAVE_PAYMENTS = 'SAVE_PAYMENTS';
+
+// Get
+export const GET_PAYMENTS = 'GET_PAYMENTS';
+
+// Update
+export const DISCONTINUE_PAYMENT = ' DISCONTINUE_PAYMENT';

@@ -1,0 +1,23 @@
+.column{
+    background-color: rgba(249, 249, 249, 1);
+    width: 2100;
+}
+.columnHead{
+   
+    background-color: rgba(24, 23, 23, 0.281);
+    width: 600px;
+    height: 40px;
+    padding: 8px 16px 8px 16px;
+    border: none;
+    outline: none;
+    border: 1px solid #f9f9f9;
+    color: #f9f9f9a1;
+}
+table{
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+.thead{
+    width: 800px;
+}
+

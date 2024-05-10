@@ -1,0 +1,54 @@
+{
+    "categorias": [
+      {
+        "clave": "01",
+        "nombre": "Bebidas",
+        "subcategorias": [
+          {
+            "clave": "0101",
+            "nombre": "Bebidas sin alcohol"
+          },
+          {
+            "clave": "0102",
+            "nombre": "Bebidas con alcohol",
+            "subcategorias": [
+              {
+                "clave": "010201",
+                "nombre": "Cervezas"
+              },
+              {
+                "clave": "010202",
+                "nombre": "Preparados con alcohol",
+                "subcategorias": [
+                  {
+                    "clave": "01020201",
+                    "nombre": "Categoría ejemplo 1"
+                  },
+                  {
+                    "clave": "01020202",
+                    "nombre": "Categoría ejemplo 2"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "date" : "01/08/23 12:00pm"
+      },
+      {
+        "clave": "02",
+        "nombre": "Alimentos",
+        "date" : "01/08/23 12:00pm"
+      },
+      {
+        "clave": "03",
+        "nombre": "Postres",
+        "date" : "01/08/23 12:00pm"
+      },
+      {
+        "clave": "04",
+        "nombre": "Salsas",
+        "date" : "01/08/23 12:00pm"
+      }
+    ]
+  }

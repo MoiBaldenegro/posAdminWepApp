@@ -1,0 +1,53 @@
+@import "../../../varCss/colors.module.css";
+
+.container{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000000d3 ;
+}
+.spinner,
+.tomate{
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+.spinner{
+    width: 100px;
+    height: 100px;
+    display: grid;
+    border: 4.5px solid #0000;
+    border-radius: 50%;
+    border-color: var(--color-gray-medium) #0000;
+    animation: spinner-e04l1k 1s infinite linear;
+  }
+  .tomate{
+    width: 55px;
+    opacity: .8;
+    animation: spinner-e04l1k 3s infinite linear;
+  }
+  .spinner::before,
+  .spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2.2px;
+    border: inherit;
+    border-radius: 50%;
+  }
+  
+  .spinner::before {
+    border-color: var(--color-accent-red-primary) #0000;
+    animation: inherit;
+    animation-duration: 0.5s;
+    animation-direction: reverse;
+  }
+  
+  .spinner::after {
+    margin: 8.9px;
+  }
+  
+  @keyframes spinner-e04l1k {
+    100% {
+      transform: rotate(1turn);
+    }
+  }

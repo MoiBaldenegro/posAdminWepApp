@@ -1,0 +1,288 @@
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.616);
+
+    >div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 688px;
+        height: 920px;
+        padding: 32px;
+        border-radius: 32px;
+        background: var(--color-primary);
+        color: var(--color-white);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+        >h3{
+            height: 30px;
+            display: flex;
+            width: 100%;
+            font-weight: 300;
+        }
+
+        >div:nth-child(3){
+            width: 100%;
+            height: 720px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            justify-content: space-between;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            >div{
+                background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+                border-radius: 16px;
+            }
+
+            >div:first-child{
+                min-height: 112px;
+                display: flex;
+                padding: 16px;
+                gap: 16px;
+
+                >div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    >div{
+
+                        >input{
+                            background: rgba(249, 249, 249, 0.1);
+                            color: rgba(240, 248, 255, 0.541);
+                            width: 100%;
+                            height: 48px;
+                            border-radius: 8px;
+                            text-indent: 8px;
+                            font-size: 18px;
+                        }
+
+                    }
+  
+                }
+
+            }
+
+            >div:nth-child(2){
+                min-height: 112px;
+                display: flex;
+                padding: 16px;
+                gap: 16px;
+
+                >div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    >div{
+
+                        >input{
+                            background: rgba(249, 249, 249, 0.1);
+                            color: rgba(240, 248, 255, 0.541);
+                            width: 100%;
+                            height: 48px;
+                            border-radius: 8px;
+                            text-indent: 8px;
+                            font-size: 18px;
+                            padding: 8px;
+                        }
+                    }   
+                }
+            }
+
+            >div:nth-child(3){
+                min-height: 208px;
+                display: flex;
+                padding: 16px;
+                gap: 16px;
+
+                >div{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    gap: 16px;
+
+                    >div{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+
+                        >div{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+        
+                                >div{
+                                    background: rgba(249, 249, 249, 0.1);
+                                    color: rgba(240, 248, 255, 0.541);
+                                    width: 100%;
+                                    height: 48px;
+                                    border-radius: 8px;
+                                    text-indent: 8px;
+                                    font-size: 18px;
+                            } 
+                        }
+                    }
+
+                    >div{
+
+                        >input{
+                            background: rgba(249, 249, 249, 0.1);
+                            color: rgba(240, 248, 255, 0.541);
+                            width: 100%;
+                            height: 48px;
+                            border-radius: 8px;
+                            text-indent: 8px;
+                            font-size: 18px;
+                            display: flex;
+                            justify-content: space-between;
+                            flex-direction: column;
+                            padding: 16px;
+                            gap: 16px;
+                        }
+                    } 
+                }   
+            }
+
+            >div:last-child{
+                min-height: 174px;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            gap: 16px;
+            >h4{
+                font-size: 24px;
+            }
+
+
+            >div{
+                width: 100%;
+                height: 100%;
+                background: rgba(249, 249, 249, 0.1);
+                border-radius: 8px;
+                padding: 16px;
+                gap: 16px;
+
+                >div{
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    height: 40px;
+                }
+            } 
+        }
+    }
+
+        >div:last-child{
+            width: 100%;
+            height: 48px;
+            display: flex;
+            justify-content: flex-end;
+           
+
+            >button{
+                background: rgba(153, 0, 15, 1);
+                border-radius: 8px;
+                color: aliceblue;
+                padding: 8px 16px;
+                display: flex;
+                gap: 8px;
+            }
+        }
+    }
+}
+
+  .closeButton {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.25);
+    background: rgba(249, 249, 249, 0.2);
+  }
+
+  /* Select styles */
+  .customSelect{
+    position: relative;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+   
+  }
+  .selectTrigger {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: var(--font-size-small);
+    width: 100%;
+
+  }
+  .options {
+    position: absolute;
+    background-color: var(--color-gray-hover);
+    top: 120%;
+    left: 0;
+    width: 100%;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #333;
+    font-size: var(--font-size-small);
+  }
+  
+  .hidden{
+    display: none;
+  }
+
+  .option {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #33333333;
+    width: 100%;
+    display: flex;
+    justify-content:flex-start;
+    z-index: 1000;
+  
+  }
+  
+  .option:hover {
+    background-color: #6e717442;
+    
+  }
+  
+  /* //////////////*/

@@ -1,0 +1,75 @@
+.container{
+    width: 1465px;
+    height: 785px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    >div{
+        background-color: rgba(250, 235, 215, 0.349);
+        height: 376px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px;
+
+        .reportItem{
+            width: 345px;
+            height: 164px;
+            background: rgba(249, 249, 249, 0.2);
+            border-radius: 8px;
+            padding: 16px 16px 32px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: .25s ease;
+
+            >div{
+                height: 48px;
+                width: 48px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: rgba(249, 249, 249, 0.1);
+                box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.15);
+                transition: .2s ease;             
+            }       
+        }
+
+        .reportItem:hover{
+            opacity: .8;    
+        }
+    }   
+}
+
+.reportsContainer{
+    background: transparent !important;
+    height: 786px !important;
+    padding: 0 !important;
+    width: 1500px;
+    margin-top: -4px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    >div:first-child{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        >button{
+            background-color: transparent;
+            transition: .15s ease;
+        }
+        >button:hover{
+            transform: scale(1.2);
+        }
+        
+        >h3{
+            font-weight: 200;
+            font-size: 32px;
+        }
+    }
+}

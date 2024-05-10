@@ -1,0 +1,29 @@
+.linesContainer,
+.containerDeployItemsClass{
+  transition: 300ms;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+  animation: slideDown 0.3s ease-in;
+}
+.linesContainer{
+    margin-left: -20px;
+}
+.line{
+  height: 250px;
+}
+.redLine{
+  margin-left: -4px;
+  position: absolute;
+  transition: 400ms;
+  height: 40px;
+}
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px; /* Ajusta la altura máxima deseada */
+    opacity: 1;
+  }
+}

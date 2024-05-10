@@ -1,0 +1,162 @@
+.loginPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header{
+    width: 1,888px;
+    height: 104px;
+    padding: 24px, 32px, 24px, 32px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    margin: 0 30px;
+}
+.selectInput{
+    position: absolute;
+    background-color: #333; 
+    color: white;
+    appearance: none; 
+    width: 80px;
+    border: none;
+    width: 144.18px;
+    height: 56px;
+    border-radius: 8px;
+    text-indent: 25px;
+    z-index: 10;
+
+}
+/* lenguaje select */
+.lenguajeSelect{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; 
+    outline: none; 
+    cursor: pointer; 
+    width: 144.18px;
+    height: 56px;
+    padding: 16px, 32px, 16px, 32px;
+    border-radius: 8px;
+    gap: 16px;
+    border: 1px solid #fff;
+    margin-right: 35px;
+    z-index: 5;
+
+  }
+  
+  .lenguajeSelect:hover {
+    background-color: #555; 
+  }
+  
+  .lenguajeSelect:focus {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7); 
+    z-index: 5;
+  }
+  .arrowSelect{
+    z-index: 100;
+    margin-left: 60px;
+  }
+
+  /* central section */
+  .centerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5vw;
+    margin-bottom: 2vh;
+  }
+  .logoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 406px;
+    padding: 56px, 112px, 56px, 112px;
+    border-radius: 56px;
+    gap: 32px;
+    box-shadow: 5px 5px 10px 0px #0000001A;
+    font-size: 30px;
+  }
+  .formContainer{
+    width: 800px;
+    height: 406px;
+    padding: 56px, 112px, 56px, 112px;
+    border-radius: 56px;
+    box-shadow: 5px 5px 10px 10px #f5f2f21a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: space-between;
+  }
+  .checkboxContainer{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: 1vh;
+    
+  }
+  .inputForm{
+    width: 672px;
+    height:48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    background: #F9F9F91A;
+    border: none;
+    outline: none;
+    text-indent: 20px;
+    color: #fff;
+  }
+  .inputForm::placeholder{
+    text-indent: 20px;
+  }
+  .btnEntrar,
+  .btnBack{
+    width: 672px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+    background: #F9F9F91A;
+    color: #fff;
+    transition: 300ms;
+    border: none;
+    letter-spacing: 5px;
+  }
+  .btnEntrar:hover,
+  .btnBack:hover{
+    background: #75000B;
+  }
+  .formTittle{
+    font-size: 28px;
+    margin: 25px;
+    margin-top: 6vh;
+  }
+  .btnBack{
+    width: 120px;
+   
+  }
+  .btnBackLink{
+    text-decoration: none;
+    color:#f9f9f9;
+    text-transform: uppercase;
+    width: 672px;
+    height: 48px;
+
+  }

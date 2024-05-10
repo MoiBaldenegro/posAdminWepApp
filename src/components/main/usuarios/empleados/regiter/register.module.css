@@ -1,0 +1,482 @@
+@import "../../../../../varCss/fonts.module.css";
+@import "../../../../../varCss/colors.module.css";
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+    background: rgba(0, 0, 0, 0.849);
+  }
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    width: 784px;
+    height: 834px;
+    padding: 32px;
+    border-radius: 32px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    >div{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 10px;
+    }
+
+    .process{
+        width: 656px;
+        height: 75px;
+        position: relative;
+
+         >.tittleOne,
+          .tittleTwo,
+          .tittleThree {
+          position: absolute;
+        }
+
+        >.tittleOne{
+          top: 86%;
+          left: 12.2%;
+        }
+        >.tittleTwo{
+          top: 86%;
+          left: 45%;
+        }
+        >.tittleThree{
+          top: 86%;
+          left: 78%;
+        }
+        
+
+        & .barOne,
+        .barTwo,
+        .barThree{
+            width: 70%;
+            height: 5px;
+          background: white;
+            position: absolute;
+            top: 32px;
+            left: 100px;
+            z-index: 500;
+          
+        }
+
+
+        .barTwo{
+          animation: barMediumTransition .8s ease forwards;
+
+        }
+        .barThree{
+          animation: barCompleteTransition .8s ease forwards;
+
+        }
+
+
+        .One,
+        .Two,
+        .Three,
+        .active{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: var( --color-accent-red-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+             z-index: 1000;
+        }
+
+
+        .Two{
+          background-color: #d8d2d2;
+          color: black;
+        
+        }
+
+        .active{
+          color: black;
+          background-color: white;
+          animation: backgroundAnimation .5s ease forwards;
+          animation-delay: .5s;
+        }
+    }
+
+    
+  }
+  .closeButton {
+    color: white;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    cursor: pointer;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background-color: transparent;
+    font-stretch:expanded;
+  }
+
+  section{
+
+    >article{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 656px;
+      height: 468px;
+      gap: 32px;
+      
+      & .filterButton{
+        width: 277px;
+        height: 48px;
+        padding: 12px 16px 12px 16px;
+        border-radius: 8px;
+        justify-content: flex-start;
+        background-color: transparent;
+        color: aliceblue;
+        border: none;
+        outline: none;
+        transition: .2.5s ease;
+      }
+
+      & .filterButton:hover{
+        background-color: #d8d2d236;
+      }
+      
+      >div{
+
+        width: 309px;
+        min-height: 406px;
+        max-height: 406px;
+        padding: 16px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+        overflow-x: hidden;
+        overflow-y: auto;
+
+
+        & h2{
+          font-size: 24px;
+          font-weight: 200;
+          margin-bottom: 12px;
+        }
+
+        form{
+          background-color: #d8d2d227;
+          border-radius: 8px;
+          padding: 10px;
+          max-height: 340px;
+          overflow-y: auto;
+
+        }
+      }
+    }
+    .dataUser{
+        height: 246px;
+        width: 480px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+        >h2{
+          font-weight: 400;
+          font-size: var(--font-size-medium)
+        }
+        >input{
+          background: rgba(249, 249, 249, 0.1);
+          width: 448px;
+          height: 48px;
+          padding: 12px 16px 12px 16px;
+          border-radius: 8px;
+          color: aliceblue;
+          font-size: var(--font-size-small)
+        }
+      }
+      .head{
+        display: flex;
+        justify-content: start;
+        font-size: 24px;
+        width: 90%;
+      }
+    
+      .dataJob{
+        height: 182px;
+        width: 480px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px;
+
+        >h2{
+          font-weight: 400;
+          font-size: var(--font-size-medium)
+        }
+        
+        >input{
+          background: rgba(249, 249, 249, 0.1);
+          width: 448px;
+          height: 48px;
+          padding: 12px 16px 12px 16px;
+          border-radius: 8px;
+          color: aliceblue;
+          font-size: var(--font-size-small)
+        }
+      }
+
+      >footer{
+        width: 80%;
+        height: 60px;
+        display: flex;
+        justify-content: end;  
+        align-items: center;
+        gap: 12px;
+        
+        >button{
+            width: 124px;
+            height: 48px;
+            padding: 12px 16px 12px 16px;
+            border-radius: 8px;
+            gap: 8px;
+            border: none;
+            outline: none;
+            background: rgba(249, 249, 249, 0.1);
+            color: aliceblue;
+            transition: .2s ease;
+        }
+
+        >button:last-child:active{
+          background: var( --color-accent-red-primary);
+        }
+
+        >button:hover{
+          filter: opacity(0.8);
+        }
+     }
+
+     .third{
+      display: flex;
+      flex-direction: column;
+      width:656px;
+      height: 468px;
+      gap: 16px;
+      
+      >div{
+        position: relative;
+        width: 480px;
+        height: 182px;
+        padding: 16px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        
+        >input{
+          width: 448px;
+          height: 48px;
+          border-radius: 8px;
+          background: rgba(249, 249, 249, 0.1);
+          text-indent: 12px;
+          color: #d8d2d2;
+          font-size: 16px
+        }
+      };
+
+      & div:last-child{
+        height: 158px;
+
+      }
+    }
+  }
+  .customDate{
+    position: relative;
+    display: inline-block; 
+    width: 100%; 
+    height: 48px;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(249, 249, 249, 0.1);
+    align-items: center;
+  }
+  .customDate img{
+    margin-right: 20px;
+    height: 20px;
+  }
+
+  .customDate input[type="date"]{
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); 
+    font-size: 14px;
+    background-color: transparent;
+    color: #d8d2d286;
+    font-size: 18px;
+  }
+
+  .customDate label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #d8d2d2;
+    transition: 0.2s ease-out;
+    font-size: 16px ;
+    margin-left: 8px;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+
+.radioContainer{
+  height: 35px;
+  display: flex;
+  align-items: center;
+  filter: saturate(0);
+
+  >label{
+    font-size: 16px;
+    font-weight: 200;
+  }
+}
+
+.saveButton{
+  background: var( --color-accent-red-primary);
+
+}
+
+
+h4{
+  font-weight: 100;
+  font-size: 16px;
+}
+
+@keyframes barMediumTransition {
+  0% { width: 0%; background-color: var(--color-accent-red-primary); } /* Estado inicial */
+  100% { width: 35%; background-color: var(--color-accent-red-primary); } /* Estado final */
+
+}
+
+
+@keyframes barCompleteTransition {
+ 
+  0% { width: 35%; background-color: var(--color-accent-red-primary); } /* Estado inicial */
+  100% { width: 70%; background-color: var(--color-accent-red-primary)}; /* Estado final */
+}
+
+@keyframes backgroundAnimation{
+  0% {
+    background-color: #d8d2d2;
+  }
+  100%{
+    background-color: var(--color-accent-red-primary);
+    color:#d8d2d2;
+  }
+}
+
+.validation{
+  margin-top: -20px;
+  width: 65% !important;
+  height: 30px !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+  background: transparent !important;
+  flex-direction: row !important;
+  align-items: start;
+
+  & img{ 
+    height: 20px !important;
+  } 
+  
+
+  & span{    
+    font-size: 16px;
+    font-weight: 200;
+    color: var( --color-error-message);
+  }
+}
+
+button:disabled{
+  opacity: 0.3;
+}
+
+/* Select styles */
+.customSelect{
+  position: relative;
+  width: 448px;
+  height: 48px;
+  background: rgba(249, 249, 249, 0.103);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 6px;
+ 
+}
+.selectTrigger {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-small);
+}
+.options {
+  position: absolute;
+  background-color: var(--color-gray-hover);
+  top: 120%;
+  left: 0;
+  width: 448px;
+  max-height: 220px;
+  flex-direction: column;
+  border-radius: 6px;
+  color: #333;
+  font-size: var(--font-size-small);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.hidden{
+  display: none;
+}
+.option {
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #33333333;
+  display: flex;
+
+}
+.option:hover {
+  background-color: #6e717442;
+  
+}
+
+/* //////////////*/
+
+ 
+
+
+
+ 
+ 

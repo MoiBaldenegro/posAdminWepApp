@@ -1,0 +1,27 @@
+
+.linesContainer{  
+    margin-left: 20px;
+   display: flex;
+}
+.Container{
+    background-color: rgba(0, 255, 255, 0.212);  
+}
+
+.redLine{
+    height: 38px;
+    width: 5px;
+    margin-left: -3px;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 300px; /* Ajusta la altura máxima deseada */
+    opacity: 1;
+  }
+}
+
+
