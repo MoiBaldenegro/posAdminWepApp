@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { MODIFIERS_PATH } from '../../../../lib/path.lib';
 import {
   DELETE_MODIFIERS,
   MODIFIERS_FAILURE,
@@ -9,9 +10,7 @@ export function deleteModifiersAction(id) {
   return async (dispatch) => {
     dispatch({ type: MODIFIERS_REQUEST });
     try {
-      const deletedModifier = await axios.delete(
-        `https://tomate-server.onrender.com/modifications/${id}`,
-      );
+      const deletedModifier = await axios.delete(`${MODIFIERS_PATH}/${id}`);
       dispatch({ type: DELETE_MODIFIERS, payload: deletedModifier });
     } catch (error) {
       dispatch({

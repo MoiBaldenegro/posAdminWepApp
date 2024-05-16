@@ -1,20 +1,17 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
-  MODIFIERS_CONFLICT,
   MODIFIERS_FAILURE,
   MODIFIERS_REQUEST,
   SAVE_MODIFIERS,
 } from './actionTypes';
+import { MODIFIERS_PATH } from '../../../../lib/path.lib';
 
 export const createModifiersAction = (modifiers) => async (dispatch) => {
   dispatch({ type: MODIFIERS_REQUEST });
   console.log(modifiers);
   try {
     if (Array.isArray(modifiers)) {
-      const res = await axios.post(
-        'https://tomate-server.onrender.com/modifications',
-        modifiers,
-      );
+      const res = await axios.post(MODIFIERS_PATH, modifiers);
       if (!res.data) {
         dispatch({
           type: MODIFIERS_FAILURE,
@@ -34,10 +31,7 @@ export const createModifiersAction = (modifiers) => async (dispatch) => {
 
       dispatch({ type: SAVE_MODIFIERS });
     } else {
-      const response = await axios.post(
-        'https://tomate-server.onrender.com/modifications',
-        modifiers,
-      );
+      const response = await axios.post(MODIFIERS_PATH, modifiers);
       if (!response.data) {
         throw new Error(
           'Ha ocurrido algo inesperado, la respuesta no contiene datos',

@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { CANCELLATIONS_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_CANCELLATIONS,
   CANCELLATIONS_REQUEST,
@@ -11,9 +12,7 @@ export const getCancellationsAction = () => {
   return async (dispatch) => {
     dispatch({ type: CANCELLATIONS_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/cancellations',
-      );
+      const response = await axios(CANCELLATIONS_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_CANCELLATIONS, payload: response.data });
         return;

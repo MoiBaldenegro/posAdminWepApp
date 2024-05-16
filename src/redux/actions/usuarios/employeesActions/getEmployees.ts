@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { EMPLOYEES_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_EMPLOYEES,
   EMPLOYEES_REQUEST,
@@ -11,9 +12,7 @@ export const getEmployeesAction = () => {
   return async (dispatch) => {
     dispatch({ type: EMPLOYEES_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/employees',
-      );
+      const response = await axios(EMPLOYEES_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_EMPLOYEES, payload: response.data });
         return;

@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { SHIFTS_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_SHIFTS,
   SHIFTS_REQUEST,
@@ -11,7 +12,7 @@ export const getShiftsAction = () => {
   return async (dispatch) => {
     dispatch({ type: SHIFTS_REQUEST });
     try {
-      const response = await axios('https://tomate-server.onrender.com/shifts');
+      const response = await axios(SHIFTS_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_SHIFTS, payload: response.data });
         return;

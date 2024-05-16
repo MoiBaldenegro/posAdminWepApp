@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { PRODUCTS_PATH } from '../../../../lib/path.lib';
 import {
   PRODUCTSANDPRICES_CONFLICT,
   PRODUCTSANDPRICES_FAILURE,
@@ -11,10 +12,7 @@ export const createProductsAndPrices =
     dispatch({ type: PRODUCTSANDPRICES_REQUEST });
     try {
       if (Array.isArray(productsAndPrices)) {
-        const res = await axios.post(
-          'https://tomate-server.onrender.com/products',
-          productsAndPrices,
-        );
+        const res = await axios.post(PRODUCTS_PATH, productsAndPrices);
         if (!res.data) {
           dispatch({
             type: PRODUCTSANDPRICES_FAILURE,
@@ -33,10 +31,7 @@ export const createProductsAndPrices =
         }
         dispatch({ type: SAVE_PRODUCTSANDPRICES });
       } else {
-        const response = await axios.post(
-          'https://tomate-server.onrender.com/products',
-          productsAndPrices,
-        );
+        const response = await axios.post(PRODUCTS_PATH, productsAndPrices);
         if (!response.data) {
           throw new Error(
             'Ha ocurrido algo inesperado, la respuesta no contiene datos',

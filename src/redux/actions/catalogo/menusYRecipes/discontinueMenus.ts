@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { MENUS_RECIPES_PATH } from '../../../../lib/path.lib';
 import { DISCONTINUE_MENUS, MENUS_FAILURE, MENUS_REQUEST } from './actionTypes';
 
 export function discontinueMenusAction(id, body) {
@@ -9,7 +10,7 @@ export function discontinueMenusAction(id, body) {
     const solicitud = { status: bodyValue };
     try {
       const response = await axios.put(
-        `https://tomate-server.onrender.com/menus-yrecetas/${id}`,
+        `${MENUS_RECIPES_PATH}/${id}`,
         solicitud,
       );
       if (!response.data) {

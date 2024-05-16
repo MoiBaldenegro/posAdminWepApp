@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { NOTES_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_NOTES,
   NOTES_REQUEST,
@@ -11,7 +12,7 @@ export const getNotesAction = () => {
   return async (dispatch) => {
     dispatch({ type: NOTES_REQUEST });
     try {
-      const response = await axios('https://tomate-server.onrender.com/notes');
+      const response = await axios(NOTES_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_NOTES, payload: response.data });
         return;

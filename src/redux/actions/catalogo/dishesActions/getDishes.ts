@@ -1,19 +1,18 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   DISHES_FAILURE,
   DISHES_REQUEST,
   GET_DISHES,
   SEARCH_DISHES,
 } from './actionTypes';
+import { DISHES_PATH } from '../../../../lib/path.lib';
 
 // Get dishes
 export function getDishesAction() {
   return async (dispatch) => {
     dispatch({ type: DISHES_REQUEST });
     try {
-      const dishesArray = await axios(
-        'https://tomate-server.onrender.com/dishes',
-      );
+      const dishesArray = await axios(DISHES_PATH);
       if (dishesArray.status === 200) {
         dispatch({ type: GET_DISHES, payload: dishesArray.data });
         return;

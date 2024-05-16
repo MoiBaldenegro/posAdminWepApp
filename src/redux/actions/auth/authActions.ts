@@ -1,4 +1,5 @@
 import axios from '../../../configs/axios';
+import { USERS_PATH, LOGIN_PATH } from '../../../lib/path.lib';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
@@ -6,9 +7,6 @@ export const TOGGLE_LOADING_REGISTER = 'TOGGLE_LOADING_REGISTER';
 export const SET_ERRORS = 'SET_ERRORS';
 export const SET_ERRORS_REGISTER = 'SET_ERRORS_REGISTER';
 export const GET_USERS = 'GET_USERS';
-
-const LOGIN_PATH = import.meta.env.VITE_LOGIN_PATH;
-const USERS_PATH = import.meta.env.VITE_LOGIN_PATH;
 
 // Register authentication
 export const createUser = (user) => async (dispatch) => {

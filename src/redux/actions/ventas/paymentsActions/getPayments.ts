@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { PAYMENTS_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_PAYMENTS,
   PAYMENTS_REQUEST,
@@ -11,9 +12,7 @@ export const getPaymentsAction = () => {
   return async (dispatch) => {
     dispatch({ type: PAYMENTS_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/payments',
-      );
+      const response = await axios(PAYMENTS_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_PAYMENTS, payload: response.data });
         return;

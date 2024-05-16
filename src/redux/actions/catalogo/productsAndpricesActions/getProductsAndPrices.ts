@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { PRODUCTS_PATH } from '../../../../lib/path.lib';
 import {
   PRODUCTSANDPRICES_FAILURE,
   PRODUCTSANDPRICES_REQUEST,
@@ -11,9 +12,7 @@ export function getProductsAndPricesAction() {
   return async (dispatch) => {
     dispatch({ type: PRODUCTSANDPRICES_REQUEST });
     try {
-      const productsAndPricesArray = await axios(
-        'https://tomate-server.onrender.com/products',
-      );
+      const productsAndPricesArray = await axios(PRODUCTS_PATH);
       if (productsAndPricesArray.status === 200) {
         dispatch({
           type: GET_PRODUCTSANDPRICES,

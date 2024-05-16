@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { DISHES_PATH } from '../../../../lib/path.lib';
 import {
   DISCONTINUE_DISHES,
   DISHES_FAILURE,
@@ -11,10 +12,7 @@ export function discontinueDishesAction(id, body) {
     const bodyValue = body === 'enabled' ? 'disabled' : 'enabled';
     const solicitud = { status: bodyValue };
     try {
-      const response = await axios.put(
-        `https://tomate-server.onrender.com/dishes/${id}`,
-        solicitud,
-      );
+      const response = await axios.put(`${DISHES_PATH}/${id}`, solicitud);
       if (!response.data) {
         dispatch({
           type: DISHES_FAILURE,
