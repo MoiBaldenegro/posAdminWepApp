@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   CATEGORIES_FAILURE,
   CATEGORIES_REQUEST,
   DISCONTINUE_CATEGORY,
 } from './actionTypes';
+import { DISCOUNTINUE_CATEGORIES_PATH } from '../../../../lib/path.lib';
 
 export function discontinueCategoriesAction(id, body, path) {
   return async (dispatch) => {
@@ -13,7 +14,7 @@ export function discontinueCategoriesAction(id, body, path) {
 
     try {
       const response = await axios.put(
-        `https://tomate-server.onrender.com/${path}/discontinue/${id}`,
+        `${path}${DISCOUNTINUE_CATEGORIES_PATH}/${id}`,
         solicitud,
       );
       if (!response.data) {

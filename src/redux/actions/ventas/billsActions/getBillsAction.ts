@@ -1,17 +1,18 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   SEARCH_BILLS,
   BILLS_REQUEST,
   BILLS_FAILURE,
   GET_BILLS,
 } from './actionTypes';
+import { BILLS_PATH } from '../../../../lib/path.lib';
 
 //Get bills
 export const getBillsAction = () => {
   return async (dispatch) => {
     dispatch({ type: BILLS_REQUEST });
     try {
-      const response = await axios('https://tomate-server.onrender.com/bills');
+      const response = await axios(BILLS_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_BILLS, payload: response.data });
         return;

@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   DISCONTINUE_PRODUCTSANDPRICES,
   PRODUCTSANDPRICES_FAILURE,
   PRODUCTSANDPRICES_REQUEST,
 } from './actionTypes';
+import { PRODUCTS_PATH } from '../../../../lib/path.lib';
 
 export function discontinueProductsAndPricesAction(id, body) {
   return async (dispatch) => {
@@ -11,10 +12,7 @@ export function discontinueProductsAndPricesAction(id, body) {
     const bodyValue = body === 'enabled' ? 'disabled' : 'enabled';
     const solicitud = { status: bodyValue };
     try {
-      const response = await axios.put(
-        `https://tomate-server.onrender.com/products/${id}`,
-        solicitud,
-      );
+      const response = await axios.put(`${PRODUCTS_PATH}/${id}`, solicitud);
       if (!response.data) {
         dispatch({
           type: PRODUCTSANDPRICES_FAILURE,

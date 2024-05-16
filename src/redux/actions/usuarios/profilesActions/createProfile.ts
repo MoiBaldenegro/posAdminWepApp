@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { PROFILES_PATH } from '../../../../lib/path.lib';
 
 import {
   PROFILES_FAILURE,
@@ -19,10 +20,7 @@ export const createProfileAction =
         };
         console.log(data);
         try {
-          const response = await axios.post(
-            'https://tomate-server.onrender.com/profiles',
-            data,
-          );
+          const response = await axios.post(PROFILES_PATH, data);
           if (!response.data) {
             dispatch({
               type: PROFILES_FAILURE,

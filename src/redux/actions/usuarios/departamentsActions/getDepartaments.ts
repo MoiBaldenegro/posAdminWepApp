@@ -1,19 +1,18 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   SEARCH_DEPARTAMENTS,
   DEPARTAMENTS_REQUEST,
   DEPARTAMENTS_FAILURE,
   GET_DEPARTAMENTS,
 } from './actionTypes';
+import { DEPARTAMENTS_PATH } from '../../../../lib/path.lib';
 
 //Get departaments
 export const getDepartamentsAction = () => {
   return async (dispatch) => {
     dispatch({ type: DEPARTAMENTS_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/departaments',
-      );
+      const response = await axios(DEPARTAMENTS_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_DEPARTAMENTS, payload: response.data });
         return;

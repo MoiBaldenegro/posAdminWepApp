@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { PROFILES_PATH } from '../../../../lib/path.lib';
 import {
   SEARCH_PROFILES,
   PROFILES_REQUEST,
@@ -11,9 +12,7 @@ export const getProfilesAction = () => {
   return async (dispatch) => {
     dispatch({ type: PROFILES_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/profiles',
-      );
+      const response = await axios(PROFILES_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_PROFILES, payload: response.data });
         return;

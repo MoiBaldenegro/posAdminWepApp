@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   CATEGORIES_FAILURE,
   CATEGORIES_REQUEST,
@@ -12,10 +12,7 @@ export function updateCategoriesAction(id, body, path) {
     const newValue = { categoryName: body };
 
     try {
-      const response = await axios.put(
-        `https://tomate-server.onrender.com/${path}/${id}`,
-        newValue,
-      );
+      const response = await axios.put(`/${path}/${id}`, newValue);
       if (!response.data) {
         dispatch({
           type: CATEGORIES_FAILURE,

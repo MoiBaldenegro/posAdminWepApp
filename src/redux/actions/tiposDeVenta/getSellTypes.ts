@@ -1,19 +1,18 @@
-import axios from 'axios';
+import axios from '../../../configs/axios';
 import {
   GET_SELLTYPES,
   SEARCH_SELLTYPES,
   SELLTYPES_FAILURE,
   SELLTYPES_REQUEST,
 } from './actionTypes';
+import { SELLTYPES_PATH } from '../../../lib/path.lib';
 
 //Get sellType
 export const getSellTypesAction = () => {
   return async (dispatch) => {
     dispatch({ type: SELLTYPES_REQUEST });
     try {
-      const response = await axios(
-        'https://tomate-server.onrender.com/sell-types',
-      );
+      const response = await axios(SELLTYPES_PATH);
       if (response.status === 200) {
         dispatch({ type: GET_SELLTYPES, payload: response.data });
         return;

@@ -1,22 +1,19 @@
 //dependencies
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 // Actions consts
 import {
   CATEGORIES_REQUEST,
   CATEGORIES_FAILURE,
-  CATEGORIES_CONFLICT,
   SAVE_CATEGORIES,
 } from './actionTypes';
+import { CATEGORIES_PATH } from '../../../../lib/path.lib';
 
 // Create Categories
 export const createCategoryAction = (category) => async (dispatch) => {
   dispatch({ type: CATEGORIES_REQUEST });
   try {
     if (Array.isArray(category)) {
-      const res = await axios.post(
-        'https://tomate-server.onrender.com/categories',
-        category,
-      );
+      const res = await axios.post(CATEGORIES_PATH, category);
       if (!res.data) {
         dispatch({
           type: CATEGORIES_FAILURE,
@@ -35,10 +32,7 @@ export const createCategoryAction = (category) => async (dispatch) => {
       }
       dispatch({ type: SAVE_CATEGORIES });
     } else {
-      const response = await axios.post(
-        'https://tomate-server.onrender.com/categories',
-        category,
-      );
+      const response = await axios.post(CATEGORIES_PATH, category);
       if (!response.data) {
         dispatch({
           type: CATEGORIES_FAILURE,

@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
+import { MENUS_RECIPES_PATH } from '../../../../lib/path.lib';
 import {
   MENUS_FAILURE,
   MENUS_REQUEST,
@@ -9,10 +10,7 @@ export const createMenusAction = (menus) => async (dispatch) => {
   dispatch({ type: MENUS_REQUEST });
   try {
     if (Array.isArray(menus)) {
-      const res = await axios.post(
-        'https://tomate-server.onrender.com/menus-yrecetas',
-        menus,
-      );
+      const res = await axios.post(MENUS_RECIPES_PATH, menus);
       if (!res.data) {
         dispatch({
           type: MENUS_FAILURE,
@@ -31,10 +29,7 @@ export const createMenusAction = (menus) => async (dispatch) => {
       }
       dispatch({ type: SAVE_MENUS });
     } else {
-      const response = await axios.post(
-        'https://tomate-server.onrender.com/menus-yrecetas',
-        menus,
-      );
+      const response = await axios.post(MENUS_RECIPES_PATH, menus);
       if (!response.data) {
         throw new Error(
           'Ha ocurrido algo inesperado, la respuesta no contiene datos',

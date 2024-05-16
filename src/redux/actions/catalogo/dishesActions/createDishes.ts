@@ -1,19 +1,17 @@
-import axios from 'axios';
+import axios from '../../../../configs/axios';
 import {
   DISHES_CONFLICT,
   DISHES_FAILURE,
   DISHES_REQUEST,
   SAVE_DISHES,
 } from './actionTypes';
+import { DISHES_PATH } from '../../../../lib/path.lib';
 
 export const createDishesAction = (dishes) => async (dispatch) => {
   dispatch({ type: DISHES_REQUEST });
   try {
     if (Array.isArray(dishes)) {
-      const res = await axios.post(
-        'https://tomate-server.onrender.com/dishes',
-        dishes,
-      );
+      const res = await axios.post(DISHES_PATH, dishes);
       if (!res.data) {
         dispatch({
           type: DISHES_FAILURE,
@@ -32,10 +30,7 @@ export const createDishesAction = (dishes) => async (dispatch) => {
       }
       dispatch({ type: SAVE_DISHES });
     } else {
-      const response = await axios.post(
-        'https://tomate-server.onrender.com/dishes',
-        dishes,
-      );
+      const response = await axios.post(DISHES_PATH, dishes);
       if (!response.data) {
         throw new Error(
           'Ha ocurrido algo inesperado, la respuesta no contiene datos',
