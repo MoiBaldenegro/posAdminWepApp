@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../../configs/axios';
 
 export const LOGIN_USER = 'LOGIN_USER';
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
@@ -7,14 +7,14 @@ export const SET_ERRORS = 'SET_ERRORS';
 export const SET_ERRORS_REGISTER = 'SET_ERRORS_REGISTER';
 export const GET_USERS = 'GET_USERS';
 
+const LOGIN_PATH = import.meta.env.VITE_LOGIN_PATH;
+const USERS_PATH = import.meta.env.VITE_LOGIN_PATH;
+
 // Register authentication
 export const createUser = (user) => async (dispatch) => {
   dispatch({ type: TOGGLE_LOADING_REGISTER, payload: true });
   try {
-    const response = await axios.post(
-      'https://tomate-server.onrender.com/auth/register',
-      user,
-    );
+    const response = await axios.post(user);
     if (!response.data) {
       dispatch({ type: TOGGLE_LOADING_REGISTER, payload: false });
       dispatch({ type: SET_ERRORS_REGISTER, payload: true });
@@ -29,11 +29,10 @@ export const createUser = (user) => async (dispatch) => {
 
 // login authentication
 export const loginUser = (user) => async (dispatch) => {
+  console.log(LOGIN_PATH);
+  console.log(USERS_PATH);
   try {
-    const response = await axios.post(
-      'https://tomate-server.onrender.com/auth/login',
-      user,
-    );
+    const response = await axios.post(LOGIN_PATH, user);
     return dispatch({ type: LOGIN_USER, payload: response.data });
   } catch (error) {
     return dispatch({ type: TOGGLE_LOADING, payload: false });
@@ -42,7 +41,7 @@ export const loginUser = (user) => async (dispatch) => {
 
 export const getUsersAction = () => async (dispatch: any) => {
   try {
-    const res = await axios.get('https://tomate-server.onrender.com/users', {
+    const res = await axios.get(USERS_PATH, {
       timeout: 5000,
     });
     if (res.status < 200 || res.status >= 300) {
