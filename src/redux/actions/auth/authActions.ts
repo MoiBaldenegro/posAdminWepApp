@@ -27,8 +27,6 @@ export const createUser = (user) => async (dispatch) => {
 
 // login authentication
 export const loginUser = (user) => async (dispatch) => {
-  console.log(LOGIN_PATH);
-  console.log(USERS_PATH);
   try {
     const response = await axios.post(LOGIN_PATH, user);
     return dispatch({ type: LOGIN_USER, payload: response.data });
