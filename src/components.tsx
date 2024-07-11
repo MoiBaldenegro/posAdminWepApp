@@ -6,7 +6,6 @@ import Config from './components/main/configuracion/configuracion';
 import Dashboard from './components/main/dashboard/dashboard';
 import Ventas from './components/main/ventas/ventas';
 import VentaTypes from './components/main/ventaTypes/ventaTypes';
-import Promociones from './components/main/promociones/promociones';
 import Caja from './components/main/caja/caja';
 import Reservaciones from './components/main/reservaciones/reservaciones';
 import Tableros from './components/main/tableros/tableros';
@@ -23,7 +22,6 @@ export {
   Dashboard,
   Ventas,
   VentaTypes,
-  Promociones,
   Caja,
   Reservaciones,
   Tableros,
@@ -32,4 +30,4 @@ export {
   Reportes,
   Ayuda,
 };
-// updates
+// updates new commit
