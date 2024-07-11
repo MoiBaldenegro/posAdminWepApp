@@ -22,10 +22,8 @@ import Modificaciones from './components/main/catalogo/modificaciones/modificaci
 import MenusYRecetas from './components/main/catalogo/menusYRecetas/menusYRecetas.tsx';
 import Main from './components/main/main.tsx';
 import Cuentas from './components/main/ventas/cuentas/cuentas.tsx';
-import Notas from './components/main/ventas/notas/notas.tsx';
 import Pagos from './components/main/ventas/pagos/pagos.tsx';
 import Cancelaciones from './components/main/ventas/cancelaciones/cancelaciones.tsx';
-import MotivosDeCancelacion from './components/main/ventas/motivosDeCancelaiones/motivosDeCancelaciones.tsx';
 import Turnos from './components/main/usuarios/turnos/turnos.tsx';
 import Departamentos from './components/main/usuarios/departamentos/departamentos.tsx';
 import Perfiles from './components/main/usuarios/perfiles/perfiles.tsx';
@@ -88,10 +86,7 @@ const router = createBrowserRouter([
                 path: 'bills',
                 element: <Cuentas />,
               },
-              {
-                path: 'notes',
-                element: <Notas />,
-              },
+
               {
                 path: 'payments',
                 element: <Pagos />,
@@ -99,10 +94,6 @@ const router = createBrowserRouter([
               {
                 path: 'cancellations',
                 element: <Cancelaciones />,
-              },
-              {
-                path: 'cancellationsReasons',
-                element: <MotivosDeCancelacion />,
               },
             ],
           },
@@ -181,3 +172,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <RouterProvider router={router} />
   </Provider>,
 );
+// aqui le main.tsx // import { Outlet } from "react-router-dom";
