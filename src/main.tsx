@@ -172,4 +172,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <RouterProvider router={router} />
   </Provider>,
 );
-// aqui le main.tsx
+// aqui le main.tsx // import { Outlet } from "react-router-dom";
