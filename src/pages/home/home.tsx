@@ -28,11 +28,13 @@ export default function Home() {
       {invalidCredentials === false && isLoading ? (
         <Loader />
       ) : loginUsers.length > 0 && loginUsers[0].token ? (
-        <div>
+        <>
           <Header />
-          <Aside />
-          <Main />
-        </div>
+          <div>
+            <Aside />
+            <Main />
+          </div>
+        </>
       ) : null}
     </div>
   );

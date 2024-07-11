@@ -8,7 +8,7 @@ interface Props {
   redLinePosition: number;
 }
 
-export default function LinesVentasModule({ redLinePosition }: Props) {
+export default function LinesCatalogoModule({ redLinePosition }: Props) {
   return (
     <div>
       <div className={styles.linesContainer}>
@@ -29,9 +29,7 @@ export default function LinesVentasModule({ redLinePosition }: Props) {
               ? { marginTop: '205px' }
               : redLinePosition === 6
               ? { marginTop: '255px' }
-              : redLinePosition === 7
-              ? { marginTop: '310px' }
-              : { marginTop: '380px' }
+              : { marginTop: '310px' }
           }
           alt="red-line"
         />

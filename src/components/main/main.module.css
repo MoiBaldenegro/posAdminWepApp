@@ -1,9 +1,8 @@
-section{
-    display: flex;
-}
+
 .container{
-    position:absolute;
-    top: 17%;
-    left: 21%;
+   width: 100%;
+   height: calc(100vh - 170px);
+   position: relative;
+   overflow: hidden;
 }
 

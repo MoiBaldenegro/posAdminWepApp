@@ -11,7 +11,7 @@
   
   body{
     font-family: "tomate-font", sans-serif;
-  
+
     color: var(--color-white);
     background-color: var(--color-primary);
     font-size: var(--font-size-medium);
@@ -32,6 +32,14 @@
     border: none;
     outline: none;
     transition: .2s ease;
+    border-radius: 8px;
+    background: #F9F9F933;
+    padding: 16px;
+    color: rgb(247, 245, 243);
+    cursor: pointer;
+    max-height: 48px;
+    font-weight: 200;
+
   }
   button:hover{
     filter: brightness(0.80);

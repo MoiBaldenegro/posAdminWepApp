@@ -29,10 +29,12 @@ import { useState } from 'react';
 import { toggleCategory } from './utils/categoryExpansion';
 import ExportCategoriesModal from './modals/exportCategories/exportCategories';
 import { updateCategoriesAction } from '../../../../redux/actions/catalogo/categoriesActions/updateCategories';
+import CreateSubcategories from './createSubcategories/createSubcategories';
 
 export default function Categorias() {
   // Modales
   const createCategory = useModal('createCategory');
+  const createSubCategory = useModal('createSubCategory');
   const uploadCategories = useModal('uploadCategories');
   const saveCategories = useModal('saveCategories');
   const updateOneCategory = useModal('updateOneCategory');
@@ -41,7 +43,6 @@ export default function Categorias() {
   const exportCategories = useModal('exportCategories');
   const categoryProcessOne = useModal('categoryProcessOne');
 
-  //////////////////////////////////////////////////////////////////////////////////////
   // States
   // Category expansion
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
@@ -120,6 +121,13 @@ export default function Categorias() {
           ) : null}
           <button
             className={styles.createCategories}
+            onClick={createSubCategory.openModal}
+          >
+            <img src={createIcon} alt="create-icon" />
+            <span>Crear Subcategoria</span>
+          </button>
+          <button
+            className={styles.createCategories}
             onClick={categoryProcessOne.openModal}
           >
             <img src={createIcon} alt="create-icon" />
@@ -180,6 +188,19 @@ export default function Categorias() {
           >
             Crear categoria
           </CategoryProcessOne>
+        ) : null}
+        {createSubCategory.isOpen &&
+        createSubCategory.modalName === 'createSubCategory' ? (
+          <CreateSubcategories
+            loading={loading}
+            errors={error}
+            isOpen={createSubCategory.isOpen}
+            onClose={createSubCategory.closeModal}
+            actionType={getCategoriesAction}
+            openModal={confirmChanges.openModal}
+          >
+            Crear Subcategoria
+          </CreateSubcategories>
         ) : null}
         {confirmChanges.isOpen &&
         confirmChanges.modalName === 'confirmChanges' ? (

@@ -8,13 +8,11 @@
     justify-content:space-between;
     align-items: center;
     width: 1,888px;
-    height: 128px;
+    min-height: 128px;
     padding: 24px, 32px, 24px, 32px;
     border-radius: 16px;
     background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
     box-shadow: 5px 5px 10px 0px #0000001A;
-    margin: 15px;
-    padding: 5px;
     position: relative;
 }
 .tomateLogo {
