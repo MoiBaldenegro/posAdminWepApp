@@ -1,0 +1,64 @@
+.itemsDeployContainer,
+.deployContainer{
+   margin-top: 2.5vh;
+   display: flex;
+   margin-left: 3vw;
+   position: relative;  
+
+}
+
+.hidden{
+    display: none;
+}
+.linesContainer,
+.containerDeployItemsClass{
+  transition: 300ms;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in;
+  animation: slideDown 0.3s ease-in;
+
+}
+.isActiveDeploy,
+.notActiveDeploy{
+    display: flex;
+    margin-left: 3vw;
+    position: relative;
+    margin-left: 1vw;
+    width: 160px;
+    height: 30px;
+    font-size: var(--font-size-medium);
+    font-weight: 400;
+    text-align: left;
+    border-radius: 12px;
+    transition: 200ms;
+    width: 254px;
+    height: 52px;
+    padding: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--color-white); 
+}
+.isActiveDeploy{  
+    font-weight: 700;
+}
+.line{
+    height: 250px;
+    
+}
+.redLine{
+    margin-left: -4px;
+    position: absolute;
+    transition: 400ms;
+    height: 40px;
+ }
+
+ @keyframes slideDown {
+    from {
+      max-height: 0;
+      opacity: 0;
+    }
+    to {
+      max-height: 300px; /* Ajusta la altura máxima deseada */
+      opacity: 1;
+    }
+  }

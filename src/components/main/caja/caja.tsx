@@ -18,6 +18,7 @@ export default function Caja() {
   const tillDetails = useModal('tillDetails');
   const dispatch = useDispatch();
   const { allTills } = useSelector((state) => state.tills);
+
   useEffect(() => {
     dispatch(getTillsAction());
   }, []);

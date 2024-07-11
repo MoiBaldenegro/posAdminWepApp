@@ -17,6 +17,7 @@
   transition: 400ms;
   height: 40px;
 }
+
 @keyframes slideDown {
   from {
     max-height: 0;

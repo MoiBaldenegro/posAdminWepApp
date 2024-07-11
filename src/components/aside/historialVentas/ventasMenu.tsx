@@ -9,7 +9,7 @@ interface Props {
   handleBoard: Function;
 }
 
-export default function VentasMenu({
+export default function HistorialDeVentas({
   main,
   redLinePosition,
   handleBoard,
@@ -17,60 +17,60 @@ export default function VentasMenu({
   const deployItemClass = ({ isActive }: any) =>
     isActive ? styles.isActiveDeploy : styles.notActiveDeploy;
 
+  const setMain = 'historialDeVentas';
+
   return (
     <div
-      className={
-        main === 'ventas' ? styles.itemsDeployContainer : styles.hidden
-      }
+      className={main === setMain ? styles.itemsDeployContainer : styles.hidden}
     >
       <LinesVentasModule redLinePosition={redLinePosition} />
       <div className={styles.containerDeployItemsClass}>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/bills"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 1)}
+          onClick={() => handleBoard(setMain, true, 1)}
         >
           Cuentas
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/payments"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 2)}
+          onClick={() => handleBoard(setMain, true, 2)}
         >
           Pagos
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/reopenings"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 3)}
+          onClick={() => handleBoard(setMain, true, 3)}
         >
           Reaperturas
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/discounts"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 4)}
+          onClick={() => handleBoard(setMain, true, 4)}
         >
           Descuentos
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/cancellations"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 5)}
+          onClick={() => handleBoard(setMain, true, 5)}
         >
           Cancelaciones
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/courtesies"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 6)}
+          onClick={() => handleBoard(setMain, true, 5)}
         >
-          Cortesías
+          Cortesias
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="historialDeVentas/closeouts"
           className={deployItemClass}
-          onClick={() => handleBoard('ventas', true, 7)}
+          onClick={() => handleBoard(setMain, true, 5)}
         >
           Cierre de caja
         </NavLink>

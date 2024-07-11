@@ -1,5 +1,14 @@
 .container{
-    display: grid;
-    grid-template-columns: 100px, 1fr, 1fr;
-    grid-template-rows: 150px, 1fr;
+    height: 100vh;
+    position: relative;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    >div{
+         display: flex;
+         height: 100%;
+         gap: 16px;
+    } 
 }

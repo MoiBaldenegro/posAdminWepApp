@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import styles from './categoryProcess.module.css';
+import styles from './createSubcategories.module.css';
 import { useDispatch } from 'react-redux';
-import { createCategoryAction } from '../../../../../../redux/actions/catalogo/categoriesActions/createCategories';
 interface Props {
   openModal: any;
   actionType: () => void;
@@ -11,7 +10,7 @@ interface Props {
   onClose: any;
   children: any;
 }
-export default function CategoryProcessOne({
+export default function CreateSubcategories({
   actionType,
   openModal,
   isOpen,
