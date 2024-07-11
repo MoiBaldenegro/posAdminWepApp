@@ -14,7 +14,7 @@ import TillDetails from './details/details';
 export default function Caja() {
   // Local states
   const [till, setTills] = useState();
-  // Modals
+  // Modals // new commit
   const tillDetails = useModal('tillDetails');
   const dispatch = useDispatch();
   const { allTills } = useSelector((state) => state.tills);
