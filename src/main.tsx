@@ -30,6 +30,7 @@ import Perfiles from './components/main/usuarios/perfiles/perfiles.tsx';
 import Empleados from './components/main/usuarios/empleados/empleados.tsx';
 import Autorizaciones from './components/main/usuarios/autorizaciones/autorizaciones.tsx';
 import Asistencias from './components/main/usuarios/asistentes/asistencias.tsx';
+import GetStarted from './pages/getStarted.tsx/getStarted.tsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: '/auth/register',
     element: <CreateAccount />,
+  },
+  {
+    path: '/get-started',
+    element: <GetStarted />,
   },
   {
     path: '/',

@@ -13,18 +13,21 @@ export default function Landing() {
     <div className={styles.loginPage}>
       <main className={styles.centerContainer}>
         <img src={tomateLogo} alt="" />
-        <button className={styles.btnBack}>
-          <NavLink to="/login" className={styles.btnBackLink}>
-            START
+        <div className={styles.buttonsContainer}>
+          <NavLink to="/get-started" className={styles.btnBackLink}>
+            Get started
           </NavLink>
-        </button>
-        <img
-          className={styles.ws}
-          src={whatsApp}
-          alt="whatsapp-icon"
-          onClick={realizarLlamadaWhatsApp}
-        />
+          <NavLink to="/login" className={styles.btnBackLink}>
+            Login
+          </NavLink>
+        </div>
       </main>
+      <img
+        className={styles.ws}
+        src={whatsApp}
+        alt="whatsapp-icon"
+        onClick={realizarLlamadaWhatsApp}
+      />
     </div>
   );
 }
