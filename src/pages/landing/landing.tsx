@@ -7,6 +7,7 @@ import whatsApp from '../../assets/public/whatsApp.svg';
 
 // Utils
 import { realizarLlamadaWhatsApp } from './utils/call';
+import axios from 'axios';
 
 export default function Landing() {
   return (
@@ -14,9 +15,15 @@ export default function Landing() {
       <main className={styles.centerContainer}>
         <img src={tomateLogo} alt="" />
         <div className={styles.buttonsContainer}>
-          <NavLink to="/get-started" className={styles.btnBackLink}>
+          <button
+            onClick={() => {
+              const response = axios.post('http://localhost:8000/business');
+              console.log(response);
+            }}
+            className={styles.btnBackLink}
+          >
             Get started
-          </NavLink>
+          </button>
           <NavLink to="/login" className={styles.btnBackLink}>
             Login
           </NavLink>
