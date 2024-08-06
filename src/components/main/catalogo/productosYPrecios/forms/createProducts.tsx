@@ -3,8 +3,10 @@ import styles from './createProducts.module.css';
 import { useState } from 'react';
 //Icons
 import arrowRigth from './../../../../../assets/public/arrowRigth.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { createProductsAndPrices } from '../../../../../redux/actions/catalogo/productsAndpricesActions/createProduct';
+import closeIcon from '@/assets/public/closeIcon.svg';
+import arrow from '@/assets/public/arrow.svg';
 interface Props {
   openModal: () => void;
   isOpen: any;
@@ -17,7 +19,19 @@ export default function CreateProductsModal({
   onClose,
   children,
 }: Props) {
-  const [toggleStatus, setToggleStatus] = useState(false);
+  enum ProcesStatus {
+    FIRST_PROCESS = 'FIRST_PROCESS',
+    SECOND_PROCESS = 'SECOND_PROCESS',
+  }
+  const [processStatus, setProcessStatus] = useState<ProcesStatus>(
+    ProcesStatus.FIRST_PROCESS,
+  );
+  const [category, setCategory] = useState({});
+  const [subcategory, setSubcategory] = useState({});
+  const categoryList = useSelector((state) => state.categories.allCategories);
+  // const categoryList = useSelector((state) => state.categories.allCategories);
+
+  const [toggleCategory, setToggleCategory] = useState(false);
   const [product, setProduct] = useState({
     code: 'ABC123',
     category: 'Electronics',
@@ -38,63 +52,78 @@ export default function CreateProductsModal({
   };
 
   const dispatch = useDispatch();
+
   return (
     <div className={styles.screen}>
       <section className={styles.modal}>
-        <button className={styles.closeButton} onClick={onClose}>
-          X
-        </button>
-        <h1
-          className={styles.tittle}
-          style={{ marginLeft: '200px', marginTop: '25px' }}
-        >
-          {children}
-        </h1>
-        <div className={styles.tittleContainer}>
-          <form action="" className={styles.form}>
-            <input
-              type="text"
-              className={styles.input}
-              placeholder="Categoria"
-              onChange={(e) => {
-                handleChange('category', e);
-              }}
-            />
-            <input
-              type="text"
-              className={styles.input}
-              placeholder="code"
-              onChange={(e) => {
-                handleChange('code', e);
-              }}
-            />
-            <input
-              type="text"
-              className={styles.input}
-              placeholder="Nombre del producto"
-              onChange={(e) => {
-                handleChange('productName', e);
-              }}
-            />
-            <input
-              type="number"
-              className={styles.input}
-              placeholder="Precio"
-              onChange={(e) => {
-                handleChange('priceInSite', e);
-              }}
-            />
-          </form>
+        <div className={styles.head}>
+          <button className={styles.closeButton} onClick={onClose}>
+            <img src={closeIcon} alt="close-icon" />
+          </button>
+          <h2 className={styles.tittle}>{children}</h2>
+          <p>Seleccione la categoría a la que se asignarán los productos.</p>
         </div>
-        <button
-          className={styles.nextButton}
-          onClick={() => {
-            dispatch(createProductsAndPrices(product)), openModal(), onClose();
-          }}
-        >
-          Siguiente
-          <img src={arrowRigth} alt="arrow-rigth" />
-        </button>
+        {processStatus === ProcesStatus.FIRST_PROCESS ? (
+          <div>
+            <div className={styles.containerInput}>
+              <div className={styles.categoriesSelect}>
+                <div
+                  className={styles.customSelect}
+                  onClick={() => {
+                    setToggleCategory(!toggleCategory);
+                  }}
+                >
+                  <div className={styles.selectTrigger}>
+                    <span>
+                      {category.categoryName
+                        ? category.categoryName
+                        : 'Seleccione una categoría'}
+                    </span>
+                    <img
+                      src={arrow}
+                      alt="arrow-icon"
+                      className={styles.arrowSelect}
+                    />
+                  </div>
+                  <div
+                    className={toggleCategory ? styles.options : styles.hidden}
+                  >
+                    {categoryList.map((element: any, index: number) => (
+                      <span
+                        onClick={() => setCategory(element)}
+                        className={styles.option}
+                        key={index}
+                      >
+                        {element.categoryName}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <> Process 2</>
+        )}
+        <div className={styles.nextButton}>
+          {processStatus === ProcesStatus.FIRST_PROCESS ? (
+            <button
+              onClick={() => {
+                setProcessStatus(ProcesStatus.SECOND_PROCESS);
+              }}
+            >
+              Siguiente
+              <img src={arrowRigth} alt="arrow-rigth" />
+            </button>
+          ) : (
+            <button
+              onClick={() => setProcessStatus(ProcesStatus.FIRST_PROCESS)}
+            >
+              Regresar
+              <img src={arrowRigth} alt="arrow-rigth" />
+            </button>
+          )}
+        </div>
       </section>
     </div>
   );

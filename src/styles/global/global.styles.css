@@ -9,5 +9,63 @@ input[type="date"]{
   }
   
    
-  /*  Tables styles */
+
+  /* Select styles */
+  .customSelect{
+    position: relative;
+    width: 145px;
+    height: 56px;
+    background: rgba(249, 249, 249, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+   
+  }
+  .selectTrigger {
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: var(--font-size-small);
+  }
+  
+  .options {
+    position: absolute;
+    background-color: var(--color-gray-hover);
+    top: 120%;
+    left: 0;
+    width: 144px;
+    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    color: #333;
+    font-size: var(--font-size-small);
+  }
+  
+
+  .hidden{
+    display: none;
+  }
+  .option {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #33333333;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  
+  }
+  .option:hover {
+    background-color: #6e717442;
+    
+  }
+  
+  /* //////////////*/
  

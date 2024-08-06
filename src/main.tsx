@@ -97,6 +97,14 @@ const router = createBrowserRouter([
                 element: <Pagos />,
               },
               {
+                path: 'reopened',
+                element: <Pagos />,
+              },
+              {
+                path: 'discount',
+                element: <Pagos />,
+              },
+              {
                 path: 'cancellations',
                 element: <Cancelaciones />,
               },

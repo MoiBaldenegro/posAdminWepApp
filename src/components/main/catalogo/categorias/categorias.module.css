@@ -6,35 +6,39 @@
     flex-direction: column;
     height: 100%;
     gap: 16px;
- 
 }
+
 .categoriesButtonsContainer{
    display: flex;
    gap: 16px;
 
-
+   >button span {
+       white-space: nowrap;
+   }
 }
+
 .buttonsContainer{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
     height: 100%;
+    border-bottom: #cfd0d377 1px solid;
+  
     >button{
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
  }
+
 .categoriasButtons{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     >h2{
         font-size: 32px;
         font-weight: 400;
     }
-
 }
 
 .searchBarContainer{
@@ -42,15 +46,13 @@
     flex-direction: column;
     align-items: end;
     background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
-    width: 1,482px;
-    min-height: 450px;
     overflow: auto;
     border-radius: 8px;
     gap: 16px;
     padding: 16px;
+
 }
 .searchBar{
-    
     border: none;
     outline: none;
     color: var(--color-white);
@@ -61,49 +63,37 @@
     border-radius: 8px;
     gap: 10px;
     background: transparent;
-
-
 } 
 
 .table{
     border-collapse: separate;
     border-spacing: 0 1px ;
     background: rgba(221, 218, 218, 0.502);
-    width: 1,418px;
-    height: 56px;
     border-radius: 8px;
     overflow: hidden;  
     width: 100%;
 }
 
-
-
 .actionButtonsFirst{
     background: rgba(116, 160, 22, 1);
-
 }
 .actionButtonsFirstEnabled{
     background: rgba(249, 249, 249, 0.1);
-
 }
 .actionButtonsSecond{
     background: var(--color-accent-red-primary);
-
 }
 
 .tableRows{
-text-indent: 25px;
-height: 56px;
-border-bottom: #cfd0d377 1px solid;
-
-
+    text-indent: 25px;
+    height: 56px;
+    border-bottom: #cfd0d377 1px solid;
 }
+
 .downArrow,
 .downArrowDisabled{
     margin-left: 8px;
-    width: 4.72;
     height: 8px;
-
 }
 .downArrowDisabled{
    opacity: .2;
@@ -124,8 +114,6 @@ border-bottom: #cfd0d377 1px solid;
     text-align: left;
     text-indent: 8px;
     background-color: #F9F9F966;
-    width: 464px;
-    height:56px;
     padding: 16px;
     gap: 8px;
 
@@ -141,18 +129,14 @@ border-bottom: #cfd0d377 1px solid;
 }
 .tHeadActions{
     text-indent: 5px;
-
 }
-
 
 .createCategories{
     background: #99000F;
-    width: 160px;
 }
 
 .searchIcon{
     margin-left: 15px;
-
 }
 .searchInputContainer{
     display: flex;
@@ -168,16 +152,12 @@ border-bottom: #cfd0d377 1px solid;
     border-radius: 8px;
     gap: 10px;
     background: #F9F9F91A;
-
-
-
 }
 .rowDisabled{
     background-color: #2e2c2d31;
     color: rgba(167, 161, 161, 0.555);
     transition: 300ms;
     outline: 1px solid #99000F;
-
 }
 .release{
     transition: 300ms;
@@ -185,7 +165,6 @@ border-bottom: #cfd0d377 1px solid;
 .subCategoryRow{
     background: #707173;
     transition: 300ms;
-
 }
 .subCategoryRowTwo{
     background: #5C5D60;
@@ -198,18 +177,15 @@ border-bottom: #cfd0d377 1px solid;
 .subCategoryRowFour{
     background: #353639;
     transition: 300ms;
-
 }
 
 .tableRowsNameFour{
     text-indent: 100px;
 }
 
-
 .tableRowsNameThree{
     text-indent: 80px;
 }
-
 
 .tableRowsNameTwo{
     text-indent: 60px;
@@ -217,5 +193,4 @@ border-bottom: #cfd0d377 1px solid;
 
 .tableRowsNameOne{
     text-indent: 40px;
-
 }

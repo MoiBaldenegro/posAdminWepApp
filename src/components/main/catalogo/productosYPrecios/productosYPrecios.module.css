@@ -3,8 +3,6 @@
   flex-direction: column;
   gap: 16px;
   height: 100%;
-
-
 }
 
 /* container  buttons */
@@ -12,6 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   >h2{
     font-size: 32px;
     font-weight: 200;
@@ -28,10 +27,8 @@
     }
 }
 
-
 .btnHeadCreate{
     background: #99000F;
-
 }
 
 .buttonsContainer{
@@ -40,7 +37,6 @@
 }
 /*  Update section */
 .updateSection{
-  
     display: flex;
     justify-content: space-between;
     width: 1,482px;
@@ -49,6 +45,7 @@
     border-radius: 16px;
     background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
 }
+
 .leftSection{
     width: 378px;
     height: 112px;
@@ -56,11 +53,12 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .rightSection{
     display: flex;
-    gap: 16px;
-   
+    gap: 16px;   
 }
+
 .inRightSection{
     display: flex;
     flex-direction: column;
@@ -79,6 +77,7 @@
     outline: none;
     text-indent: 20px;
 }
+
 .clave{
     width: 184px;
     height: 48px;
@@ -88,8 +87,8 @@
     border: none;
     outline: none;
     text-indent: 20px;
-
 }
+
   .ventaTypesSelect{
     width: 178px;
     height: 48px;
@@ -100,8 +99,6 @@
     color: #f9f9f980;
     border: none;
     outline: none;
-
-
   } 
   
   .impuesto{
@@ -110,12 +107,12 @@
     justify-content: center;
     gap: 16px;
     display: flex;
-
-
   }
+
   .subTittle{
    margin-right: 8px;
   }
+
   .inputItem{
     width: 120px;
     height: 48px;
@@ -125,30 +122,25 @@
     border: none;
     color: #f9f9f96a;
     text-indent: 20px;
-
-
   }
+
   .iconItem{
     width: 16px;
     height: 16px;
-
-
   }
+
   .aumento{
     display:flex;
     align-items: center;
     border-radius: 25px;
-
-
   }
+
   .btnContainerInput{
     display: flex;
     background: #F9F9F91A;
     border-radius: 8px 8px 8px 8px;
-
-
-
   }
+
 .inputWithButton{
     width: 120px;
     height: 48px;
@@ -173,22 +165,19 @@
     display: flex;
     align-items: center;
     gap: 8px;
-
 }
+
 .porcentaje{
     display: flex;
     align-items: center;
     gap: 8px;
-
-
 }
+
 .price,
 .utility{
     display: flex;
     align-items: center;
-  gap: 8px;
-
- 
+    gap: 8px;
 }
 
 /* main section */
@@ -203,30 +192,25 @@
   flex-direction: column;
   gap: 16px;
   max-height: 100%;
-
 }
-
 
 .mainHead{
     display: flex;
     justify-content: space-between;
-
 }
+
 .mainHeadLeft{
     display: flex;
     align-items: center;
     gap: 10px;
     margin: 0 20px;
-
 }
+
 .searchContainer{
     display: flex;
     margin: 0 20px;
     gap: 10px;
-
-
 }
-
 
 .showSelect{
     width: 92px;
@@ -238,8 +222,8 @@
     color: #f9f9f980;
     border: none;
     outline: none;
-
   } 
+
   .showSelect{
     transition: 500ms; 
   }
@@ -259,12 +243,12 @@
     border: none;
     background: #F9F9F933;
     color: #f9f9f9;
-
-
   }
+
   .stateButton{
     width: 110px;
   }
+
   .searchBarTable{
     width: 480px;
     height: 48px;
@@ -275,6 +259,7 @@
     display: flex;
     align-items: center;
   }
+
   .searchBarTableInput{
     width: 100%;
     height: 80%;
@@ -284,24 +269,13 @@
     outline: none;
     color: #f9f9f9;
   }
+
   .searchIcon{
     width: 17.05px;
     height: 17.06px;
     margin-left: 15px;
   }
 
-  
-  /* toggle Fullscreen */
-  @media (max-height: 1050px) {
-   .tableContainer{
-    height: 350px;
-   }
-
-   .mainSection{
-    height: 500px;
-    margin-bottom: -10px;
-   }
-  }
 
   /* table */
   .table{
@@ -312,8 +286,6 @@
     overflow: hidden; 
     width: 100%;
     max-height: 400px;
-
-
 }
 
 .tHeadCategoria,
@@ -344,13 +316,14 @@
 .tHeadVenta{
   width: 14%;
 }
-.tableRows{
-text-indent: 25px;
-}
 .tableRows,
 .buttonsContainer{
-    border-top: 1px solid #F9F9F9;
+text-indent: 25px;
+height: 48px;
+border-top: 1px solid #F9F9F9;
+
 }
+
 
 .actionButtonsSecond,
 .actionButtonsFirst,
@@ -372,6 +345,7 @@ text-indent: 25px;
 }
 .actionButtonsSecond{
     background: var(--color-accent-red-primary);
+
 }
 .actionButtonsSecond:hover,
 .actionButtonsFirst:hover,
@@ -385,9 +359,11 @@ text-indent: 25px;
   color: rgba(167, 161, 164, 0.555);
   transition: 300ms;
 }
+
 .release{
   transition: 300ms;
 }
+
 .rowDisabled:hover,
 .release:hover{
     background-color: #2e2c2d21;
@@ -402,9 +378,8 @@ text-indent: 25px;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
-
- 
 }
+
 .selectTrigger {
   cursor: pointer;
   border-radius: 4px;
@@ -415,6 +390,7 @@ text-indent: 25px;
   gap: 15px;
   font-size: var(--font-size-small);
 }
+
 .options {
   position: absolute;
   background-color: var(--color-gray-hover);
@@ -433,10 +409,10 @@ text-indent: 25px;
   overflow-x: hidden;
 }
 
-
 .hidden{
   display: none;
 }
+
 .option,
 .optionTwo,
 .optionThree,
@@ -448,14 +424,7 @@ text-indent: 25px;
   display: flex;
 
 }
-.optionTwo{
-}
-.optionThree{
-}
-.optionFour{
-}
-.optionFive{
-}
+
 .option:hover {
   background-color: #6e717442;
   
@@ -463,19 +432,8 @@ text-indent: 25px;
 
 /* //////////////*/
 
-.oneCategory{
-  width: 100%; 
-  position: relative;
-}
-.twoCategory{
-  display: flex;
-  position:relative ;
-}
 
-.threeCategory{
-  border: 1px solid #1900ff;
-  position:relative;
-}
+
 
 
 

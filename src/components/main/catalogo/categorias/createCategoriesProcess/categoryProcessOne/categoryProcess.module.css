@@ -55,64 +55,7 @@
     background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
   }
   
-  /* Select styles */
-  .customSelect{
-    position: relative;
-    width: 474px;
-    height: 56px;
-    background: rgba(249, 249, 249, 0.2);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    border-radius: 6px;
-   
-  }
-  .selectTrigger {
-    cursor: pointer;
-    border-radius: 4px;
-    width: 95%;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    font-size: var(--font-size-small);
-  }
-  .options {
-    position: absolute;
-    background-color: var(--color-gray-hover);
-    top: 120%;
-    left: 0;
-    width: 474px;
-    display: block;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    color: #333;
-    font-size: var(--font-size-small);
-  }
-  
-  .customSelect:hover .options  {
-    display: block;
-    display: flex;
-    flex-direction: column;
-  }
-  .hidden{
-    display: none;
-  }
-  .option {
-    padding: 12px;
-    cursor: pointer;
-    border-bottom: 1px solid #33333333;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  
-  }
-
-  
+ 
   /* //////////////*/
   .tittleContainer{
     margin-bottom: 30px;
@@ -133,6 +76,8 @@
     height: 60%;
     > input{
       height: 48px;
+      text-indent: 8px;
+      font-size: 16px;
     }
 
     >h1{

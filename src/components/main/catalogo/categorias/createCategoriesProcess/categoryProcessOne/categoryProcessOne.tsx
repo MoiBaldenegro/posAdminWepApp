@@ -2,6 +2,8 @@ import { useState } from 'react';
 import styles from './categoryProcess.module.css';
 import { useDispatch } from 'react-redux';
 import { createCategoryAction } from '../../../../../../redux/actions/catalogo/categoriesActions/createCategories';
+import disquetIcon from '@/assets/public/disquetIcon.svg';
+import closeIcon from '@/assets/public/closeIcon.svg';
 interface Props {
   openModal: any;
   actionType: () => void;
@@ -34,7 +36,7 @@ export default function CategoryProcessOne({
     <div className={styles.screen}>
       <section className={styles.modal}>
         <button className={styles.closeButton} onClick={onClose}>
-          X
+          <img src={closeIcon} alt="close-icon" />
         </button>
         <form className={styles.form}>
           <h1 className={styles.tittle}>{children}</h1>
@@ -53,6 +55,7 @@ export default function CategoryProcessOne({
             dispatch(createCategoryAction(category)), openModal(), onClose();
           }}
         >
+          <img src={disquetIcon} alt="save-icon" />
           Agregar categoria
         </button>
       </section>

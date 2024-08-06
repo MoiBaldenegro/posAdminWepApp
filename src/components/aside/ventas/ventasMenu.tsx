@@ -33,42 +33,42 @@ export default function VentasMenu({
           Cuentas
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/payments"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 2)}
         >
           Pagos
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/reopens"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 3)}
         >
           Reaperturas
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/discounts"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 4)}
         >
           Descuentos
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/cancellations"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 5)}
         >
           Cancelaciones
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/courtesies"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 6)}
         >
           Cortesías
         </NavLink>
         <NavLink
-          to="ventas/bills"
+          to="ventas/close-till"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 7)}
         >

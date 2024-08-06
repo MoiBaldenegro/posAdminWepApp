@@ -185,11 +185,11 @@
   flex-direction: column;
   align-items: center;
   width: 1,482px;
-  height: 780px;
   padding: 16px, 0px, 16px, 0px;
   border-radius: 16px;
   background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
   margin-bottom: -8px;
+  overflow: auto;
 }
 .mainHead{
   display: flex;
@@ -293,7 +293,8 @@
   padding: 0px, 16px, 0px, 16px;
   border-radius: 8px;
   margin: 25px;
-  overflow: hidden;   
+  border: 1px solid yellow;
+  overflow-y: auto;
 }
 
 .tHeadPaymentNumber,
