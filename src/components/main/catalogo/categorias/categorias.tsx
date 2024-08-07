@@ -339,7 +339,7 @@ export default function Categorias() {
                               {subCategory.code}
                             </td>
                             <td className={styles.tableRowsNameOne}>
-                              {subCategory.categoryName}
+                              {subCategory.name}
                               {subCategory.subCategories &&
                               subCategory.subCategories.length > 0 &&
                               subCategory.status !== 'disabled' ? (
