@@ -25,8 +25,11 @@ import { createProductsAndPrices } from '../../../../redux/actions/catalogo/prod
 import CreateProductsModal from './forms/createProducts';
 import { exportToExcel } from '../../../../utils/exporter';
 import ConfirmChangesModal from '../../../modals/confimChanges/confirmChanges';
+import { useSubcategoriesStore } from '@/zstore/subcategories.store';
+import EditProducts from './editProducts/EditPtoducts';
 
 export default function ProductosYPrecios() {
+  const [product, setProduct] = useState({});
   // Modals
   const confirmChanges = useModal('confirmChanges');
   // Redux states
@@ -44,6 +47,7 @@ export default function ProductosYPrecios() {
   const uploadProduct = useModal('uploadProduct');
   const saveProducts = useModal('saveProducts');
   const createProducts = useModal('createProducts');
+  const editProducts = useModal('editProducts');
   // Events
   const handleChange = (event) => {
     event.preventDefault();
@@ -53,9 +57,11 @@ export default function ProductosYPrecios() {
     }
     dispatch(searchProductsAndPricesAction(searchValue));
   };
+
   useEffect(() => {
     dispatch(getProductsAndPricesAction());
   }, []);
+
   return (
     <div className={styles.container}>
       <section className={styles.head}>
@@ -113,6 +119,16 @@ export default function ProductosYPrecios() {
           >
             Cambios guardados
           </ConfirmChangesModal>
+        ) : null}
+        {editProducts.isOpen && editProducts.modalName === 'editProducts' ? (
+          <EditProducts
+            isOpen={editProducts.isOpen}
+            onClose={editProducts.closeModal}
+            openModal={confirmChanges.openModal}
+            product={product}
+          >
+            Editar productos
+          </EditProducts>
         ) : null}
       </section>
       <section className={styles.updateSection}>
@@ -350,7 +366,13 @@ export default function ProductosYPrecios() {
                 <td className={styles.buttonsContainer}>
                   {product.status === 'enabled' ? (
                     <>
-                      <button className={styles.actionButtonsFirst}>
+                      <button
+                        onClick={() => {
+                          editProducts.openModal();
+                          setProduct(product);
+                        }}
+                        className={styles.actionButtonsFirst}
+                      >
                         <img src={update} alt="update-icon" />
                       </button>
                       <button
@@ -382,10 +404,8 @@ export default function ProductosYPrecios() {
             ))}
           </tbody>
         </table>
-
         <div className={styles.tableFooter}></div>
       </section>
     </div>
   );
 }
-// new commit

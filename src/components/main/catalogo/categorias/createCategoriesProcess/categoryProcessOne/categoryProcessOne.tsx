@@ -21,7 +21,6 @@ export default function CategoryProcessOne({
   children,
 }: Props) {
   const [category, setCategory] = useState({
-    code: '05',
     categoryName: '',
   });
   const handleChange = (event) => {

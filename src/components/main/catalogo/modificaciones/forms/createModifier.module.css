@@ -11,20 +11,27 @@
   transition: 1s;
   background: rgba(0, 0, 0, 0.829)
 }
+
 .modal {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 608px;
-  height: px;
-  gap: 8px;
+  width: 530px;
+  gap: 32px;
   border-radius: 32px;
   background: var(--color-primary);
   color: var(--color-white);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.541)
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.541);
+  padding: 32px;
+
+  & p{
+    font-size: 16px;
+    font-weight: 100;
+  }
 }
+
 .closeButton {
   position: absolute;
   top: 10px;
@@ -34,8 +41,9 @@
   border: none;
   font-size: 18px;
   color: #cfcece;
-font-weight: 900;
+  font-weight: 900;
 }
+
 .containerInput{
   display: flex;
   justify-content: center;
@@ -70,6 +78,11 @@ font-weight: 900;
   gap: 15px;
   font-size: var(--font-size-small);
 }
+
+form{
+  width: 100%;
+}
+
 .options {
   position: absolute;
   background-color: var(--color-gray-hover);
@@ -116,9 +129,9 @@ font-weight: 900;
   flex-direction: column;
 }
 .tittle{
-  border: none;
   width: 100%;
-  margin: 50px 0 10px 250px;
+  font-size: 24px;
+  font-weight: 200;
 }
 .textTittle{
   font-size: var(--font-size-small);
@@ -133,16 +146,26 @@ font-weight: 900;
 
 }
 
-.form{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  gap: 5px;
-  height: 200px;
-}
+
 .input{
-  padding: 10px;
   background-color: #ffffff17;
+  height: 48px;
+  text-indent: 12px;
   border-radius: 6px;
   color: #f9f9f9;
+  width: 100%
 }
+
+.buttonsFooter{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px; 
+  height: 48px; 
+
+  >button{
+    padding: 0px 16px;
+    background-color: var(--color-accent-red-primary);
+  }
+}
+
