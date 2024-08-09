@@ -7,9 +7,7 @@ input[type="date"]{
     border-radius: 8px;
    text-align: center;
   }
-  
    
-
   /* Select styles */
   .customSelect{
     position: relative;
@@ -22,6 +20,7 @@ input[type="date"]{
     border-radius: 6px;
    
   }
+
   .selectTrigger {
     cursor: pointer;
     border-radius: 4px;
@@ -49,10 +48,10 @@ input[type="date"]{
     font-size: var(--font-size-small);
   }
   
-
   .hidden{
     display: none;
   }
+
   .option {
     padding: 12px;
     cursor: pointer;
@@ -62,9 +61,9 @@ input[type="date"]{
     justify-content: center;
   
   }
+
   .option:hover {
     background-color: #6e717442;
-    
   }
   
   /* //////////////*/

@@ -1,6 +1,7 @@
 @import "../../../../varCss/colors.module.css";
 @import "../../../../varCss/fonts.module.css";
 
+
 .categorias{
     display: flex;
     flex-direction: column;
@@ -193,4 +194,5 @@
 
 .tableRowsNameOne{
     text-indent: 40px;
+    border-bottom: #cfd0d377 1px solid;
 }

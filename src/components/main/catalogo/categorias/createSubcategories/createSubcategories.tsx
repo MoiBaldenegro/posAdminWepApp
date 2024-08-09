@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import arrow from '@/assets/public/arrow.svg';
 import closeIcon from '@/assets/public/closeIcon.svg';
 import disquetIcon from '@/assets/public/disquetIcon.svg';
+import { createCategoryAction } from '@/redux/actions/catalogo/categoriesActions/createCategories';
+import { useSubcategoriesStore } from '@/zstore/subcategories.store';
 
 interface Props {
   openModal: any;
@@ -26,9 +28,14 @@ export default function CreateSubcategories({
   const [category, setCategory] = useState({});
 
   const [subCategory, setSubCategory] = useState({
-    subCategoryName: '',
-    category: category,
+    name: '',
+    categoryId: category,
   });
+
+  const sendCategory = {
+    name: subCategory.name,
+    categoryId: category._id,
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -38,8 +45,9 @@ export default function CreateSubcategories({
     });
   };
   const categoriesList = useSelector((state) => state.categories.allCategories);
-
-  const dispatch = useDispatch();
+  const createSubcategory = useSubcategoriesStore(
+    (state) => state.createSubcategory,
+  );
 
   return (
     <div className={styles.screen}>
@@ -80,15 +88,17 @@ export default function CreateSubcategories({
             type="text"
             placeholder="Nombre de la Subcategoria"
             className={styles.input}
-            name="subCategoryName"
+            name="name"
             onChange={handleChange}
           />
         </form>
         <button
-          disabled={!category.categoryName || !subCategory.subCategoryName}
+          disabled={!category.categoryName || !subCategory.name}
           className={styles.button}
           onClick={() => {
-            dispatch(createCategoryAction(category)), openModal(), onClose();
+            createSubcategory(sendCategory);
+            openModal();
+            onClose();
           }}
         >
           <img src={disquetIcon} alt="save-icon" />

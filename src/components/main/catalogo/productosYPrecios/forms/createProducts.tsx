@@ -1,18 +1,21 @@
 import styles from './createProducts.module.css';
 // Hooks
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 //Icons
 import arrowRigth from './../../../../../assets/public/arrowRigth.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { createProductsAndPrices } from '../../../../../redux/actions/catalogo/productsAndpricesActions/createProduct';
-import closeIcon from '@/assets/public/closeIcon.svg';
 import arrow from '@/assets/public/arrow.svg';
+import arrowLeft from '@/assets/public/arrowLeft.svg';
+import { useSubcategoriesStore } from '@/zstore/subcategories.store';
+import CloseButton from '@/components/customElements/CloseButton';
+
 interface Props {
   openModal: () => void;
   isOpen: any;
   onClose: any;
   children: any;
 }
+
 export default function CreateProductsModal({
   openModal,
   isOpen,
@@ -26,22 +29,270 @@ export default function CreateProductsModal({
   const [processStatus, setProcessStatus] = useState<ProcesStatus>(
     ProcesStatus.FIRST_PROCESS,
   );
-  const [category, setCategory] = useState({});
-  const [subcategory, setSubcategory] = useState({});
+  const [category, setCategory] = useState();
+  const [subcategory, setSubcategory] = useState();
   const categoryList = useSelector((state) => state.categories.allCategories);
-  // const categoryList = useSelector((state) => state.categories.allCategories);
 
   const [toggleCategory, setToggleCategory] = useState(false);
-  const [product, setProduct] = useState({
-    code: 'ABC123',
-    category: 'Electronics',
-    productName: 'Smartphone',
-    priceInSite: '499.99',
-    priceToGo: '449.99',
-    priceCallOrder: '459.99',
-    priceDelivery: '479.99',
-    status: 'enabled',
-  });
+  const [toggleSubCategory, setToggleSubCategory] = useState(false);
+  const [product, setProduct] = useState([
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+    {
+      code: 'ABC123',
+      category: 'Electronics',
+      productName: 'Smartphone',
+      priceInSite: '499.99',
+      priceToGo: '449.99',
+      priceCallOrder: '459.99',
+      priceDelivery: '479.99',
+      status: 'enabled',
+    },
+  ]);
+
+  const TABLE_COLUMNS = [
+    '',
+    'Producto',
+    'Restaurante',
+    'Rappi',
+    'Didi Food',
+    'Uber Eats',
+    'Para llevar',
+    'Telefónico',
+    'Precio 7',
+    'Precio 8',
+    'Precio 9',
+    'Precio 10',
+  ];
+  const TABLE_ROWS = product?.length + 1 ?? 1;
 
   const handleChange = (name, event) => {
     console.log(product);
@@ -50,33 +301,48 @@ export default function CreateProductsModal({
       [name]: event.target.value,
     });
   };
+  const getSubcategories = useSubcategoriesStore(
+    (state) => state.getSubcategories,
+  );
+
+  const subCategoriesArray = useSubcategoriesStore(
+    (state) => state.subCategoriesArray,
+  );
+  // Crear la variable managementSubCategories
+  const managementSubCategories = subCategoriesArray.filter((subCategory) =>
+    category?.subCategories?.some((element) => element._id === subCategory._id),
+  );
 
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    getSubcategories();
+  }, [category]);
+
   return (
     <div className={styles.screen}>
-      <section className={styles.modal}>
-        <div className={styles.head}>
-          <button className={styles.closeButton} onClick={onClose}>
-            <img src={closeIcon} alt="close-icon" />
-          </button>
-          <h2 className={styles.tittle}>{children}</h2>
-          <p>Seleccione la categoría a la que se asignarán los productos.</p>
-        </div>
-        {processStatus === ProcesStatus.FIRST_PROCESS ? (
-          <div>
+      {processStatus === ProcesStatus.FIRST_PROCESS ? (
+        <section className={styles.modal}>
+          <CloseButton onClose={onClose} />
+          <div className={styles.head}>
+            <h2 className={styles.tittle}>{children}</h2>
+            <p>Seleccione la categoría a la que se asignarán los productos.</p>
+          </div>
+
+          <div className={styles.containerSelects}>
             <div className={styles.containerInput}>
               <div className={styles.categoriesSelect}>
                 <div
                   className={styles.customSelect}
                   onClick={() => {
                     setToggleCategory(!toggleCategory);
+                    setToggleSubCategory(false);
                   }}
                 >
                   <div className={styles.selectTrigger}>
                     <span>
-                      {category.categoryName
-                        ? category.categoryName
+                      {category?.categoryName
+                        ? category?.categoryName
                         : 'Seleccione una categoría'}
                     </span>
                     <img
@@ -90,7 +356,9 @@ export default function CreateProductsModal({
                   >
                     {categoryList.map((element: any, index: number) => (
                       <span
-                        onClick={() => setCategory(element)}
+                        onClick={() => {
+                          setCategory(element);
+                        }}
                         className={styles.option}
                         key={index}
                       >
@@ -101,13 +369,45 @@ export default function CreateProductsModal({
                 </div>
               </div>
             </div>
+            <div className={styles.containerInput}>
+              <div className={styles.categoriesSelect}>
+                <div
+                  className={styles.customSelect}
+                  onClick={() => {
+                    setToggleSubCategory(!toggleSubCategory);
+                    setToggleCategory(false);
+                  }}
+                >
+                  <div className={styles.selectTrigger}>
+                    <span>
+                      {subcategory?.name ?? 'Seleccione una subcategoría'}
+                    </span>
+                    <img src={arrow} alt="" className={styles.arrowSelect} />
+                  </div>
+                  <div
+                    className={
+                      toggleSubCategory ? styles.options : styles.hidden
+                    }
+                  >
+                    {managementSubCategories.map((element, index) => (
+                      <span
+                        onClick={() => {
+                          setSubcategory(element);
+                        }}
+                        className={styles.option}
+                        key={index}
+                      >
+                        {`${element.code} - ${element.name}`}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-        ) : (
-          <> Process 2</>
-        )}
-        <div className={styles.nextButton}>
-          {processStatus === ProcesStatus.FIRST_PROCESS ? (
+          <div className={styles.nextButton}>
             <button
+              disabled={!category || !subcategory}
               onClick={() => {
                 setProcessStatus(ProcesStatus.SECOND_PROCESS);
               }}
@@ -115,53 +415,47 @@ export default function CreateProductsModal({
               Siguiente
               <img src={arrowRigth} alt="arrow-rigth" />
             </button>
-          ) : (
-            <button
-              onClick={() => setProcessStatus(ProcesStatus.FIRST_PROCESS)}
-            >
-              Regresar
-              <img src={arrowRigth} alt="arrow-rigth" />
-            </button>
-          )}
-        </div>
-      </section>
-    </div>
-  );
-}
-
-{
-  /*   
-
-
-<h1 className={styles.tittle}>{children}</h1>
-          <span className={styles.textTittle}>
-            Seleccione la categoría a la que se asignarán los productos.
-          </span>
-        </div>
-        <div className={styles.containerInput}>
-          <div className={styles.categoriesSelect}>
-            <div
-              className={styles.customSelect}
-              onClick={() => {
-                setToggleStatus(!toggleStatus);
-              }}
-            >
-              <div className={styles.selectTrigger}>
-                <span>Categorias</span>
-                <img src={arrow} alt="" className={styles.arrowSelect} />
-              </div>
-              <div className={toggleStatus ? styles.options : styles.hidden}>
-                <span className={styles.option}>Options</span>
-                <span className={styles.option}> Option</span>
-                <span className={styles.option}>Option</span>
-              </div>
+          </div>
+        </section>
+      ) : (
+        <section className={styles.procesTwo}>
+          <CloseButton onClose={onClose} />
+          <header>
+            <h3>{`Crear productos en ${subcategory.name}`}</h3>
+          </header>
+          <div className={styles.tableContainer}>
+            <div>
+              {TABLE_COLUMNS.map((column, index) => (
+                <div className={styles.thead} key={index}>
+                  {column}
+                </div>
+              ))}
+            </div>
+            <div>
+              {product.map((product, index) => (
+                <div className={styles.row} key={index}>
+                  <span>{index + 1}</span>
+                  <span>{product.productName}</span>
+                  <span>{product.category}</span>
+                  <span>{product.priceInSite}</span>
+                  <span>{product.priceToGo}</span>
+                  <span>{product.priceCallOrder}</span>
+                  <span>{product.priceDelivery}</span>
+                  <span>{product.status}</span>
+                  <span>{product.priceToGo}</span>
+                  <span>{product.priceCallOrder}</span>
+                  <span>{product.priceDelivery}</span>
+                  <span>{product.status}</span>
+                </div>
+              ))}
             </div>
           </div>
-
-
-
-
-
-
-*/
+          <button onClick={() => setProcessStatus(ProcesStatus.FIRST_PROCESS)}>
+            <img src={arrowLeft} alt="arrow-left" />
+            Regresar
+          </button>
+        </section>
+      )}
+    </div>
+  );
 }

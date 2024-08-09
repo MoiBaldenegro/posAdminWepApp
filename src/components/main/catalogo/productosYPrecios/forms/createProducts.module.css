@@ -16,13 +16,14 @@
     flex-direction: column;
     position: relative;
     width: 634px;
-    gap: 8px;
+    gap: 16px;
     border-radius: 32px;
     background: var(--color-primary);
     color: var(--color-white);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.541);
     padding: 32px;
   }
+
   .closeButton {
     position: absolute;
     top: 10px;
@@ -30,11 +31,9 @@
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 18px;
     color: #cfcece;
     font-weight: 900;
   }
-
 
   .form{
     display: flex;
@@ -52,6 +51,7 @@
     height: 48px;
     width: 100%;
   }
+  
   .head{
     display: flex;
     flex-direction: column;
@@ -82,6 +82,7 @@
     border-radius: 6px;
    
   }
+
   .selectTrigger {
     cursor: pointer;
     border-radius: 4px;
@@ -93,6 +94,7 @@
     gap: 15px;
     font-size: var(--font-size-small);
   }
+
   .options {
     position: absolute;
     background-color: var(--color-gray-hover);
@@ -108,6 +110,10 @@
     color: #333;
     font-size: var(--font-size-small);
     z-index: 9999;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+
   }
   
   .customSelect:hover .options  {
@@ -115,9 +121,11 @@
     display: flex;
     flex-direction: column;
   }
+
   .hidden{
     display: none;
   }
+  
   .option {
     padding: 12px;
     cursor: pointer;
@@ -125,8 +133,152 @@
     width: 100%;
     display: flex;
     justify-content: flex-start;
-  
+    transition: all .15s ease;
   }
 
-  
+  .option:hover {
+    background-color: #6e717418; 
+  }
+
   /* //////////////*/
+  .containerSelects{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+
+  .procesTwo{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    gap: 16px;
+    border-radius: 32px;
+    background: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.541);
+    padding: 32px;
+   
+  }
+
+  .procesTwo button:last-child{
+    background: rgba(153, 0, 15, 1);
+    border-radius: 8px;
+    color: var(--color-white);
+    width: 117px;
+    height: 48px;
+    padding: 12px, 16px, 12px, 16px;
+    border-radius: 8px;
+    gap: 8px;
+    transition: all .15s ease;
+  }
+
+  .tableContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+
+    >div:first-child{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 32px;
+      border-bottom: 1px solid white;
+      font-weight: 200;
+      font-size: var(--font-size-small);
+      color: var(--color-white);
+
+      >.thead{
+        background: #F9F9F980;
+        height: 100%;
+        width: 100%;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid white;
+        border-top: 1px solid white;  
+      }
+
+      >.thead:nth-child(1){
+        max-width: 50px;
+        text-align: center;
+        border-radius: 8px 0 0 0px;
+      }
+
+      >.thead:nth-child(2){
+        min-width: 350px;
+        text-align: center;
+        border-top: 1px solid white;
+
+      }
+
+      >.thead:last-child{
+        border-radius: 0 8px 0 0px;
+        border-right: 1px solid white;
+      }
+    }
+  }
+
+  .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 32px;
+    font-weight: 200;
+    font-size: var(--font-size-small);
+    color: var(--color-white);
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+
+    >span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-weight: 200;
+      font-size: var(--font-size-small);
+      color: var(--color-white);
+      width: 100%;
+      height: 32px;
+      border-right: 1px solid white;
+      background-color: rgba(249, 249, 249, 0.15);
+    }
+
+    >span:first-child{
+      max-width: 50px;
+      text-align: center;
+      border-right: 1px solid white;
+      background: #F9F9F980;
+
+    }
+    
+    >span:nth-child(2){
+      min-width: 350px;
+      text-align: center;
+    }
+
+    >span:last-child{
+      border-right: none;
+
+    }
+  }
+
+  .row:last-child{
+    border-bottom: 1px solid white;
+    border-radius: 0px 0px 8px 8px;
+  }
+
+  .tableContainer{
+    overflow-y: auto;
+  }
+
+  .tableContainer::-webkit-scrollbar {
+    display: none;
+  }

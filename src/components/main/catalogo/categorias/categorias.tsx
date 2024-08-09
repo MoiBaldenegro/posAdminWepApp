@@ -32,6 +32,7 @@ import { toggleCategory } from './utils/categoryExpansion';
 import ExportCategoriesModal from './modals/exportCategories/exportCategories';
 import { updateCategoriesAction } from '../../../../redux/actions/catalogo/categoriesActions/updateCategories';
 import CreateSubcategories from './createSubcategories/createSubcategories';
+import { useSubcategoriesStore } from '@/zstore/subcategories.store';
 
 export default function Categorias() {
   // Modales
@@ -42,6 +43,7 @@ export default function Categorias() {
   const updateOneCategory = useModal('updateOneCategory');
   const AuthDiscontinue = useModal('AuthDiscontinue');
   const confirmChanges = useModal('confirmChanges');
+  const confirmChangesSub = useModal('confirmChangesSub');
   const exportCategories = useModal('exportCategories');
   const categoryProcessOne = useModal('categoryProcessOne');
 
@@ -49,6 +51,7 @@ export default function Categorias() {
   // Category expansion
   const [expandedCategories, setExpandedCategories] = useState<string[]>([]);
   const [buttonParams, setButtonParams] = useState();
+
   // UpdateOneCategory
   const [updateValue, setUpdateValue] = useState();
   const dispatch = useDispatch();
@@ -81,6 +84,9 @@ export default function Categorias() {
     }
     dispatch(searchCategoriesAction(searchValue));
   };
+
+  const loadingSubcategory = useSubcategoriesStore((state) => state.isLoading);
+  const errorsSubcategory = useSubcategoriesStore((state) => state.errors);
 
   useEffect(() => {
     dispatch(getCategoriesAction());
@@ -199,7 +205,7 @@ export default function Categorias() {
             isOpen={createSubCategory.isOpen}
             onClose={createSubCategory.closeModal}
             actionType={getCategoriesAction}
-            openModal={confirmChanges.openModal}
+            openModal={confirmChangesSub.openModal}
           >
             Crear Subcategoria
           </CreateSubcategories>
@@ -212,6 +218,18 @@ export default function Categorias() {
             actionType={getCategoriesAction}
             loading={loading}
             errors={error}
+          >
+            Cambios guardados
+          </ConfirmChangesModal>
+        ) : null}
+        {confirmChangesSub.isOpen &&
+        confirmChangesSub.modalName === 'confirmChangesSub' ? (
+          <ConfirmChangesModal
+            isOpen={confirmChangesSub.isOpen}
+            onClose={confirmChangesSub.closeModal}
+            actionType={getCategoriesAction}
+            loading={loadingSubcategory}
+            errors={errorsSubcategory}
           >
             Cambios guardados
           </ConfirmChangesModal>

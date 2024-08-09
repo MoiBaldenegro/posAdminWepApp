@@ -96,7 +96,7 @@ export default function Modificaciones() {
               onClose={createModifier.closeModal}
               openModal={confirmChanges.openModal}
             >
-              Crear complemento
+              Crear modificador
             </CreateModifierModal>
           ) : null}
           {confirmChanges.isOpen &&
