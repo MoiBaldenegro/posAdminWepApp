@@ -31,6 +31,7 @@ import Empleados from './components/main/usuarios/empleados/empleados.tsx';
 import Autorizaciones from './components/main/usuarios/autorizaciones/autorizaciones.tsx';
 import Asistencias from './components/main/usuarios/asistentes/asistencias.tsx';
 import GetStarted from './pages/getStarted.tsx/getStarted.tsx';
+import ConfigModal from './zstore/configModal.tsx';
 
 const router = createBrowserRouter([
   {
@@ -115,7 +116,9 @@ const router = createBrowserRouter([
             children: [
               {
                 path: 'sellTypes',
-                element: <VentaTypes />,
+                element: (
+                  <ConfigModal isOpen={true} onClose={() => {}}></ConfigModal>
+                ),
               },
             ],
           },

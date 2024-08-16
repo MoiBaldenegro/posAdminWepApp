@@ -19,6 +19,7 @@ export const useProcessOperationsStore = create<state>((set) => {
       set({ isLoading: true });
       try {
         const res = await getTotalBillsService();
+        console.log(res);
         const totalBills = res.data;
         set({ isLoading: false, totalBills: totalBills });
       } catch (error) {
