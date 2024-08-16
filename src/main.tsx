@@ -91,7 +91,6 @@ const router = createBrowserRouter([
                 path: 'bills',
                 element: <Cuentas />,
               },
-
               {
                 path: 'payments',
                 element: <Pagos />,

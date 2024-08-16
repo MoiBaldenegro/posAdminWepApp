@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 interface Props {
   main: string;
   redLinePosition: number;
-  handleBoard: Function;
+  handleBoard: () => void;
 }
 
 export default function VentasMenu({

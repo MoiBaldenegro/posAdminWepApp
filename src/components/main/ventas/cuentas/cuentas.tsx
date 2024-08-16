@@ -13,6 +13,8 @@ import pendingIcon from '../../../../assets/public/StatusIcon(pending).svg';
 import { getBillsAction } from '../../../../redux/actions/ventas/billsActions/getBillsAction';
 import NotesDetails from './details/details';
 import { useModal } from '../../../../hooks/useModals';
+import { FINISHED_STATUS } from '@/lib/status.lib';
+import { useProcessOperationsStore } from '@/zstore/processOperations.store';
 
 export default function Cuentas() {
   // Local States
@@ -21,11 +23,15 @@ export default function Cuentas() {
 
   // Modals
   const notesDetails = useModal('notesDetails');
-  const { allBills } = useSelector((state) => state.bills);
-  const dispatch = useDispatch();
+  const totalBills = useProcessOperationsStore((state) => state.totalBills);
+
+  const getTotalBills = useProcessOperationsStore(
+    (state) => state.getTotalBills,
+  );
 
   useEffect(() => {
-    dispatch(getBillsAction());
+    getTotalBills();
+    console.log(totalBills);
   }, []);
 
   return (
@@ -80,65 +86,67 @@ export default function Cuentas() {
               </tr>
             </thead>
             <tbody>
-              {allBills?.map((element) => (
-                <tr
-                  key={element._billCode}
-                  className={
-                    element.status === 'disabled'
-                      ? styles.rowDisabled
-                      : styles.release
-                  }
-                >
-                  <td className={styles.tableRows}>{element.billCode}</td>
-                  <td className={styles.tableRows}>{element.sellType}</td>
-                  <td className={styles.tableRows}>{element.user}</td>
-                  <td className={styles.tableRows}>{element.checkTotal}</td>
-                  <td className={styles.tableRows}>
-                    {element.status === 'enabled' ? (
-                      <>
-                        <img
-                          className={styles.statusIcon}
-                          src={enabledIcon}
-                          alt="enabled-icon"
-                        />
-                        {element.status}
-                      </>
-                    ) : element.status === 'disabled' ? (
-                      <>
-                        <img
-                          className={styles.statusIcon}
-                          src={disabledIcon}
-                          alt="disabled-icon"
-                        />
-                        {element.status}
-                      </>
-                    ) : (
-                      <>
-                        <img
-                          className={styles.statusIcon}
-                          src={pendingIcon}
-                          alt="pending-icon"
-                        />
-                        {element.status}
-                      </>
-                    )}
-                  </td>
-
-                  <td className={styles.tableRows}>{element.createdAt}</td>
-                  <td className={styles.tableRows}>{element.paymentDate}</td>
-                  <td className={styles.buttonsContainer}>
-                    <button
-                      className={styles.actionButtonsFirstDetails}
-                      onClick={() => {
-                        notesDetails.openModal();
-                        setAccount(element);
-                      }}
-                    >
-                      <img src={eyeIcon} alt="open-eye-icon" />
-                    </button>
-                  </td>
-                </tr>
-              ))}
+              {totalBills?.map((element) => {
+                // Revisa si el estado del elemento no es 'disabled'
+                return element.status !== FINISHED_STATUS ? (
+                  <tr
+                    key={element.code}
+                    className={
+                      element.status === 'disabled'
+                        ? styles.rowDisabled
+                        : styles.release
+                    }
+                  >
+                    <td className={styles.tableRows}>{element?.code}</td>
+                    <td className={styles.tableRows}>{element?.sellType}</td>
+                    <td className={styles.tableRows}>{element?.user}</td>
+                    <td className={styles.tableRows}>{element?.checkTotal}</td>
+                    <td className={styles.tableRows}>
+                      {element.status === 'enabled' ? (
+                        <>
+                          <img
+                            className={styles.statusIcon}
+                            src={enabledIcon}
+                            alt="enabled-icon"
+                          />
+                          {element.status}
+                        </>
+                      ) : element.status === 'disabled' ? (
+                        <>
+                          <img
+                            className={styles.statusIcon}
+                            src={disabledIcon}
+                            alt="disabled-icon"
+                          />
+                          {element.status}
+                        </>
+                      ) : (
+                        <>
+                          <img
+                            className={styles.statusIcon}
+                            src={pendingIcon}
+                            alt="pending-icon"
+                          />
+                          {element.status}
+                        </>
+                      )}
+                    </td>
+                    <td className={styles.tableRows}>{element.createdAt}</td>
+                    <td className={styles.tableRows}>{element.paymentDate}</td>
+                    <td className={styles.buttonsContainer}>
+                      <button
+                        className={styles.actionButtonsFirstDetails}
+                        onClick={() => {
+                          notesDetails.openModal();
+                          setAccount(element);
+                        }}
+                      >
+                        <img src={eyeIcon} alt="open-eye-icon" />
+                      </button>
+                    </td>
+                  </tr>
+                ) : null; // Si el estado es 'disabled', no renderizar nada
+              })}
             </tbody>
           </table>
           <div className={styles.tableFooter}></div>
