@@ -35,7 +35,7 @@ const NOTIFICACIONES = "NOTIFICACIONES"
 
 
 
-export const POS_CONFIG = [
+export const POS_CONFIGS = [
     {
         name: "Inicio de sesión",
         path: icon_01,
