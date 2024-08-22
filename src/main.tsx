@@ -7,11 +7,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/landing/landing.tsx';
 import {
   Caja,
+  Config,
   CreateAccount,
   Home,
   LoginPage,
   Reportes,
-  VentaTypes,
 } from './components.tsx';
 import NotFound from './pages/notFound/notFound.tsx';
 import ProtectedRoute from './pages/protectedRoute/protectedRoute.tsx';
@@ -31,6 +31,8 @@ import Empleados from './components/main/usuarios/empleados/empleados.tsx';
 import Autorizaciones from './components/main/usuarios/autorizaciones/autorizaciones.tsx';
 import Asistencias from './components/main/usuarios/asistentes/asistencias.tsx';
 import GetStarted from './pages/getStarted.tsx/getStarted.tsx';
+import ConfigModal from './zstore/configModal.tsx';
+import ConfigPos from './components/main/configuracion/configPos/configPos.tsx';
 
 const router = createBrowserRouter([
   {
@@ -115,7 +117,9 @@ const router = createBrowserRouter([
             children: [
               {
                 path: 'sellTypes',
-                element: <VentaTypes />,
+                element: (
+                  <ConfigModal isOpen={true} onClose={() => {}}></ConfigModal>
+                ),
               },
             ],
           },
@@ -166,6 +170,20 @@ const router = createBrowserRouter([
               {
                 path: 'reports',
                 element: <Reportes />,
+              },
+            ],
+          },
+          {
+            path: 'config',
+            element: <Main />,
+            children: [
+              {
+                path: 'admin',
+                element: <Config />,
+              },
+              {
+                path: 'pos',
+                element: <ConfigPos />,
               },
             ],
           },

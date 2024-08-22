@@ -145,7 +145,7 @@ export default function Cuentas() {
                       </button>
                     </td>
                   </tr>
-                ) : null; // Si el estado es 'disabled', no renderizar nada
+                ) : null;
               })}
             </tbody>
           </table>

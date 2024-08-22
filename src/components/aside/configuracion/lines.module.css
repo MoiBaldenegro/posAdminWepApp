@@ -9,7 +9,7 @@
   margin-left: -20px;
 }
 .line {
-  height: 240px;
+  height: 80px;
   width: 2px;
 }
 .redLine {
@@ -25,7 +25,7 @@
     opacity: 0;
   }
   to {
-    max-height: 300px;
+    max-height: 300px; /* Ajusta la altura máxima deseada */
     opacity: 1;
   }
 }
