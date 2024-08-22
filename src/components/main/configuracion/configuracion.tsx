@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './configuracion.module.css';
-import { ADMIN_CONFIGS, SUCURSAL } from './const';
+import { ADMIN_CONFIGS } from './const';
 import BranchConfig from './branchConfig/branchConfig';
 import { useModal } from '@/hooks/useModals';
 
