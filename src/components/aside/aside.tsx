@@ -20,6 +20,7 @@ import HistorialDeVentas from './historialVentas/ventasMenu';
 import CajaChicaMenu from './cajaChica/cajaChica';
 import VentasMenu from './ventas/ventasMenu';
 import CatalogoMenu from './catalogo/catalogo';
+import ConfigMenu from './configuracion/configuracion';
 
 // Actions
 export default function Aside() {
@@ -40,6 +41,7 @@ export default function Aside() {
   const toggleTwo = main === 'ventas' ? 'lo que sea' : 'ventas';
   const toggleThree = main === 'usuariosMenu' ? 'lo que sea' : 'usuariosMenu';
   const toggleFive = main === 'cajaChica' ? 'lo que sea' : 'cajaChica';
+  const toggleSix = main === 'config' ? 'lo que sea' : 'config';
   const toggleFour =
     main === 'historialDeVentas' ? 'lo que sea' : 'historialDeVentas';
   const activeClassName = ({ isActive }) =>
@@ -90,8 +92,8 @@ export default function Aside() {
           style={path === 'ventas' ? { background: '#ebebeb41' } : {}}
         >
           <div className={styles.iconContainer}>
-            <img src={ventas} className={styles.icon} alt="ventas-icon" />
-            <span>Ventas del día</span>
+            <img src={clock} className={styles.icon} alt="ventas-icon" />
+            <span>Periodo operativo</span>
           </div>
           <img
             src={arrow}
@@ -111,7 +113,7 @@ export default function Aside() {
           className={activeClassName}
         >
           <div className={styles.iconContainer}>
-            <img src={clock} className={styles.icon} alt="ventas-icon" />
+            <img src={ventas} className={styles.icon} alt="ventas-icon" />
             <span>Historial de ventas</span>
           </div>
           <img src={arrow} className={styles.arrowIcon} alt="icon" />
@@ -121,7 +123,6 @@ export default function Aside() {
           redLinePosition={redLinePosition}
           handleBoard={handleBoard}
         />
-
         <NavLink
           to="till/till"
           className={activeClassName}
@@ -138,7 +139,6 @@ export default function Aside() {
           redLinePosition={redLinePosition}
           handleBoard={handleBoard}
         />
-
         <NavLink to="panels" className={activeClassName}>
           <div className={styles.iconContainer}>
             <img src={tableros} className={styles.icon} alt="tableros" />
@@ -181,12 +181,21 @@ export default function Aside() {
           <span className={styles.itemTittle}>Reportes</span>
           <div className={styles.separator}></div>
         </NavLink>
-        <NavLink to="sellTypes/sellTypes" className={activeClassName}>
+        <NavLink
+          to="config/admin"
+          className={activeClassName}
+          onClick={() => handleBoard(toggleSix, !active, 1)}
+        >
           <img src={config} className={styles.icon} alt="tipos-de-venta" />
           <span className={styles.itemTittle}>Configuracion</span>
           <div className={styles.separator}></div>
           <img src={arrow} className={styles.arrowIcon} alt="icon" />
         </NavLink>
+        <ConfigMenu
+          main={main}
+          redLinePosition={redLinePosition}
+          handleBoard={handleBoard}
+        />
       </div>
       <div className={styles.sectionTwo}>
         <Link className={styles.iconConfig} to={'config'}>

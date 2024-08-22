@@ -14,6 +14,7 @@
   > div {
     height: 100%;
     display: flex;
+    flex-wrap: wrap;
     gap: 16px;
     padding: 16px;
     background: linear-gradient(
@@ -22,6 +23,7 @@
       rgba(249, 249, 249, 0.03) 100%
     );
     border-radius: 16px;
+    overflow: auto;
   }
 }
 
