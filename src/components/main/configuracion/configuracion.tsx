@@ -34,7 +34,7 @@ export default function Config() {
             isOpen={$openModal.isOpen}
             onClose={$openModal.closeModal}
           >
-            {openModal}
+            Sucursal
           </BranchConfig>
         ) : null}
       </div>
