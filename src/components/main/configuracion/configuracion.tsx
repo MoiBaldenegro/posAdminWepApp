@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import styles from './configuracion.module.css';
-import { ADMIN_CONFIGS } from './const';
+import { ADMIN_CONFIGS, SUCURSAL } from './const';
 import BranchConfig from './branchConfig/branchConfig';
 import { useModal } from '@/hooks/useModals';
 
 export default function Config() {
   const [openModal, setOpenModal] = useState('');
-
   const $openModal = useModal(openModal);
 
   return (
@@ -29,7 +28,7 @@ export default function Config() {
           </div>
         ))}
 
-        {$openModal.isOpen && $openModal.modalName === openModal ? (
+        {$openModal.isOpen && $openModal.modalName === SUCURSAL ? (
           <BranchConfig
             isOpen={$openModal.isOpen}
             onClose={$openModal.closeModal}

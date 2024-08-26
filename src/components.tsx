@@ -4,7 +4,7 @@ import LoginPage from './pages/loginPage/loginPage';
 import CreateAccount from './pages/createAccount/createAccount';
 import Config from './components/main/configuracion/configuracion';
 import Dashboard from './components/main/dashboard/dashboard';
-import Ventas from './components/main/ventas/ventas';
+import Ventas from './components/main/periodoOperativo/ventas';
 import VentaTypes from './components/main/ventaTypes/ventaTypes';
 import Caja from './components/main/caja/caja';
 import Reservaciones from './components/main/reservaciones/reservaciones';

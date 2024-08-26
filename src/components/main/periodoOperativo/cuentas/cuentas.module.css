@@ -1,34 +1,33 @@
-.container{
+.container {
   height: 100%;
-  
 }
 
 /* container  buttons */
-.head{
+.head {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding:  16px 0px;
-  >h2{
+  padding: 16px 0px;
+  > h2 {
     font-size: 32px;
     font-weight: 200;
-
   }
-    >div{
-      display: flex;
+  > div {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
     height: 100%;
-
-      
-    }
+  }
 }
 
-
 /* main section */
-.mainSection{
-  background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
+.mainSection {
+  background: linear-gradient(
+    180deg,
+    rgba(249, 249, 249, 0.15) 0%,
+    rgba(249, 249, 249, 0.03) 100%
+  );
   min-height: 300px;
   overflow: auto;
   border-radius: 8px;
@@ -38,38 +37,38 @@
   gap: 16px;
   max-height: 100%;
 }
-.mainHead{
+.mainHead {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
-.mainHeadLeft{
+.mainHeadLeft {
   display: flex;
   align-items: center;
   gap: 10px;
 }
-.searchContainer{
+.searchContainer {
   display: flex;
   gap: 10px;
 }
-.showSelect{
+.showSelect {
   width: 92px;
   height: 40px;
   padding: 8px, 16px, 8px, 16px;
   border-radius: 8px;
-  background: #F9F9F91A;
+  background: #f9f9f91a;
   text-indent: 15px;
   color: #f9f9f980;
   border: none;
   outline: none;
-} 
-.showSelect{
-  transition: 500ms; 
+}
+.showSelect {
+  transition: 500ms;
 }
 
 .categoryButton,
 .sellTypeButton,
-.stateButton{
+.stateButton {
   width: 134px;
   height: 48px;
   padding: 12px, 16px, 12px, 16px;
@@ -80,23 +79,23 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: #F9F9F933;
+  background: #f9f9f933;
   color: #f9f9f9;
 }
-.stateButton{
+.stateButton {
   width: 110px;
 }
-.searchBarTable{
+.searchBarTable {
   width: 480px;
   height: 48px;
   padding: 12px, 16px, 12px, 16px;
   border-radius: 8px;
   gap: 10px;
-  background: #F9F9F91A;
+  background: #f9f9f91a;
   display: flex;
   align-items: center;
 }
-.searchBarTableInput{
+.searchBarTableInput {
   width: 100%;
   height: 80%;
   text-indent: 5ertpx;
@@ -105,32 +104,31 @@
   outline: none;
   color: #f9f9f9;
 }
-.searchIcon{
+.searchIcon {
   width: 17.05px;
   height: 17.06px;
   margin-left: 15px;
 }
 
-
 /* toggle Fullscreen */
 @media (max-height: 1050px) {
- .tableContainer{
-  height: 520px;
- }
+  .tableContainer {
+    height: 520px;
+  }
 
- .mainSection{
-  margin-bottom: -10px;
- }
+  .mainSection {
+    margin-bottom: -10px;
+  }
 }
 
-.table{
+.table {
   border-collapse: separate;
-    border-spacing: 0 1px;
-    background: #F9F9F980;
-    border-radius: 8px;
-    overflow: hidden; 
-    width: 100%;
-    max-height: 400px;     
+  border-spacing: 0 1px;
+  background: #f9f9f980;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 400px;
 }
 
 .tHeadCuenta,
@@ -140,52 +138,51 @@
 .tHeadStatus,
 .tHeadFechaDeCreacion,
 .tHeadFechaDePago,
-.tHeadDetalles{
-text-align: left;
-text-indent: 8px;
-background-color: #F9F9F966;
-width: 464px;
-height:56px;
-padding: 16px;
-gap: 8px;
+.tHeadDetalles {
+  text-align: left;
+  text-indent: 8px;
+  background-color: #f9f9f966;
+  width: 464px;
+  height: 56px;
+  padding: 16px;
+  gap: 8px;
 }
-.tHeadCuenta{
-width: 12%;
-}
-
-.tHeadTipoDeVenta{
-width: 12%;
-}
-.tHeadAbiertaPor{
-width: 12%;
-}
-.tHeadTotal{
-width: 12%;
-}
-.tHeadStatus{
-width: 12%;
-}
-.tHeadFechaDeCreacion{
-width: 20%;
-}
-.tHeadFechaDePago{
-width: 15%;
-
+.tHeadCuenta {
+  width: 12%;
 }
 
-.tableRows{
-text-indent: 25px;
+.tHeadTipoDeVenta {
+  width: 12%;
+}
+.tHeadAbiertaPor {
+  width: 12%;
+}
+.tHeadTotal {
+  width: 12%;
+}
+.tHeadStatus {
+  width: 12%;
+}
+.tHeadFechaDeCreacion {
+  width: 20%;
+}
+.tHeadFechaDePago {
+  width: 15%;
+}
+
+.tableRows {
+  text-indent: 25px;
 }
 .tableRows,
-.buttonsContainer{
-  border-top: 1px solid #F9F9F9;
+.buttonsContainer {
+  border-top: 1px solid #f9f9f9;
 }
 
 .actionButtonsSecond,
 .actionButtonsFirst,
 .actionButtonsFirstEnabled,
-.actionButtonsFirstDetails{
-position: relative;
+.actionButtonsFirstDetails {
+  position: relative;
   border: none;
   width: 32px;
   height: 32px;
@@ -193,39 +190,43 @@ position: relative;
   transition: 200ms;
   margin: 10px 16px;
 }
-.actionButtonsFirstDetails{
+.actionButtonsFirstDetails {
   background-color: #7c78784f;
 }
-.actionButtonsFirst{
+.actionButtonsFirst {
   background: rgba(116, 160, 22, 1);
   margin-left: 1.5vw;
 }
-.actionButtonsFirstEnabled{
+.actionButtonsFirstEnabled {
   background: rgba(249, 249, 249, 0.1);
   margin-left: 1.5vw;
 }
-.actionButtonsSecond{
+.actionButtonsSecond {
   background: var(--color-accent-red-primary);
 }
 .actionButtonsSecond:hover,
 .actionButtonsFirst:hover,
 .actionButtonsFirstEnabled:hover,
-.actionButtonsFirstDetails:hover{
- /*  opacity: .6; */
- filter:brightness(0.85);
+.actionButtonsFirstDetails:hover {
+  /*  opacity: .6; */
+  filter: brightness(0.85);
 }
-.statusIcon{
+.statusIcon {
   border-radius: 50px;
   margin: 3px 8px;
   box-shadow: -0px 0px 8px 1px #f9f9f94f;
   filter: brightness(1.1);
 }
-.mainSection{
+.mainSection {
   display: flex;
   flex-direction: column;
   align-items: end;
-  background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
-  width: 1,482px;
+  background: linear-gradient(
+    180deg,
+    rgba(249, 249, 249, 0.15) 0%,
+    rgba(249, 249, 249, 0.03) 100%
+  );
+  width: 1, 482px;
   min-height: 300px;
   max-height: 650 px;
   overflow: auto;
@@ -233,13 +234,12 @@ position: relative;
   border-radius: 8px;
 }
 .rowDisabled:hover,
-.release:hover{
-    background-color: #2e2c2d21;
+.release:hover {
+  background-color: #2e2c2d21;
 }
-.release{
+.release {
   transition: 300ms;
 }
-.hidden{
+.hidden {
   display: none;
 }
-

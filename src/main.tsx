@@ -21,9 +21,9 @@ import Complementos from './components/main/catalogo/complementos/complementos.t
 import Modificaciones from './components/main/catalogo/modificaciones/modificaciones.tsx';
 import MenusYRecetas from './components/main/catalogo/menusYRecetas/menusYRecetas.tsx';
 import Main from './components/main/main.tsx';
-import Cuentas from './components/main/ventas/cuentas/cuentas.tsx';
-import Pagos from './components/main/ventas/pagos/pagos.tsx';
-import Cancelaciones from './components/main/ventas/cancelaciones/cancelaciones.tsx';
+import Cuentas from './components/main/periodoOperativo/cuentas/cuentas.tsx';
+import Pagos from './components/main/periodoOperativo/pagos/pagos.tsx';
+import Cancelaciones from './components/main/periodoOperativo/cancelaciones/cancelaciones.tsx';
 import Turnos from './components/main/usuarios/turnos/turnos.tsx';
 import Departamentos from './components/main/usuarios/departamentos/departamentos.tsx';
 import Perfiles from './components/main/usuarios/perfiles/perfiles.tsx';
@@ -33,6 +33,12 @@ import Asistencias from './components/main/usuarios/asistentes/asistencias.tsx';
 import GetStarted from './pages/getStarted.tsx/getStarted.tsx';
 import ConfigModal from './zstore/configModal.tsx';
 import ConfigPos from './components/main/configuracion/configPos/configPos.tsx';
+import ReOpenings from './components/main/periodoOperativo/reaperturas/reaperturas.tsx';
+import Discounts from './components/main/periodoOperativo/descuentos/descuentos.tsx';
+import Courtesies from './components/main/periodoOperativo/Cortesias/cortesias.tsx';
+import CashierClose from './components/main/periodoOperativo/cierreDeCaja/cierreDeCaja.tsx';
+import Incoming from './components/main/periodoOperativo/IngresosEgresos/ingresos.tsx';
+import CashWithdrawals from './components/main/periodoOperativo/retirosParciales/retirosParciales.tsx';
 
 const router = createBrowserRouter([
   {
@@ -98,16 +104,32 @@ const router = createBrowserRouter([
                 element: <Pagos />,
               },
               {
-                path: 'reopened',
-                element: <Pagos />,
+                path: 'reopenings',
+                element: <ReOpenings />,
               },
               {
-                path: 'discount',
-                element: <Pagos />,
+                path: 'discounts',
+                element: <Discounts />,
               },
               {
                 path: 'cancellations',
                 element: <Cancelaciones />,
+              },
+              {
+                path: 'courtesies',
+                element: <Courtesies />,
+              },
+              {
+                path: 'close-till',
+                element: <CashierClose />,
+              },
+              {
+                path: 'incoming',
+                element: <Incoming />,
+              },
+              {
+                path: 'withdrawals',
+                element: <CashWithdrawals />,
               },
             ],
           },

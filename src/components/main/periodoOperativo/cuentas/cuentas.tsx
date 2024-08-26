@@ -1,6 +1,5 @@
 import styles from './cuentas.module.css';
 //hooks
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 //icons
@@ -10,7 +9,6 @@ import eyeIcon from '../../../../assets/public/openEye.svg';
 import enabledIcon from '../../../../assets/public/StatusIcon(enabled).svg';
 import disabledIcon from '../../../../assets/public/StatusIcon(disabled).svg';
 import pendingIcon from '../../../../assets/public/StatusIcon(pending).svg';
-import { getBillsAction } from '../../../../redux/actions/ventas/billsActions/getBillsAction';
 import NotesDetails from './details/details';
 import { useModal } from '../../../../hooks/useModals';
 import { FINISHED_STATUS } from '@/lib/status.lib';
@@ -18,7 +16,6 @@ import { useProcessOperationsStore } from '@/zstore/processOperations.store';
 
 export default function Cuentas() {
   // Local States
-  const [detailsActive, setDetailsActive] = useState(true);
   const [account, setAccount] = useState();
 
   // Modals
