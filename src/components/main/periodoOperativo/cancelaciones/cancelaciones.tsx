@@ -22,6 +22,7 @@ export default function Cancelaciones() {
   useEffect(() => {
     dispatch(getCancellationsAction());
   }, []);
+
   return (
     <div className={styles.container}>
       <div>
