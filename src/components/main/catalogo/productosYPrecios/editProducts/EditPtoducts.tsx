@@ -55,10 +55,7 @@ export default function ComponentName({
               <div className={styles.priceInput}>
                 <span>Restaurante</span>
                 <input type="text" placeholder="0.00" />
-                <label className={styles.switch}>
-                  <input type="checkbox" />
-                  <span className={styles.slider}></span>
-                </label>
+                
               </div>
               <div className={styles.priceInput}>
                 <span>Para llevar</span>

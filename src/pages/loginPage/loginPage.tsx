@@ -88,13 +88,16 @@ export default function LoginPage() {
         <div className={styles.formContainer}>
           <span className={styles.formTittle}>Iniciar sesión</span>
           <div className={styles.form}>
-            <input
-              name="email"
-              onChange={handleChange}
-              placeholder="correo@ejemplo.com"
-              type="text"
-              className={styles.inputForm}
-            />
+            <div className={styles.inputForm}>
+              <input
+                name="email"
+                onChange={handleChange}
+                placeholder="correo@ejemplo.com"
+                type="email"
+                required
+                className={styles.inputForm}
+              />
+            </div>
             <div className={styles.inputForm}>
               <input
                 name="password"
@@ -102,6 +105,7 @@ export default function LoginPage() {
                 placeholder="Contraseña"
                 type={passVisibility ? 'text' : 'password'}
                 required
+                minLength={6}
                 className={styles.inputFormIn}
               />
               <img

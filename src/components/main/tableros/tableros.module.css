@@ -1,0 +1,24 @@
+.contenedor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  > h1 {
+    font-size: 40px;
+    font-weight: 400;
+  }
+  > div {
+    height: 100%;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: linear-gradient(
+      180deg,
+      rgba(249, 249, 249, 0.15) 0%,
+      rgba(249, 249, 249, 0.03) 100%
+    );
+    border-radius: 16px;
+    overflow: auto;
+  }
+}

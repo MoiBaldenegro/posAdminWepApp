@@ -40,7 +40,7 @@ export default function VentasMenu({
           Pagos
         </NavLink>
         <NavLink
-          to="ventas/reopens"
+          to="ventas/reopenings"
           className={deployItemClass}
           onClick={() => handleBoard('ventas', true, 3)}
         >
@@ -73,6 +73,20 @@ export default function VentasMenu({
           onClick={() => handleBoard('ventas', true, 7)}
         >
           Cierre de caja
+        </NavLink>
+        <NavLink
+          to="ventas/incoming"
+          className={deployItemClass}
+          onClick={() => handleBoard('ventas', true, 8)}
+        >
+          Ingresos y egresos
+        </NavLink>
+        <NavLink
+          to="ventas/withdrawals"
+          className={deployItemClass}
+          onClick={() => handleBoard('ventas', true, 9)}
+        >
+          Retiros parciales
         </NavLink>
       </div>
     </div>

@@ -1,17 +1,17 @@
 .linesContainer,
-.containerDeployItemsClass{
+.containerDeployItemsClass {
   transition: 300ms;
   overflow: hidden;
   transition: max-height 0.3s ease-in;
   animation: slideDown 0.3s ease-in;
 }
-.linesContainer{
-    margin-left: -20px;
+.linesContainer {
+  margin-left: -20px;
 }
-.line{
-  height: 350px;
+.line {
+  height: 455px;
 }
-.redLine{
+.redLine {
   margin-left: -4px;
   position: absolute;
   transition: 400ms;

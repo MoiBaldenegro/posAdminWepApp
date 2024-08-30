@@ -9,20 +9,97 @@
   align-items: center;
   z-index: 1000;
   transition: 1s;
-  background: rgba(0, 0, 0, 0.616);
+  background: rgba(0, 0, 0, 0.700);
 
-  > div {
+  /*Modal*/
+  > section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 32px;
+    border: none;
     position: relative;
-    width: 924px;
-    height: 464px;
-    padding: 32px;
+    background: var(--color-modal-gray);
     border-radius: 32px;
-    background: var(--color-primary);
+    padding: 64px;
     color: var(--color-white);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+   
+    > h4{
+      font-size: 28px;
+      font-weight: 400;
+      width: 100%;
+    }
+
+    /*Columnas*/
+    > div{
+      width: 100%;
+      display: flex;
+      justify-content: right;
+      gap: 32px;
+
+      > div > div:last-child{
+        height: 344px;
+      }
+
+      > div:last-child > div:last-child > div{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #F9F9F91A;
+        border: 2px dashed #F9F9F933;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 400;
+      }
+
+      /*Filas*/
+      > div{
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+        /*Seccion*/
+        > div{
+          display: flex;
+          width: 452px;
+          flex-direction: column;
+          gap: 16px;
+          padding: 16px;
+          background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);        
+          border-radius: 16px;
+
+          > strong{
+            font-weight: 300;
+          }
+
+          /*2 campos*/
+          > div{ 
+            display: flex;
+            gap: 16px;
+          }
+
+          & input{
+            width: 100%;
+            outline: none;
+            background: #F9F9F91A;
+            font-size: 16px;
+            font-weight: 400;
+            color: #F9F9F9;
+            caret-color: #F9F9F9;
+            border-radius: 8px;
+            padding: 12px 16px 12px 16px;
+          }
+          & input::placeholder{
+            color: #F9F9F980;
+          }
+        }
+      }
+      > button{
+        background: #99000F;
+      }
+    }
   }
 }
