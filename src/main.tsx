@@ -49,6 +49,7 @@ import HistoricoIngresosEgresos from './components/main/historialDeVentas/histor
 import HistoricoDeRetiros from './components/main/historialDeVentas/historicoDeRetiros/historicoDeRetiros.tsx';
 import HistoricoDePeriodosOperativos from './components/main/historialDeVentas/historicoDePeriodosOpertivos/historicoDePeriodosOperativos.tsx';
 import HistoricoDeCortesias from './components/main/historialDeVentas/historicoDeCortesias/historicoDeCortesias.tsx';
+import HistoricoDeReaperturas from './components/main/historialDeVentas/historicoDeReaperturas/historicoDeReaperturas.tsx';
 
 const router = createBrowserRouter([
   {
@@ -167,7 +168,7 @@ const router = createBrowserRouter([
               },
               {
                 path: 'reopenings',
-                element: <HistoricoDePagos />,
+                element: <HistoricoDeReaperturas />,
               },
               {
                 path: 'discounts',

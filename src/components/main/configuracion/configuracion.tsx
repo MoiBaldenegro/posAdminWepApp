@@ -1,8 +1,17 @@
 import { useState } from 'react';
 import styles from './configuracion.module.css';
-import { ADMIN_CONFIGS, SUCURSAL } from './const';
+import {
+  ADMIN_CONFIGS,
+  CAJA_CHICA,
+  NOTIFICACIONES,
+  PREFERENCIAS,
+  SUCURSAL,
+} from './const';
 import BranchConfig from './branchConfig/branchConfig';
 import { useModal } from '@/hooks/useModals';
+import CashFloatConfig from './cashFLoatConfig/cashFLoatConfig';
+import PreferencesConfig from './preferencesConfig/preferencesConfig';
+import NotificationsConfig from './notificationsConfig/notificationsConfig';
 
 export default function Config() {
   const [openModal, setOpenModal] = useState('');
@@ -35,6 +44,27 @@ export default function Config() {
           >
             Sucursal
           </BranchConfig>
+        ) : $openModal.isOpen && $openModal.modalName === CAJA_CHICA ? (
+          <CashFloatConfig
+            isOpen={$openModal.isOpen}
+            onClose={$openModal.closeModal}
+          >
+            Caja chica
+          </CashFloatConfig>
+        ) : $openModal.isOpen && $openModal.modalName === PREFERENCIAS ? (
+          <PreferencesConfig
+            isOpen={$openModal.isOpen}
+            onClose={$openModal.closeModal}
+          >
+            Preferencias
+          </PreferencesConfig>
+        ) : $openModal.isOpen && $openModal.modalName === NOTIFICACIONES ? (
+          <NotificationsConfig
+            isOpen={$openModal.isOpen}
+            onClose={$openModal.closeModal}
+          >
+            Notificaciones
+          </NotificationsConfig>
         ) : null}
       </div>
     </div>

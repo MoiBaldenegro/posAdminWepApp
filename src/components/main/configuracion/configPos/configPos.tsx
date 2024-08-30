@@ -3,6 +3,8 @@ import styles from './configPos.module.css';
 import { NOTIFICACIONES, POS_CONFIGS } from './const';
 import { useModal } from '@/hooks/useModals';
 import NotificationsConfig from './notificationsConfig/notificationsConfig';
+import { CAJA_CHICA } from '../const';
+import CashFloatConfig from '../cashFLoatConfig/cashFLoatConfig';
 
 export default function ConfigPos() {
   const [openModal, setOpenModal] = useState('');
@@ -34,6 +36,13 @@ export default function ConfigPos() {
           >
             Notificaciones
           </NotificationsConfig>
+        ) : $openModal.isOpen && $openModal.modalName === CAJA_CHICA ? (
+          <CashFloatConfig
+            isOpen={$openModal.isOpen}
+            onClose={$openModal.closeModal}
+          >
+            Caja chica
+          </CashFloatConfig>
         ) : null}
       </div>
     </div>

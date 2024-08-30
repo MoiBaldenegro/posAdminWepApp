@@ -112,12 +112,16 @@
   height: 446px;
   padding: 56px, 112px, 56px, 112px;
   border-radius: 56px;
-  gap: 32px;
+  gap: 16px;
   background: linear-gradient(
     180deg,
     rgba(249, 249, 249, 0.15) 0%,
     rgba(249, 249, 249, 0.03) 100%
   );
+
+  img[alt='tomate-logo'] {
+    width: 650px;
+  }
 }
 .formContainer {
   width: 800px;
