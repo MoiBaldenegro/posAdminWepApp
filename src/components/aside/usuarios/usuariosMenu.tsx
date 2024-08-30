@@ -33,38 +33,32 @@ export default function UsuariosMenu({
         >
           Turnos
         </NavLink>
-        <NavLink
-          to="usuarios/departaments"
-          className={deployItemClass}
-          onClick={() => handleBoard('usuariosMenu', true, 2)}
-        >
-          Departamentos
-        </NavLink>
+
         <NavLink
           to="usuarios/profiles"
           className={deployItemClass}
-          onClick={() => handleBoard('usuariosMenu', true, 3)}
+          onClick={() => handleBoard('usuariosMenu', true, 2)}
         >
           Perfiles
         </NavLink>
         <NavLink
           to="usuarios/employees"
           className={deployItemClass}
-          onClick={() => handleBoard('usuariosMenu', true, 4)}
+          onClick={() => handleBoard('usuariosMenu', true, 3)}
         >
           Empleados
         </NavLink>
         <NavLink
           to="usuarios/authorizations"
           className={deployItemClass}
-          onClick={() => handleBoard('usuariosMenu', true, 5)}
+          onClick={() => handleBoard('usuariosMenu', true, 4)}
         >
           Autorizaciones
         </NavLink>
         <NavLink
           to="usuarios/assistants"
           className={deployItemClass}
-          onClick={() => handleBoard('usuariosMenu', true, 6)}
+          onClick={() => handleBoard('usuariosMenu', true, 5)}
         >
           Asistencias
         </NavLink>

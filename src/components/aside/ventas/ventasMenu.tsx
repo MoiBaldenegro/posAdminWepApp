@@ -81,6 +81,13 @@ export default function VentasMenu({
         >
           Ingresos y egresos
         </NavLink>
+        <NavLink
+          to="ventas/withdrawals"
+          className={deployItemClass}
+          onClick={() => handleBoard('ventas', true, 9)}
+        >
+          Retiros parciales
+        </NavLink>
       </div>
     </div>
   );

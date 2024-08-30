@@ -6,12 +6,14 @@ import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/landing/landing.tsx';
 import {
-  Caja,
   Config,
   CreateAccount,
+  Dashboard,
   Home,
   LoginPage,
+  Mesas,
   Reportes,
+  Tableros,
 } from './components.tsx';
 import NotFound from './pages/notFound/notFound.tsx';
 import ProtectedRoute from './pages/protectedRoute/protectedRoute.tsx';
@@ -31,7 +33,6 @@ import Empleados from './components/main/usuarios/empleados/empleados.tsx';
 import Autorizaciones from './components/main/usuarios/autorizaciones/autorizaciones.tsx';
 import Asistencias from './components/main/usuarios/asistentes/asistencias.tsx';
 import GetStarted from './pages/getStarted.tsx/getStarted.tsx';
-import ConfigModal from './zstore/configModal.tsx';
 import ConfigPos from './components/main/configuracion/configPos/configPos.tsx';
 import ReOpenings from './components/main/periodoOperativo/reaperturas/reaperturas.tsx';
 import Discounts from './components/main/periodoOperativo/descuentos/descuentos.tsx';
@@ -39,6 +40,15 @@ import Courtesies from './components/main/periodoOperativo/Cortesias/cortesias.t
 import CashierClose from './components/main/periodoOperativo/cierreDeCaja/cierreDeCaja.tsx';
 import Incoming from './components/main/periodoOperativo/IngresosEgresos/ingresos.tsx';
 import CashWithdrawals from './components/main/periodoOperativo/retirosParciales/retirosParciales.tsx';
+import HistoricoDeVentas from './components/main/historialDeVentas/historicoDeCuentas/historicoDeVentas.tsx';
+import HistoricoDePagos from './components/main/historialDeVentas/historicoDePagos/historicoDePagos.tsx';
+import HistoricoDeDescuentos from './components/main/historialDeVentas/historicoDeDescuentos/historicoDeDescuentos.tsx';
+import HistoricoDeCancelaciones from './components/main/historialDeVentas/historicoDeCancelaciones/historicoDeCancelaciones.tsx';
+import HistoricoDeCierresDeCaja from './components/main/historialDeVentas/historicoDeCierresDeCaja/historicoDeCierresDeCaja.tsx';
+import HistoricoIngresosEgresos from './components/main/historialDeVentas/historicoIngresosEgresos/historicoIngresosEgresos.tsx';
+import HistoricoDeRetiros from './components/main/historialDeVentas/historicoDeRetiros/historicoDeRetiros.tsx';
+import HistoricoDePeriodosOperativos from './components/main/historialDeVentas/historicoDePeriodosOpertivos/historicoDePeriodosOperativos.tsx';
+import HistoricoDeCortesias from './components/main/historialDeVentas/historicoDeCortesias/historicoDeCortesias.tsx';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +75,16 @@ const router = createBrowserRouter([
         path: 'home',
         element: <Home />,
         children: [
+          {
+            path: 'dashboard',
+            element: <Main />,
+            children: [
+              {
+                path: 'index',
+                element: <Dashboard />,
+              },
+            ],
+          },
           {
             path: 'catalogo',
             element: <Main />,
@@ -134,24 +154,58 @@ const router = createBrowserRouter([
             ],
           },
           {
-            path: 'sellTypes',
+            path: 'history',
             element: <Main />,
             children: [
               {
-                path: 'sellTypes',
-                element: (
-                  <ConfigModal isOpen={true} onClose={() => {}}></ConfigModal>
-                ),
+                path: 'sells',
+                element: <HistoricoDeVentas />,
+              },
+              {
+                path: 'payments',
+                element: <HistoricoDePagos />,
+              },
+              {
+                path: 'reopenings',
+                element: <HistoricoDePagos />,
+              },
+              {
+                path: 'discounts',
+                element: <HistoricoDeDescuentos />,
+              },
+              {
+                path: 'cancellations',
+                element: <HistoricoDeCancelaciones />,
+              },
+              {
+                path: 'courtesies',
+                element: <HistoricoDeCortesias />,
+              },
+              {
+                path: 'close-till',
+                element: <HistoricoDeCierresDeCaja />,
+              },
+              {
+                path: 'incoming',
+                element: <HistoricoIngresosEgresos />,
+              },
+              {
+                path: 'withdrawals',
+                element: <HistoricoDeRetiros />,
+              },
+              {
+                path: 'periods',
+                element: <HistoricoDePeriodosOperativos />,
               },
             ],
           },
           {
-            path: 'till',
+            path: 'tables',
             element: <Main />,
             children: [
               {
-                path: 'till',
-                element: <Caja />,
+                path: 'index',
+                element: <Mesas />,
               },
             ],
           },
@@ -192,6 +246,16 @@ const router = createBrowserRouter([
               {
                 path: 'reports',
                 element: <Reportes />,
+              },
+            ],
+          },
+          {
+            path: 'panels',
+            element: <Main />,
+            children: [
+              {
+                path: 'index',
+                element: <Tableros />,
               },
             ],
           },

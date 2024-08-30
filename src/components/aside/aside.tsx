@@ -4,7 +4,6 @@ import dashboard from '../../assets/dashboard/dashboard.svg';
 import arrow from '../../assets/dashboard/arrow.svg';
 import catalogo from '../../assets/dashboard/catalogo.svg';
 import ventas from '../../assets/dashboard/ventas.svg';
-import caja from '../../assets/dashboard/caja.svg';
 import reservaciones from '../../assets/dashboard/reservaciones.svg';
 import tableros from '../../assets/dashboard/tableros.svg';
 import usuarios from '../../assets/dashboard/usuarios.svg';
@@ -17,7 +16,6 @@ import styles from '../aside/aside.module.css';
 import UsuariosMenu from './usuarios/usuariosMenu';
 import phones from '../../assets/public/phones.svg';
 import HistorialDeVentas from './historialVentas/ventasMenu';
-import CajaChicaMenu from './cajaChica/cajaChica';
 import VentasMenu from './ventas/ventasMenu';
 import CatalogoMenu from './catalogo/catalogo';
 import ConfigMenu from './configuracion/configuracion';
@@ -40,7 +38,6 @@ export default function Aside() {
   const toggle = main === 'catalogo' ? 'lo que sea' : 'catalogo';
   const toggleTwo = main === 'ventas' ? 'lo que sea' : 'ventas';
   const toggleThree = main === 'usuariosMenu' ? 'lo que sea' : 'usuariosMenu';
-  const toggleFive = main === 'cajaChica' ? 'lo que sea' : 'cajaChica';
   const toggleSix = main === 'config' ? 'lo que sea' : 'config';
   const toggleFour =
     main === 'historialDeVentas' ? 'lo que sea' : 'historialDeVentas';
@@ -55,7 +52,7 @@ export default function Aside() {
     <aside className={styles.aside}>
       <div className={styles.sectionOne}>
         <NavLink
-          to="dashboard"
+          to="dashboard/index"
           className={activeClassName}
           style={path === 'dashboard' ? { background: '#ebebeb41' } : {}}
         >
@@ -109,7 +106,7 @@ export default function Aside() {
         />
         <NavLink
           onClick={() => handleBoard(toggleFour, !active, 1)}
-          to="historialDeVentas/bills"
+          to="history/sells"
           className={activeClassName}
         >
           <div className={styles.iconContainer}>
@@ -123,23 +120,8 @@ export default function Aside() {
           redLinePosition={redLinePosition}
           handleBoard={handleBoard}
         />
-        <NavLink
-          to="till/till"
-          className={activeClassName}
-          onClick={() => handleBoard(toggleFive, !active, 1)}
-        >
-          <div className={styles.iconContainer}>
-            <img src={caja} className={styles.icon} alt="caja" />
-            <span>Caja chica</span>
-          </div>
-          <img src={arrow} className={styles.arrowIcon} alt="icon" />
-        </NavLink>
-        <CajaChicaMenu
-          main={main}
-          redLinePosition={redLinePosition}
-          handleBoard={handleBoard}
-        />
-        <NavLink to="panels" className={activeClassName}>
+
+        <NavLink to="panels/index" className={activeClassName}>
           <div className={styles.iconContainer}>
             <img src={tableros} className={styles.icon} alt="tableros" />
             <span>Tableros</span>
@@ -161,7 +143,7 @@ export default function Aside() {
           redLinePosition={redLinePosition}
           handleBoard={handleBoard}
         />
-        <NavLink to="tables" className={activeClassName}>
+        <NavLink to="tables/index" className={activeClassName}>
           <div className={styles.iconContainer}>
             <img src={mesas} className={styles.icon} alt="mesas" />
             <span>Mesas</span>
