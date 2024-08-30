@@ -6,7 +6,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 // icons
 import arrow from '../../assets/loginPage/arrow.svg';
-import tomateLogo from '../../assets/loginPage/tomateLogo.svg';
+import tomateLogo from '@/assets/header/tomateLogo.svg';
 import footerRight from '../../assets/loginPage/footerImgRight.svg';
 import eyeClose from '../../assets/loginPage/eyeClose.svg';
 import eyeOpen from '../../assets/loginPage/eyeOpen.svg';
@@ -83,7 +83,7 @@ export default function LoginPage() {
       <main className={styles.centerContainer}>
         <div className={styles.logoContainer}>
           <span className={styles.bienvenido}>Bienvenido</span>
-          <img src={tomateLogo} alt="" />
+          <img src={tomateLogo} alt="tomate-logo" />
         </div>
         <div className={styles.formContainer}>
           <span className={styles.formTittle}>Iniciar sesión</span>

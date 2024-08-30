@@ -4,9 +4,9 @@ import icon_03 from "@/assets/public/adminConfig_03.svg"
 import icon_04 from "@/assets/public/adminConfig_04.svg"
 
 export const SUCURSAL = "SUCURSAL"
-const CAJA_CHICA = "CAJA_CHICA"
-const PREFERENCIAS = "PREFERENCIAS"
-const NOTIFICACIONES = "NOTIFICACIONES"
+export const CAJA_CHICA = "CAJA_CHICA"
+export const PREFERENCIAS = "PREFERENCIAS"
+export const NOTIFICACIONES = "NOTIFICACIONES"
 
 export const ADMIN_CONFIGS = [
     {
