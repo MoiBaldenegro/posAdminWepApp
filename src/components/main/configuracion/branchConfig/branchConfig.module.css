@@ -11,13 +11,15 @@
   transition: 1s;
   background: rgba(0, 0, 0, 0.700);
 
+  /*Modal*/
   > section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 32px;
-    position: relative; /*para que es?*/
-    background: #353639;
+    border: none;
+    position: relative;
+    background: var(--color-modal-gray);
     border-radius: 32px;
     padding: 64px;
     color: var(--color-white);
@@ -29,6 +31,7 @@
       width: 100%;
     }
 
+    /*Columnas*/
     > div{
       width: 100%;
       display: flex;
@@ -52,11 +55,13 @@
         font-weight: 400;
       }
 
+      /*Filas*/
       > div{
         display: flex;
         flex-direction: column;
         gap: 32px;
 
+        /*Seccion*/
         > div{
           display: flex;
           width: 452px;
@@ -70,7 +75,8 @@
             font-weight: 300;
           }
 
-          > div{
+          /*2 campos*/
+          > div{ 
             display: flex;
             gap: 16px;
           }

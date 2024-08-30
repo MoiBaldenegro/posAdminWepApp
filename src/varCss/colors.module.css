@@ -11,5 +11,7 @@
     --color-accent-darkmode: #FF5733;
     --color-gradient: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
     --standard-shadow: 5px 5px 10px 0px #0000001A;
+    --color-modal-gray: #353639;
+    --color-modal-light-gray: #f9f9f91A;
     
   } 
