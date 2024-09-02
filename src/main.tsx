@@ -5,6 +5,7 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/landing/landing.tsx';
+// update
 import {
   Config,
   CreateAccount,
