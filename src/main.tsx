@@ -5,6 +5,7 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './pages/landing/landing.tsx';
+// update
 import {
   Config,
   CreateAccount,
@@ -14,6 +15,7 @@ import {
   Mesas,
   Reportes,
   Tableros,
+  VentaTypes,
 } from './components.tsx';
 import NotFound from './pages/notFound/notFound.tsx';
 import ProtectedRoute from './pages/protectedRoute/protectedRoute.tsx';
@@ -50,6 +52,8 @@ import HistoricoDeRetiros from './components/main/historialDeVentas/historicoDeR
 import HistoricoDePeriodosOperativos from './components/main/historialDeVentas/historicoDePeriodosOpertivos/historicoDePeriodosOperativos.tsx';
 import HistoricoDeCortesias from './components/main/historialDeVentas/historicoDeCortesias/historicoDeCortesias.tsx';
 import HistoricoDeReaperturas from './components/main/historialDeVentas/historicoDeReaperturas/historicoDeReaperturas.tsx';
+import Groups from './components/main/catalogo/groups/groups.tsx';
+import { SellTypes } from './lib/autorizations.lib.ts';
 
 const router = createBrowserRouter([
   {
@@ -107,8 +111,12 @@ const router = createBrowserRouter([
                 element: <Modificaciones />,
               },
               {
-                path: 'menus&recipes',
-                element: <MenusYRecetas />,
+                path: 'groups',
+                element: <Groups />,
+              },
+              {
+                path: 'sell-types',
+                element: <VentaTypes />,
               },
             ],
           },

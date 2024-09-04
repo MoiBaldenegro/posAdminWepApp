@@ -7,9 +7,18 @@ import eyeIcon from '../../../../assets/public/openEye.svg';
 import enabledIcon from '../../../../assets/public/StatusIcon(enabled).svg';
 import disabledIcon from '../../../../assets/public/StatusIcon(disabled).svg';
 import pendingIcon from '../../../../assets/public/StatusIcon(pending).svg';
+import { usePaymentsStore } from '@/zstore/payments.store';
+import { useEffect } from 'react';
 
 export default function HistoricoDePagos() {
-  const totalBills: any = []; // provisional
+  const paymentsArray = usePaymentsStore((state) => state.payments);
+  const getCurrentPayments = usePaymentsStore(
+    (state) => state.getCurrentPayments,
+  );
+
+  useEffect(() => {
+    getCurrentPayments();
+  }, []);
   return (
     <div className={styles.container}>
       <div>
@@ -49,8 +58,8 @@ export default function HistoricoDePagos() {
           <table className={styles.table}>
             <thead>
               <tr>
-                <th className={styles.tHeadCuenta}>Cuenta</th>
-                <th className={styles.tHeadTipoDeVenta}>Tipo de venta</th>
+                <th className={styles.tHeadCuenta}>Folio</th>
+                <th className={styles.tHeadTipoDeVenta}>Nota</th>
                 <th className={styles.tHeadAbiertaPor}>Abierta por</th>
                 <th className={styles.tHeadTotal}> Total</th>
                 <th className={styles.tHeadStatus}>Status</th>
@@ -62,18 +71,11 @@ export default function HistoricoDePagos() {
               </tr>
             </thead>
             <tbody>
-              {totalBills?.map((element) => {
+              {paymentsArray?.map((element) => {
                 // Revisa si el estado del elemento no es 'disabled'
-                return element.status !== FINISHED_STATUS ? (
-                  <tr
-                    key={element.code}
-                    className={
-                      element.status === 'disabled'
-                        ? styles.rowDisabled
-                        : styles.release
-                    }
-                  >
-                    <td className={styles.tableRows}>{element?.code}</td>
+                return element ? (
+                  <tr key={element.paymentCode} className={styles.release}>
+                    <td className={styles.tableRows}>{element?.paymentCode}</td>
                     <td className={styles.tableRows}>{element?.sellType}</td>
                     <td className={styles.tableRows}>{element?.user}</td>
                     <td className={styles.tableRows}>{element?.checkTotal}</td>

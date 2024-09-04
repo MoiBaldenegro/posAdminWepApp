@@ -88,7 +88,7 @@ export default function Autorizaciones() {
           Guardar
         </button>
       </h1>
-      <section className={styles.section}>
+      <section>
         {select ? (
           <div className={styles.containerOne}>
             <div className={styles.tittles}>
@@ -141,118 +141,114 @@ export default function Autorizaciones() {
             </div>
           </div>
         )}
-        <section className={styles.sectionTwo}>
-          <div className={styles.inContainerOne}>
-            <h2 className={styles.tittleOne}>Autorización por módulos</h2>
-            <div className={styles.inListOne}>
-              {appsAuth.map((element) => (
-                <div
-                  style={
-                    settingApp === element.name
-                      ? { background: '#ffffff1a' }
-                      : {}
-                  }
-                  className={styles.inputOne}
-                  onClick={() => {
-                    setSettingApp(element.name);
-                    setSettingModule('');
-                  }}
-                >
-                  <label className={styles.label}>{element.name}</label>
+        <div className={styles.inContainerOne}>
+          <h2 className={styles.tittleOne}>Autorización por módulos</h2>
+          <div className={styles.inListOne}>
+            {appsAuth.map((element) => (
+              <div
+                style={
+                  settingApp === element.name ? { background: '#ffffff1a' } : {}
+                }
+                className={styles.inputOne}
+                onClick={() => {
+                  setSettingApp(element.name);
+                  setSettingModule('');
+                }}
+              >
+                <label className={styles.label}>{element.name}</label>
+              </div>
+            ))}
+          </div>
+          <div className={styles.inListTwo}>
+            {settingApp === ADMIN_APP
+              ? adminModules.map((element) => (
+                  <div
+                    onClick={() => {
+                      setSettingModule(element.name);
+                    }}
+                    className={styles.inputOne}
+                    key={element.name}
+                    style={
+                      settingModule === element.name
+                        ? { background: '#ffffff1a' }
+                        : {}
+                    }
+                  >
+                    <label className={styles.label}>{element.name}</label>
+                  </div>
+                ))
+              : settingApp === POS_APP
+              ? SellTypes.map((element) => (
+                  <div
+                    onClick={() => {
+                      setSettingModule(element.value);
+                    }}
+                    className={styles.inputOne}
+                    key={element.name}
+                    style={
+                      settingModule === element.value
+                        ? { background: '#ffffff1a' }
+                        : {}
+                    }
+                  >
+                    <label className={styles.label}>{element.name}</label>
+                  </div>
+                ))
+              : null}
+          </div>
+        </div>
+        <div className={styles.inContainerTwo}>
+          <div className={styles.head}>
+            <h2 className={styles.tittleTwo}>Autorización por acciones</h2>
+            <button className={styles.allButton}>Seleccionar todo</button>
+          </div>
+          {settingModule === RESTAURANT && settingApp === POS_APP ? (
+            <div className={styles.inListThree}>
+              {actionsAuthsRestaurant.map((element) => (
+                <div className={styles.inputTwo}>
+                  <label
+                    className={styles.labelTwo}
+                    onClick={() => {
+                      const restaurantSellTypes =
+                        sendUserAuthData?.pos?.sellTypes?.restaurant || [];
+
+                      if (restaurantSellTypes.includes(element.value)) {
+                        setAddAuthPos({
+                          ...addAuthPos,
+                          restaurant: restaurantSellTypes.filter(
+                            (item) => item !== element.value,
+                          ),
+                        });
+                      } else {
+                        setAddAuthPos({
+                          ...addAuthPos,
+                          restaurant: addAuthPos.restaurant
+                            ? [...addAuthPos.restaurant, element.value]
+                            : [element.value],
+                        });
+                      }
+
+                      console.log(sendUserAuthData);
+                    }}
+                  >
+                    <input
+                      type="checkbox"
+                      className={styles.check}
+                      checked={
+                        sendUserAuthData?.pos?.sellTypes?.restaurant?.includes(
+                          element.value,
+                        ) ?? false
+                      }
+                    />
+                    {element.name}
+                  </label>
                 </div>
               ))}
             </div>
-            <div className={styles.inListTwo}>
-              {settingApp === ADMIN_APP
-                ? adminModules.map((element) => (
-                    <div
-                      onClick={() => {
-                        setSettingModule(element.name);
-                      }}
-                      className={styles.inputOne}
-                      key={element.name}
-                      style={
-                        settingModule === element.name
-                          ? { background: '#ffffff1a' }
-                          : {}
-                      }
-                    >
-                      <label className={styles.label}>{element.name}</label>
-                    </div>
-                  ))
-                : settingApp === POS_APP
-                ? SellTypes.map((element) => (
-                    <div
-                      onClick={() => {
-                        setSettingModule(element.value);
-                      }}
-                      className={styles.inputOne}
-                      key={element.name}
-                      style={
-                        settingModule === element.value
-                          ? { background: '#ffffff1a' }
-                          : {}
-                      }
-                    >
-                      <label className={styles.label}>{element.name}</label>
-                    </div>
-                  ))
-                : null}
-            </div>
-          </div>
-          <div className={styles.inContainerTwo}>
-            <div className={styles.head}>
-              <h2 className={styles.tittleTwo}>Autorización por acciones</h2>
-              <button className={styles.allButton}>Seleccionar todo</button>
-            </div>
-            {settingModule === RESTAURANT && settingApp === POS_APP ? (
-              <div className={styles.inListThree}>
-                {actionsAuthsRestaurant.map((element) => (
-                  <div className={styles.inputTwo}>
-                    <label
-                      className={styles.labelTwo}
-                      onClick={() => {
-                        const restaurantSellTypes =
-                          sendUserAuthData?.pos?.sellTypes?.restaurant || [];
-
-                        if (restaurantSellTypes.includes(element.value)) {
-                          setAddAuthPos({
-                            ...addAuthPos,
-                            restaurant: restaurantSellTypes.filter(
-                              (item) => item !== element.value,
-                            ),
-                          });
-                        } else {
-                          setAddAuthPos({
-                            ...addAuthPos,
-                            restaurant: addAuthPos.restaurant
-                              ? [...addAuthPos.restaurant, element.value]
-                              : [element.value],
-                          });
-                        }
-
-                        console.log(sendUserAuthData);
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        className={styles.check}
-                        checked={
-                          sendUserAuthData?.pos?.sellTypes?.restaurant?.includes(
-                            element.value,
-                          ) ?? false
-                        }
-                      />
-                      {element.name}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className={styles.inListThreeActions}></div>
-            )}
-          </div>
-        </section>
+          ) : (
+            <div className={styles.inListThreeActions}></div>
+          )}
+        </div>
       </section>
     </div>
   );
