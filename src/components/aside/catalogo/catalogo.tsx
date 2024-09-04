@@ -36,7 +36,7 @@ export default function CatalogoMenu({
           className={deployItemClass}
           onClick={() => handleBoard(setMain, true, 2)}
         >
-          Productos y precios
+          Productos
         </NavLink>
         <NavLink
           to="catalogo/dishes"
@@ -53,11 +53,18 @@ export default function CatalogoMenu({
           Modificadores
         </NavLink>
         <NavLink
-          to="catalogo/menus&recipes"
+          to="catalogo/groups"
           className={deployItemClass}
           onClick={() => handleBoard(setMain, true, 5)}
         >
-          Recetas
+          Grupos
+        </NavLink>
+        <NavLink
+          to="catalogo/sell-types"
+          className={deployItemClass}
+          onClick={() => handleBoard(setMain, true, 6)}
+        >
+          Tipos de venta
         </NavLink>
       </div>
     </div>

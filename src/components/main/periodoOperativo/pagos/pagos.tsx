@@ -1,18 +1,25 @@
 import styles from './pagos.module.css';
 // Hooks
-import { useDispatch, useSelector } from 'react-redux';
 //icons
 import searchIcon from '../../../../assets/public/searchIcon.svg';
 import filterIcon from '../../../../assets/public/filterIcon.svg';
-import { useEffect } from 'react';
-import { getPaymentsAction } from '../../../../redux/actions/ventas/paymentsActions/getPayments';
+import editIcon from '../../../../assets/public/editPencil.svg';
+import { useEffect, useState } from 'react';
+import { PAYMENTS_TABLE_HEADERS } from './headers';
+import { usePaymentsStore } from '@/zstore/payments.store';
+import { EDIT_PAYMENT_MODAL } from './const';
+import { useModal } from '@/hooks/useModals';
+import EditPaymentModal from './editPayment/editPayment';
 
 export default function Pagos() {
-  const dispatch = useDispatch();
-  const { allPayments } = useSelector((state) => state.payments);
-
+  const currentPayment = usePaymentsStore((state) => state.payments);
+  const getCurrentPayments = usePaymentsStore(
+    (state) => state.getCurrentPayments,
+  );
+  const [selectedPayment, setSelectedPayment] = useState();
+  const editPaymentModal = useModal(EDIT_PAYMENT_MODAL);
   useEffect(() => {
-    dispatch(getPaymentsAction());
+    getCurrentPayments();
   }, []);
   return (
     <div className={styles.container}>
@@ -49,25 +56,16 @@ export default function Pagos() {
             </div>
           </div>
         </div>
-
         <table className={styles.table}>
           <thead>
             <tr>
-              <th className={styles.tHeadPaymentNumber}>Folio de pago</th>
-              <th className={styles.tHeadAccount}>Cuenta</th>
-              <th className={styles.tHeadNoteNumber}>Nota</th>
-              <th className={styles.tHeadSellType}>Tipo de venta</th>
-              <th className={styles.tHeadNoteTotal}>Total de la nota</th>
-              <th className={styles.tHeadTips}>Propina</th>
-              <th className={styles.tHeadTotalPayment}>Total pagado</th>
-              <th className={styles.tHeadPaymentType}>Forma de pago</th>
-              <th className={styles.tHeadCashier}>Cajero</th>
-              <th className={styles.tHeadPaymentDate}>Fecha de pago</th>
-              <th className={styles.tHeadBill}>Facturacion</th>
+              {PAYMENTS_TABLE_HEADERS.map((header) => (
+                <th key={header}>{header}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
-            {allPayments?.map((element, index) => (
+            {currentPayment?.map((element, index) => (
               <tr
                 key={index}
                 className={
@@ -76,22 +74,64 @@ export default function Pagos() {
                     : styles.release
                 }
               >
-                <td className={styles.tableRows}>{element.paymentCode}</td>
-                <td className={styles.tableRows}>{element.check}</td>
-                <td className={styles.tableRows}>{element.noteCode}</td>
-                <td className={styles.tableRows}>{element.sellType}</td>
-                <td className={styles.tableRows}>{element.checkTotal}</td>
-                <td className={styles.tableRows}>{element.tips}</td>
-                <td className={styles.tableRows}>{element.paymentTotal}</td>
-                <td className={styles.tableRows}>{element.paymentType}</td>
-                <td className={styles.tableRows}>{element.cashier}</td>
-                <td className={styles.tableRows}>{element.paymentDate}</td>
-                <td className={styles.tableRows}>{element.billing}</td>
+                <td>{element.paymentCode}</td>
+                <td>{element.accountId.code}</td>
+                <td style={{ paddingLeft: '24px' }}>
+                  {element.noteCode != 'n/a' ? element.noteCode : '--'}
+                </td>
+                <td>{element.accountId.checkTotal}</td>
+                <td>
+                  {element.transactions.length
+                    ? `$${element.transactions[0].tips}`
+                    : '$0.00'}
+                </td>
+                <td>{`$${element.paymentTotal}`}</td>
+                <td>
+                  {element.transactions.length > 1 &&
+                  element.transactions.some(
+                    (transaction) =>
+                      transaction.paymentType ===
+                      element.transactions[0].paymentType,
+                  )
+                    ? 'Compuesto'
+                    : element.transactions[0].paymentType === 'cash'
+                    ? 'Efectivo'
+                    : element.transactions[0].paymentType === 'debit'
+                    ? 'Tarjeta de debito'
+                    : element.transactions[0].paymentType === 'credit'
+                    ? 'Tarjeta de crédito'
+                    : element.transactions[0].paymentType === 'transfer'
+                    ? 'Transferencia'
+                    : 'Otro'}
+                </td>
+                <td>{element.cashier}</td>
+                <td>{element.paymentDate.slice(0, 10)}</td>
+                <td style={{ paddingLeft: '32px' }}>
+                  <button
+                    onClick={() => {
+                      setSelectedPayment(element);
+                      editPaymentModal.openModal();
+                    }}
+                  >
+                    <img src={editIcon} alt="edit-icon" />
+                  </button>
+                </td>
+                <td style={{ paddingLeft: '48px' }}>
+                  <input type="checkbox" />
+                </td>
               </tr>
             ))}
           </tbody>
         </table>
-
+        {editPaymentModal.isOpen &&
+        editPaymentModal.modalName === EDIT_PAYMENT_MODAL ? (
+          <EditPaymentModal
+            onClose={editPaymentModal.closeModal}
+            element={selectedPayment}
+          >
+            Editar pago
+          </EditPaymentModal>
+        ) : null}
         <div className={styles.tableFooter}></div>
       </section>
     </div>

@@ -1,6 +1,5 @@
 @import "../../../../varCss/fonts.module.css";
 
-
 .saveButton{
     width: 115px;
     height: 48px;
@@ -22,27 +21,14 @@
 }
 
 .tittle{
-    border: none;
     color: White;
     display: flex;
     justify-content: space-between;
     width: 1482px;
 }
-.section{
-    display: flex;
-    justify-content: space-evenly;
-    width: 1,490px;
-    height: 720px;
-    gap: 32px;
-}
 
-.containerOne{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 480px;
-    height: 100%;
-}
+
+
 .tittles{
     display: flex;
     justify-content: space-around;
@@ -80,18 +66,7 @@
     background: linear-gradient(180deg, rgba(249, 249, 249, 0.15) 0%, rgba(249, 249, 249, 0.03) 100%);
     border-radius: 0px 8px 8px 8px;
 }
-.contentContainerTwo{
 
-    >div{
-    padding: 16px;
-
-    >div{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-}
-}
 .contentContainerTwo{
     border-radius: 8px 0px 8px 8px;
 
@@ -117,12 +92,7 @@
 .item:hover{
     font-weight: 400; 
 }
-.sectionTwo{
-    width: 970px;
-    height: 100%px;
-    gap: 32px;
 
-}
 .inContainerOne,
 .inContainerTwo{
     display: flex;
@@ -191,9 +161,7 @@
     overflow-x: hidden;
     border: 1px solid white;
 }
-.inListThreeActions{
-    border: 1px solid red;
-}
+
 .allButton{
     width: 152px;
     height: 48px;
@@ -308,3 +276,24 @@
     background-color: #f9f9f91f;
 
 } 
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    >section{
+        display: flex;
+        border: 1px solid red;
+        justify-content: space-between; 
+        gap: 32px;
+
+        >div{
+            border: 1px solid green;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}

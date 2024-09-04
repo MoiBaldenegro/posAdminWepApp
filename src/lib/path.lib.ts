@@ -29,6 +29,7 @@ export const CANCELLATIONS_PATH = '/cancellations';
 export const DISCOUNTS_PATH = '/discounts';
 export const NOTES_PATH = '/notes';
 export const PAYMENTS_PATH = '/payments';
+export const PAYMENTS_PATH_CURRENT = '/payments/current';
 export const PROCESS_PATH = '/process';
 export const CURRENT_BILLS_PATH = '/process/total-current-bills';
 export const CLOUSURES_OF_OPERATIONS_PATH = '/clousures-of-operations';

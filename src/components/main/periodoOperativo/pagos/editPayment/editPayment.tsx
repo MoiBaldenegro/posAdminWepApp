@@ -1,17 +1,23 @@
 import CloseButton from '@/components/customElements/CloseButton';
-import styles from './configModal.module.css';
+import styles from './editPayment.module.css';
+
 interface Props {
-  isOpen: any;
+  element: any;
   onClose: any;
   children: any;
 }
-export default function ConfigModal({ isOpen, onClose, children }: Props) {
+export default function EditPaymentModal({
+  element,
+  onClose,
+  children,
+}: Props) {
   return (
     <main className={styles.screen}>
       <div>
         <CloseButton onClose={onClose} />
+        <h3>{children}</h3>
+        <h4>Pago numero: {element.paymentCode}</h4>
       </div>
-      <h2>{children}</h2>
     </main>
   );
 }
