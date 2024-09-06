@@ -7,9 +7,23 @@ import eyeIcon from '../../../../assets/public/openEye.svg';
 import enabledIcon from '../../../../assets/public/StatusIcon(enabled).svg';
 import disabledIcon from '../../../../assets/public/StatusIcon(disabled).svg';
 import pendingIcon from '../../../../assets/public/StatusIcon(pending).svg';
+import { useProcessOperationsStore } from '@/zstore/processOperations.store';
+import { useEffect } from 'react';
 
 export default function Incoming() {
   const totalBills: any = []; // provisional
+  const getTotalBills = useProcessOperationsStore(
+    (state) => state.getTotalBills,
+  );
+  const getSellTotal = useProcessOperationsStore(
+    (state) => state.getTotalCurrentSells,
+  );
+  const sellTotal = useProcessOperationsStore((state) => state.sellTotal);
+
+  useEffect(() => {
+    getTotalBills();
+    getSellTotal();
+  }, []);
   return (
     <div className={styles.container}>
       <div>
@@ -128,6 +142,26 @@ export default function Incoming() {
           <div className={styles.tableFooter}></div>
         </section>
       </div>
+      <footer>
+        <div>
+          <small>Periodo actual</small>
+          <span>23/07/2024</span>
+        </div>
+        <div>
+          <div>
+            <small>Ingresos</small>
+            <span>$200.00.00</span>
+          </div>
+          <div>
+            <small>Egresos</small>
+            <span>$200.00.00</span>
+          </div>
+          <div>
+            <small>Saldo actual</small>
+            <h4>$200.00.00</h4>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

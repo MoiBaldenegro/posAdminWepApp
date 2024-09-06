@@ -34,3 +34,5 @@ export const PROCESS_PATH = '/process';
 export const CURRENT_BILLS_PATH = '/process/total-current-bills';
 export const CLOUSURES_OF_OPERATIONS_PATH = '/clousures-of-operations';
 export const PERIOD_PATH = '/period';
+export const TOTAL_CURRENT_SELLS_PATH = '/process/sell-current-total';
+export const OPERATING_PERIODS_PATH = '/operating-period';
