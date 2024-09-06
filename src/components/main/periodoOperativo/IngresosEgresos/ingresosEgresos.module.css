@@ -1,5 +1,60 @@
+@import "../../../../varCss/colors.module.css";
+@import "../../../../varCss/fonts.module.css";
+
 .container {
   height: 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+
+  footer {
+    border-radius: 16px;
+    background: var(--color-gradient);
+    height: 106px;
+    padding: 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+
+    div{
+      width: 100%;
+      display: flex;
+
+    }
+
+    div:first-child{
+      flex-direction: column;
+      gap: 8px;
+      span{
+        font-size: var(--font-size-large);
+        text-align: left;
+      }
+    }
+
+    >div:last-child{
+      width: max-content;
+      gap: 32px;
+      align-items: end;
+
+      >div{
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        h4{
+          font-size: var(--font-size-large);
+          text-align: left;
+        }
+
+        span{
+          font-size: var(--font-size-medium);
+          text-align: left;
+        }
+      }
+    }
+  }
 }
 
 /* container  buttons */
@@ -197,13 +252,16 @@
   background: rgba(116, 160, 22, 1);
   margin-left: 1.5vw;
 }
+
 .actionButtonsFirstEnabled {
   background: rgba(249, 249, 249, 0.1);
   margin-left: 1.5vw;
 }
+
 .actionButtonsSecond {
   background: var(--color-accent-red-primary);
 }
+
 .actionButtonsSecond:hover,
 .actionButtonsFirst:hover,
 .actionButtonsFirstEnabled:hover,
@@ -211,12 +269,14 @@
   /*  opacity: .6; */
   filter: brightness(0.85);
 }
+
 .statusIcon {
   border-radius: 50px;
   margin: 3px 8px;
   box-shadow: -0px 0px 8px 1px #f9f9f94f;
   filter: brightness(1.1);
 }
+
 .mainSection {
   display: flex;
   flex-direction: column;
@@ -233,6 +293,7 @@
   padding: 16px, 0px, 0px, 0px;
   border-radius: 8px;
 }
+
 .rowDisabled:hover,
 .release:hover {
   background-color: #2e2c2d21;
@@ -240,6 +301,7 @@
 .release {
   transition: 300ms;
 }
+
 .hidden {
   display: none;
 }

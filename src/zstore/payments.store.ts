@@ -1,5 +1,4 @@
-import { getCurrentPaymentsService } from '@/components/services/payments/payments.service';
-
+import { getCurrentPaymentsService } from '@/services/payments.service';
 import { create } from 'zustand';
 
 interface state {
