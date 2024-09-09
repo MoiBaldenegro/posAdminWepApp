@@ -2,13 +2,16 @@ import styles from './historicoDePeriodosOperativos.module.css';
 
 //icons
 import searchIcon from '../../../../assets/public/searchIcon.svg';
+import periodCheck from '@/assets/public/periodCheck.svg';
 import filterIcon from '../../../../assets/public/filterIcon.svg';
 import { useOperatingPeriodStore } from '@/zstore/operatingPeriod.store';
-import { useEffect } from 'react';
+import downloadIcon from '@/assets/public/download.svg';
+import { useEffect, useState } from 'react';
 import { OPERATING_PERIODS_TABLE_HEADERS } from './headers';
 import { generateOperatingPeriodReport } from '@/reportExporter/exportOperatingPeriod';
 
 export default function HistoricoDePeriodosOperativos() {
+  const [period, setPeriod] = useState({});
   const operatingPeriods = useOperatingPeriodStore(
     (state) => state.operatingPeriods,
   );
@@ -24,15 +27,6 @@ export default function HistoricoDePeriodosOperativos() {
       <div>
         <section className={styles.head}>
           <h2>Historial de periodos operativos</h2>
-          <div>
-            <button
-              onClick={() => {
-                generateOperatingPeriodReport();
-              }}
-            >
-              Descargar reporte
-            </button>
-          </div>
         </section>
         <section className={styles.mainSection}>
           <div className={styles.mainHead}>
@@ -88,9 +82,21 @@ export default function HistoricoDePeriodosOperativos() {
                   <td>{element?.updatedAt}</td>
                   <td className={styles.tableRows}>{element.createdAt}</td>
                   <td>{element?.approvedBy ?? 'N/A'}</td>
-
                   <td>
-                    <button>estado</button>
+                    <button>
+                      <img src={periodCheck} alt="period-check" />
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      className={styles.downloadButton}
+                      onClick={() => {
+                        setPeriod(element);
+                        generateOperatingPeriodReport(period);
+                      }}
+                    >
+                      <img src={downloadIcon} alt="download-icon" />
+                    </button>
                   </td>
                 </tr>
               ))}

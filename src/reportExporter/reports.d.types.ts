@@ -13,6 +13,5 @@ export interface centerTextProps {
 }
 
 export const headerStyle: headerStyleProps = {
-  fontSize: 8,
   textColor: [255, 255, 255],
 };

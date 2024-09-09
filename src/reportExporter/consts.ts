@@ -1,105 +1,49 @@
 /////////////////////////////
 // operatingPeriod report////
 /////////////////////////////
+import { data } from './data.ts/data';
+import { transactionResumeData } from './data.ts/transactionResumeData';
 
 export const SELLTYPES_TABLE_POSITION = 90;
 export const PAYMENTS_TABLE_POSITION = 152;
 export const CATEGORIES_TABLE_POSITION = 225;
 export const SUBCATEGORIES_TABLE_POSITION = 20;
+export const PRODUCTS_TABLE_POSITION = 20;
+export const RESTAURANT_TRANSACTIONS_POSITION = 45;
+export const PARALLEVAR_TRANSACTIONS_POSITION = 105;
+export const TELEFONICO_TRANSACTIONS_POSITION = 140;
+export const RAPPI_TRANSACTIONS_POSITION = 175;
+export const DISCOUNTS_POSITION = 210;
+export const COURTESIES_POSITION = 20;
+export const CANCELLATIONS_POSITION = 100;
 
-const data = {
-  sales: [
-    { type: 'Efectivo', quantity: '$000,000,000.0.' },
-    { type: 'Tarjeta de débito', quantity: '$000,000,000.0.' },
-    { type: 'Tarjeta de crédito', quantity: '$000,000,000.0.' },
-    { type: 'Transferencia', quantity: '$000,000,000.0.' },
-    { type: 'Plataformas', quantity: '$000,000,000.0.' },
-  ],
+type rows = (string | number)[][];
 
-  selltypesSells: [
-    { type: 'Restaurante', quantity: '$000,000,000.0.' },
-    { type: 'Para llevar', quantity: '$000,000,000.0.' },
-    { type: 'Telefoníco', quantity: '$000,000,000.0.' },
-    { type: 'Rappi', quantity: '$000,000,000.0.' },
-  ],
-
-  categoriesProducts: [
-    { type: '01 Bebidas', quantity: '$000,000,000.0.' },
-    { type: '02 Alimentos', quantity: '$000,000,000.0.' },
-    { type: '03 Postres', quantity: '$000,000,000.0.' },
-    { type: '04 Complementos', quantity: '$000,000,000.0.' },
-  ],
-
-  subcategoriesProducts: [
-    { type: '0101 Aguas frescas', quantity: '$000,000,000.0.' },
-    { type: '0102 Refrescos', quantity: '$000,000,000.0.' },
-    { type: '0103 Preparados sin alcohol', quantity: '$000,000,000.0.' },
-    { type: '0104 Cervezas', quantity: '$000,000,000.0.' },
-    { type: '0105 Preparados con alcohol', quantity: '$000,000,000.0.' },
-    { type: '0201 Media orden de carne', quantity: '$000,000,000.0.' },
-    { type: '0202 Media orden de especialidad', quantity: '$000,000,000.0.' },
-    { type: '0203 Orden completa de carne', quantity: '$000,000,000.0.' },
-    {
-      type: '0204 Orden completa de especialidad',
-      quantity: '$000,000,000.0.',
-    },
-    { type: '0205 Volcanes', quantity: '$000,000,000.0.' },
-    { type: '0206 Gringas', quantity: '$000,000,000.0.' },
-    { type: '0207 Quesos fundidos', quantity: '$000,000,000.0.' },
-    { type: '0208 Tacos', quantity: '$000,000,000.0.' },
-    { type: '0301 Postres', quantity: '$000,000,000.0.' },
-    { type: '0401 Extras', quantity: '$000,000,000.0.' },
-    { type: '0402 Salsas', quantity: '$000,000,000.0.' }, //////
-    ////////////////////////////
-    { type: '0101 Aguas frescas', quantity: '$000,000,000.0.' },
-    { type: '0102 Refrescos', quantity: '$000,000,000.0.' },
-    { type: '0103 Preparados sin alcohol', quantity: '$000,000,000.0.' },
-    { type: '0104 Cervezas', quantity: '$000,000,000.0.' },
-    { type: '0105 Preparados con alcohol', quantity: '$000,000,000.0.' },
-    { type: '0201 Media orden de carne', quantity: '$000,000,000.0.' },
-    { type: '0202 Media orden de especialidad', quantity: '$000,000,000.0.' },
-    { type: '0203 Orden completa de carne', quantity: '$000,000,000.0.' },
-    {
-      type: '0204 Orden completa de especialidad',
-      quantity: '$000,000,000.0.',
-    },
-    { type: '0205 Volcanes', quantity: '$000,000,000.0.' },
-    { type: '0206 Gringas', quantity: '$000,000,000.0.' },
-    { type: '0207 Quesos fundidos', quantity: '$000,000,000.0.' },
-    { type: '0208 Tacos', quantity: '$000,000,000.0.' },
-    { type: '0301 Postres', quantity: '$000,000,000.0.' },
-    { type: '0401 Extras', quantity: '$000,000,000.0.' },
-    { type: '0402 Salsas', quantity: '$000,000,000.0.' },
-    { type: '0101 Aguas frescas', quantity: '$000,000,000.0.' },
-    { type: '0102 Refrescos', quantity: '$000,000,000.0.' },
-    { type: '0103 Preparados sin alcohol', quantity: '$000,000,000.0.' },
-    { type: '0104 Cervezas', quantity: '$000,000,000.0.' },
-    { type: '0105 Preparados con alcohol', quantity: '$000,000,000.0.' },
-    { type: '0201 Media orden de carne', quantity: '$000,000,000.0.' },
-    { type: '0202 Media orden de especialidad', quantity: '$000,000,000.0.' },
-    { type: '0203 Orden completa de carne', quantity: '$000,000,000.0.' },
-    {
-      type: '0204 Orden completa de especialidad',
-      quantity: '$000,000,000.0.',
-    },
-    { type: '0205 Volcanes', quantity: '$000,000,000.0.' },
-    { type: '0206 Gringas', quantity: '$000,000,000.0.' },
-    { type: '0207 Quesos fundidos', quantity: '$000,000,000.0.' },
-    { type: '0208 Tacos', quantity: '$000,000,000.0.' },
-    { type: '0301 Postres', quantity: '$000,000,000.0.' },
-    { type: '0401 Extras', quantity: '$000,000,000.0.' },
-    { type: '0402 Salsas', quantity: '$000,000,000.0.' },
-  ],
-};
 // Preparar los datos para la tabla
 const paymentsColumn = ['Tipo', 'Cantidad'];
 const sellTypesColumn = ['Tipo', 'Cantidad'];
 const categoriesProductsColumn = ['Tipo', 'Cantidad'];
 const subcategoriesProductsColumn = ['Tipo', 'Cantidad'];
-const tableRows: (string | number)[][] = [];
-const sellTypesRows: (string | number)[][] = [];
-const categoriesProductsRows: (string | number)[][] = [];
-const subcategoriesProductsRows: (string | number)[][] = [];
+const productsColumn = ['Tipo', 'Cantidad'];
+const restaurantTransactionsColumn = ['Tipo', 'Cantidad'];
+const parallelvarTransactionsColumn = ['Tipo', 'Cantidad'];
+const telefonicoTransactionsColumn = ['Tipo', 'Cantidad'];
+const rappiTransactionsColumn = ['Tipo', 'Cantidad'];
+const discountsColumn = ['Tipo', 'Cantidad'];
+const courtesiesColumn = ['Tipo', 'Cantidad'];
+const cancellationsColumn = ['Tipo', 'Cantidad'];
+const tableRows: rows = [];
+const sellTypesRows: rows = [];
+const categoriesProductsRows: rows = [];
+const subcategoriesProductsRows: rows = [];
+const productsRows: rows = [];
+const restaurantTransactionsRows: rows = [];
+const paraLlevarTransactionsRows: rows = [];
+const telefonicoTransactionsRows: rows = [];
+const rappiTransactionsRows: rows = [];
+const discountsRows: rows = [];
+const courtesiesRows: rows = [];
+const cancellationsRows: rows = [];
 
 data.sales.forEach((sale) => {
   const saleData = [sale.type, sale.quantity];
@@ -120,9 +64,49 @@ data.subcategoriesProducts.forEach((subcategory) => {
   subcategoriesProductsRows.push(subcategoryData);
 });
 
+data.products.forEach((product) => {
+  const productData = [product.type, product.quantity];
+  productsRows.push(productData);
+});
+
+transactionResumeData.restaurant.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  restaurantTransactionsRows.push(transactionData);
+});
+
+transactionResumeData.paraLlevar.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  paraLlevarTransactionsRows.push(transactionData);
+});
+
+transactionResumeData.telefonico.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  telefonicoTransactionsRows.push(transactionData);
+});
+
+transactionResumeData.rappi.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  rappiTransactionsRows.push(transactionData);
+});
+
+transactionResumeData.discounts.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  discountsRows.push(transactionData);
+});
+
+transactionResumeData.courtesies.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  courtesiesRows.push(transactionData);
+});
+
+transactionResumeData.cancellations.forEach((transaction) => {
+  const transactionData = [transaction.type, transaction.quantity];
+  cancellationsRows.push(transactionData);
+});
+
 const stylesConfigs = {
   styles: {
-    fontSize: 12, // Cambia el tamaño de la fuente de la tabla
+    fontSize: 10, // Cambia el tamaño de la fuente de la tabla
     cellPadding: 2, // Espacio dentro de las celdas
     cellWidth: 'auto',
     valign: 'middle', // Alineación vertical
@@ -194,6 +178,97 @@ export const SUBCATEGORIES_TABLE = {
   head: [subcategoriesProductsColumn],
   body: subcategoriesProductsRows,
   startY: SUBCATEGORIES_TABLE_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+// products Section
+export const PRODUCTS_TABLE = {
+  head: [productsColumn],
+  body: productsRows,
+  startY: PRODUCTS_TABLE_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+// restaurantTransactions Section
+export const RESTAURANT_TRANSACTIONS_TABLE = {
+  head: [restaurantTransactionsColumn],
+  body: restaurantTransactionsRows,
+  startY: RESTAURANT_TRANSACTIONS_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+export const PARALLELVAR_TRANSACTIONS_TABLE = {
+  head: [parallelvarTransactionsColumn],
+  body: paraLlevarTransactionsRows,
+  startY: PARALLEVAR_TRANSACTIONS_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+export const TELEFONICO_TRANSACTIONS_TABLE = {
+  head: [telefonicoTransactionsColumn],
+  body: telefonicoTransactionsRows,
+  startY: TELEFONICO_TRANSACTIONS_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+export const RAPPI_TRANSACTIONS_TABLE = {
+  head: [rappiTransactionsColumn],
+  body: rappiTransactionsRows,
+  startY: RAPPI_TRANSACTIONS_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+export const DISCOUNTS_TABLE = {
+  head: [discountsColumn],
+  body: discountsRows,
+  startY: DISCOUNTS_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+// courtesies Section
+export const COURTESIES_TABLE = {
+  head: [courtesiesColumn],
+  body: courtesiesRows,
+  startY: COURTESIES_POSITION, // Posición inicial de la tabla
+  styles: stylesConfigs.styles,
+  headStyles: stylesConfigs.headStyles,
+  bodyStyles: stylesConfigs.bodyStyles,
+  alternateRowStyles: stylesConfigs.alternateRowStyles,
+  columnStyles: stylesConfigs.columnStyles,
+};
+
+export const CANCELLATIONS_TABLE = {
+  head: [cancellationsColumn],
+  body: cancellationsRows,
+  startY: CANCELLATIONS_POSITION, // Posición inicial de la tabla
   styles: stylesConfigs.styles,
   headStyles: stylesConfigs.headStyles,
   bodyStyles: stylesConfigs.bodyStyles,
