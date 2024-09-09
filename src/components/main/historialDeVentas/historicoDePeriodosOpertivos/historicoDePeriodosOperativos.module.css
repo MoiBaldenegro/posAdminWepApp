@@ -187,5 +187,9 @@ td>button{
   background: var(--color-green-button);
 }
 
+.downloadButton{
+  background-color: var(--color-gray-medium);
+}
+
 
 

@@ -5,4 +5,5 @@ export const OPERATING_PERIODS_TABLE_HEADERS = [
   'Fecha de aprobacion',
   'Aprobado por',
   'Estado',
+  'Descarga',
 ];
