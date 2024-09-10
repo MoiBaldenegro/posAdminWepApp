@@ -1,0 +1,10 @@
+export enum State {
+  ACTIVE = 'ACTIVE',
+  CONFLICT = 'CONFLICT',
+  CLOSED = 'CLOSED',
+  APPROVED = 'APPROVED',
+}
+export enum Processing {
+  INITIAL = 'INITIAL',
+  CONFIRM_PROCESSING = 'CONFIRM_PROCESSING',
+}

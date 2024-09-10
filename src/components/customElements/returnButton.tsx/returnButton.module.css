@@ -1,0 +1,12 @@
+.returnButton {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #cfcece;
+    font-weight: 900;
+    transition: 200ms ease-in-out;
+}
+
+.returnButton:hover{
+    transform: scale(1.1) translateX(-8px);
+}

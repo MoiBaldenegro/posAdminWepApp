@@ -1,0 +1,31 @@
+@import "../../../../../varCss/fonts.module.css";
+@import "../../../../../varCss/colors.module.css";
+
+.hidden{
+    display: none;
+  }
+
+.screen {
+    height: 100%;
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 32px;
+
+        div{
+            display: flex;
+            align-items: center
+        };
+
+        button:last-child{
+           background-color: var(--color-green-button);
+        }
+    }
+}
+  
+
+  
+  
