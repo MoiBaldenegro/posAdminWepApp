@@ -187,8 +187,12 @@ td>button{
   background: var(--color-green-button);
 }
 
-.downloadButton{
+.downloadButton,
+.closedButton{
   background-color: var(--color-gray-medium);
+}
+.conflictButton{
+  background-color: var(--color-accent-red-primary);
 }
 
 
